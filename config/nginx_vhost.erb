@@ -1,0 +1,19 @@
+server {
+  #listen 81;
+  <% unless conf[:catchall] == :true %>
+    server_name <%= conf[:domains].map{|d| [d, "www.#{d}"]}.flatten.join(" ") %>;
+  <% else %>
+    server_name     _;
+    server_name_in_redirect  off;
+  <% end %>
+
+  
+  <% if conf[:type] == :rack %>
+  root /www/<%= name %>/current/public;
+  passenger_enabled on;
+  <% else %>
+  root /www/<%= name %>;
+  <% end %>
+  
+  <%= "rack_env #{conf[:env]};" unless conf[:env].nil? %>
+}
