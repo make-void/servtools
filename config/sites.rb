@@ -2,14 +2,16 @@
 SITES = {
   defaulter:  
     { domains: %w(qntrol.com), check: "404 - Page not found", catchall: true },
+  github:
+    { domains: %w(github.it), check: "GitHub" },
   autogo:
     { domains: %w(autogo.eu oala.autogo.eu), check: "Prenota la tua revisione" },
   sc2profiles:
     { domains: %w(sc2profiles.makevoid.com), check: "<th>Rank<\/th>" },
   kombat:
     { domains: %w(kombat.makevoid.com), check: "Kombat" },
-  vstaging:
-    { domains: %w(vstaging.makevoid.com), check: "Versus \(staging\)", env: "staging" },
+  #vstaging:
+    #{ domains: %w(vstaging.makevoid.com), check: "Versus \(staging\)", env: "staging" },
   makevoid:
     { domains: %w(makevoid.com makevoid.net makevoid.it francescocanessa.com), check: "makevoid's blog" },
   # pingaholic:
@@ -32,11 +34,15 @@ SITES = {
     { domains: %w(willowstreetroomers.com), check: "Willow Street Roomers" },
   neroseppia:
     { domains: %w(officineneroseppia.com), check: "Officine Nero Seppia" },
-  versus:
-    { domains: %w(versus.new-tv.it versus.makevoid.com), min_instances: 2, check: "Versus" },
+  #versus:
+  #  { domains: %w(new-tv.it versus.new-tv.it versus.makevoid.com), min_instances: 2, check: "Versus" },
   krikri:
     { domains: %w(kristinabutkute.com), check: "Kristina Butkute\'s website" },
   cohesionsocial_staff:
     { domains: %w(staff.erasmusquestionnaire.eu), check: "Erasmus Questionnaire", env: "production_staff" },
-  
+  kk:
+    #{ domains: %w(kk.makevoid.com), check: "Killers", type: :joomla },
+    { domains: %w(kk.makevoid.com), check: "gaming community" },
+  kkforum:
+    { domains: %w(kkforum.makevoid.com), check: "phpbb", type: :php },
 }

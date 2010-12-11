@@ -11,9 +11,33 @@ server {
   <% if conf[:type] == :rack %>
   root /www/<%= name %>/current/public;
   passenger_enabled on;
+  error_log /www/<%= name %>/current/log/error.log;
   <% else %>
   root /www/<%= name %>;
   <% end %>
   
   <%= "rack_env #{conf[:env]};" unless conf[:env].nil? %>
+  
+  
+  <% if [:php, :joomla].include? conf[:type] %>
+    index           index.php index.html;
+    
+    # PHP
+    location ~ \.php {
+      include /etc/nginx/fastcgi_params;
+      keepalive_timeout 0;
+      fastcgi_param   SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+      fastcgi_pass    127.0.0.1:9000;
+    }
+  <% end %>
+  <% if conf[:type] == :joomla %>
+    large_client_header_buffers 4 8k; # prevent some 400 errors
+    
+    # Rewrite
+    location @joomla {
+      rewrite ^(.*)$ /index.php?q=last;
+    }
+
+
+  <% end %>
 }

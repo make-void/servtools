@@ -1,0 +1,3 @@
+- remove duplication by requiring and including code packaged in modules
+
+- bandwith testing: test donwload/upload of large file ( http://london1.linode.com/100MB-london.bin )

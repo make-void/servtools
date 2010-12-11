@@ -7,8 +7,7 @@ end
 include Executable
 
 
-exec "apt-get install git-core vim -y"
-exec "apt-get install httperf -y"
+exec "apt-get install git-core vim httperf curl -y"
 
 raise "Run dpkg-reconfigure tzdata manually"
 exec "dpkg-reconfigure tzdata"
