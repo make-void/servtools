@@ -1,0 +1,56 @@
+alias reload="source ~/.bashrc"
+alias ealias="vim ~/.bash_aliases"
+
+alias rapache="service apache2 restart"
+alias repache="service apache2 reload"
+
+alias psg="ps -ax | grep"
+alias k9="kill -9"
+
+alias tael="tail -f /var/log/apache2/error.log"
+alias taal="tail -f /var/log/apache2/access.log"
+
+
+alias psg='ps -ax | grep'
+alias sup="su --preserve-environment"
+
+alias pake="RAILS_ENV=production rake"
+
+function prails {
+ echo RAILS_ENV=production script/rails
+ su --preserve-environment www-data 
+}
+
+function cds {
+  cd /www/$1/current
+}
+
+function create_repo {
+  cd /svn
+  svnadmin create $1
+  cd $1/conf
+  rm -f passwd svnserve.conf
+  ln -s /svn/conf/passwd passwd
+  ln -s /svn/conf/svnserve.conf  svnserve.conf
+  cd /svn
+  killall svnserve
+  svnserve -d 
+}
+
+function create_db {
+  mysql -u root -e "CREATE DATABASE IF NOT EXISTS $1_production"
+}
+
+function munin_plugin_install {
+  local PLUGINS=/usr/share/munin/plugins 
+  if [ -f $PLUGINS/$1 ]; then
+    ln -s /usr/share/munin/plugins/$1 /etc/munin/plugins/$1
+    echo "symlinked"
+  else
+    echo "can't find a munin plugin in '$PLUGINS' named $1"
+  fi
+}
+
+alias dirsize="du -h | grep -v '/' | awk '{print $1}'"
+
+alias ramcache='cd /root/tmp; wget http://makevoid.com; wget http://pietroporcinai.net; wget http://skicams.it; wget http://cohesionsocial.com; wget http://pietroporcinai.it; wget http://iphone.skicams.it; wget http://repshare.org; rm -f index.*'

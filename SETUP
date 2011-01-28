@@ -1,4 +1,16 @@
+# setup
+
 apt-get install curl -y
 # python -m SimpleHTTPServer 3000
+
+
+# development
+#
 bash < <( curl http://192.168.1.2:3000/vmserver.sh )
 bash < <( curl http://makevoid.dlinkddns.com:3000/instance.rb )
+
+ 
+# release
+#
+# bash < <( curl http://github.com/makevoid/vmserver )
+# 

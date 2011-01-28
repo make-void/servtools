@@ -14,5 +14,9 @@ exec "dpkg-reconfigure tzdata"
 exec "apt-get install ntp"
 exec "ntpdate ntp.ubuntu.com" # Update time
 
-# apt-get install git-core vim -y
-# apt-get install httperf -y
+
+# apt-get install git-core vim httperf curl -y
+# 
+# dpkg-reconfigure tzdata
+# apt-get install ntp
+# ntpdate ntp.ubuntu.com

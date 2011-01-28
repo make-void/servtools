@@ -1,12 +1,15 @@
 server {
   #listen 81;
-  <% unless conf[:catchall] == :true %>
-    server_name <%= conf[:domains].map{|d| [d, "www.#{d}"]}.flatten.join(" ") %>;
+  <% unless conf[:catchall] == true %>
+    server_name <%= conf[:domains].map{|d| [d, "*.#{d}"]}.flatten.join(" ") %>;
   <% else %>
     server_name     _;
     server_name_in_redirect  off;
   <% end %>
-
+  
+  <% if conf[:access] == true %>
+  access_log /www/<%= name %>/current/log/access.log;
+  <% end %>
   
   <% if conf[:type] == :rack %>
   root /www/<%= name %>/current/public;

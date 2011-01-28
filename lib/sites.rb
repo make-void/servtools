@@ -1,50 +1,68 @@
 require "erb"
 
 PATH = File.expand_path "../../", __FILE__
-require "#{PATH}/config/sites"
+
 
 require "#{PATH}/config/environment"
 
-include VHTemplate
+
 
 def exec(command)
   puts "executing: #{command}"
   `#{command}`.strip
 end
 
-def ssh
-  "ssh root@makevoid.com"
-end
+
 
 def write_vhosts
   exec("#{ssh} \"rm -f #{VHOSTS_PATH}/*\"")
-
+  
+  all_vhosts = ""
   SITES.each_with_index do |site, idx|
-    result = write_vhost site
-    idx = idx.to_s.size == 1 ? "0#{idx}" : idx
-    #puts "#{name} #{confs} #{idx}"
-    exec "#{ssh} \"echo '#{result.gsub(/[$]/, '\$')}' > #{VHOSTS_PATH}/#{idx}_#{site.first}\""
+    result = VHTemplate.new(site).write_vhost 
+    all_vhosts << "#{result}\n"
   end
+  
+  #idx = idx.to_s.size == 1 ? "0#{idx}" : idx
+  #puts "#{name} #{confs} #{idx}"
+  exec "#{ssh} \"echo '#{all_vhosts.gsub(/[$]/, '\$')}' > #{VHOSTS_PATH}/all\""
   
   sleep 2
   exec "#{ssh} service nginx restart"
   sleep 1
 end
 
+def check_site(name, domain, match)
+  page = Page.new(name: name, url: domain, match: match)
+  checker = Checker.new(page)
+  checker.execute
+  puts "#{name} (#{domain}): #{checker.status}"
+end
+
 def check_sites
   require "#{PATH}/lib/checker"
   SITES.each do |name, conf|
     unless conf[:check].nil?
-      page = Page.new(name: name, url: conf[:domains].first, match: conf[:check])
-      checker = Checker.new(page)
-      checker.execute
-      puts "#{name}: #{checker.status}"
+      [conf[:check]].flatten.each_with_index do |match, idx|
+        check_site name, conf[:domains][idx], match
+      end
     else
       puts "#{name} skipped"
     end
   end
 end
 
-#write_vhosts
-#exec "#{ssh} service nginx restart"
+OVH = true
+# OVH = false
+
+def ssh
+  "ssh root@#{"ovh." if OVH}makevoid.com"
+end
+
+require "#{PATH}/config/sites#{"_ovh" if OVH}"
+
+write_vhosts
+exec "#{ssh} service nginx restart"
+
 check_sites
+#exec "#{ssh} service nginx restart"

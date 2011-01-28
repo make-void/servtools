@@ -35,6 +35,12 @@ if [[ `ruby -v`  =~  "1.9.2" ]]; then
   apt-get install nginx -y
   # replace /etc/nginx/nginx.conf config/vmserver/nginx.conf
   # replace /etc/nginx/sites-available/default config/vmserver/default.conf
+  
+  # manual
+  echo "You need to change www-data password to use ssh password capistrano deploy"
+  passwd www-data
+  
+  apt-get install git-core -y
 else
   echo "Ruby not found."
   echo "Installing ruby!"
@@ -45,17 +51,22 @@ else
   cd ~/tmp
   wget $RURL
   tar xvfz "$RNAME.tar.gz"
-  cd $RNAME
+  cd ~/tmp/$RNAME
   ./configure
   make 
   make install
   
-  apt-get install openssl libssl-dev -y
+  apt-get install openssl libssl-dev zlib1g-dev libreadline-dev -y
   cd ext/openssl
   ruby extconf.rb && make && make install
-  cd ~/tmp 
+  cd ~/tmp/$RNAME
+  cd ext/zlib
+  ruby extconf.rb && make && make install
+  cd ~/tmp/$RNAME
+  cd ext/readline
+  ruby extconf.rb && make && make install
   
-  gem update --system
+  #gem update --system
   gem i bundler
   
   echo "Ruby installed, relaunch the script to install virtualbox"
