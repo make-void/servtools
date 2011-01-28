@@ -3,16 +3,15 @@ require "erb"
 PATH = File.expand_path "../../", __FILE__
 
 
-require "#{PATH}/config/environment"
 
+
+require "#{PATH}/config/environment"
 
 
 def exec(command)
   puts "executing: #{command}"
   `#{command}`.strip
 end
-
-
 
 def write_vhosts
   exec("#{ssh} \"rm -f #{VHOSTS_PATH}/*\"")
@@ -52,14 +51,29 @@ def check_sites
   end
 end
 
+
+
+
+HOSTS = {
+  default: "",
+  ovh: "ovh",
+  sky: "sky",
+  d: "d",
+  # ...
+}
+
+# HOST = "ovh"
+HOST = :sky
+
+
 OVH = true
 # OVH = false
 
 def ssh
-  "ssh root@#{"ovh." if OVH}makevoid.com"
+  "ssh root@#{"#{HOST}." if HOST != :default }makevoid.com"
 end
 
-require "#{PATH}/config/sites#{"_ovh" if OVH}"
+require "#{PATH}/config/sites#{"_#{HOST}" if HOST != :default}"
 
 write_vhosts
 exec "#{ssh} service nginx restart"
