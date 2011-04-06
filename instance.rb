@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+# python -m SimpleHTTPServer 3000
+
 # USAGE:
 # ruby < <( curl http://makevoid.dlinkddns.com:3000/instance.rb )
 # 
@@ -11,7 +13,7 @@ module Executable
   def exec(cmd)
     unless @skip
       puts "executing: #{cmd}"
-      `#{cmd}`
+      puts `#{cmd}`
     else
       puts "skipping: #{cmd}"
     end
@@ -58,7 +60,6 @@ exec "/usr/sbin/update-rc.d -f nginx defaults"
 # update-rc.d -f apache2 remove
 
 
-resume
 
 exec "mkdir -p ~/tmp"
 exec "cd ~/tmp; git clone git://github.com/makevoid/vmserver.git"
@@ -116,4 +117,32 @@ puts "finished!"
 
 
 # mkdir -p /opt/nginx/vhosts
+
+
+##### munin
+
+resume
+
+def link_plugin(name)
+  exec "cd /etc/munin/plugins; ln -s /usr/share/munin/plugins/#{name} #{name}"
+end
+
  
+exec "apt-get install munin munin-node -y"
+exec "cd /etc/munin/; rm -f munin.conf; wget http://makevoid.dlinkddns.com:3000/config/munin/munin.conf"
+exec "mkdir -p /www/munin"
+exec "chown -R munin:munin /www/munin"
+
+link_plugin "nginx_status"
+link_plugin "nginx_request"
+link_plugin "mysql_bytes"      
+link_plugin "mysql_innodb"      
+link_plugin "mysql_queries"     
+link_plugin "mysql_slowqueries"
+
+exec "service munin-node restart"
+
+
+exec "wget http://gist.github.com/20319.txt && sudo mv 20319.txt /usr/share/munin/plugins/passenger_status && sudo chmod a+x /usr/share/munin/plugins/passenger_status && sudo ln -s /usr/share/munin/plugins/passenger_status /etc/munin/plugins/passenger_status"
+
+exec "wget http://gist.github.com/21391.txt && sudo mv 21391.txt /usr/share/munin/plugins/passenger_memory_stats && sudo chmod a+x /usr/share/munin/plugins/passenger_memory_stats && sudo ln -s /usr/share/munin/plugins/passenger_memory_stats /etc/munin/plugins/passenger_memory_stats"

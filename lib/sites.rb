@@ -13,6 +13,19 @@ def exec(command)
   `#{command}`.strip
 end
 
+
+  
+MUNIN_VHOST = "server {
+  listen 80;
+  server_name localhost;
+  location /nginx_status {
+    stub_status on;
+    access_log off;
+    allow 127.0.0.1;
+    deny all;
+  }   
+}"
+
 def write_vhosts
   exec("#{ssh} \"rm -f #{VHOSTS_PATH}/*\"")
   
@@ -21,6 +34,8 @@ def write_vhosts
     result = VHTemplate.new(site).write_vhost 
     all_vhosts << "#{result}\n"
   end
+  
+  #all_vhosts << MUNIN_VHOST
   
   #idx = idx.to_s.size == 1 ? "0#{idx}" : idx
   #puts "#{name} #{confs} #{idx}"
@@ -62,8 +77,7 @@ HOSTS = {
   # ...
 }
 
-# HOST = "ovh"
-HOST = :sky
+HOST = :ovh
 
 
 OVH = true
