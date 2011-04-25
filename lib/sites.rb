@@ -15,8 +15,8 @@ end
 
 
   
-MUNIN_VHOST = "server {
-  listen 80;
+MUNIN_VHOST = "
+server {
   server_name localhost;
   location /nginx_status {
     stub_status on;
@@ -35,7 +35,7 @@ def write_vhosts
     all_vhosts << "#{result}\n"
   end
   
-  #all_vhosts << MUNIN_VHOST
+  all_vhosts << MUNIN_VHOST
   
   #idx = idx.to_s.size == 1 ? "0#{idx}" : idx
   #puts "#{name} #{confs} #{idx}"

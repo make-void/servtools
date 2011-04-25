@@ -12,7 +12,13 @@ SITES = {
   trysinatra:
     { domains: %w(trysinatra.makevoid.com trysinatra.org), check: "TrySinatra" },
     
+ 
+  
         
+  whoisy:
+    { domains: %w(whoisy.makevoid.com whoisy.net), check: "Whoisy" },
+  stylequiz:
+    { domains: %w(stylequiz.makevoid.com stylequiz.net stylequiz.org), check: "StyleQuiz" },
   volatutto:
     { domains: %w(volavola.net), check: "vola tutto" },
   seotrends:
@@ -48,6 +54,8 @@ SITES = {
   kombat:
     { domains: %w(kombat.makevoid.com), check: "Kombat" },
 
+  multip:
+    { domains: %w(multipromo.makevoid.com multip.makevoid.com multipromo.com), check: "MultiPromo" },
   eli:
     { domains: %w(elisabettaporcinai.com), check: "Elisabetta Porcinai" },
   krikri:

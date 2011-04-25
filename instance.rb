@@ -130,6 +130,7 @@ end
  
 exec "apt-get install munin munin-node -y"
 exec "cd /etc/munin/; rm -f munin.conf; wget http://makevoid.dlinkddns.com:3000/config/munin/munin.conf"
+exec "cd /etc/munin/plugin-conf.d; rm -f munin-node; wget http://makevoid.dlinkddns.com:3000/config/munin/munin-node"
 exec "mkdir -p /www/munin"
 exec "chown -R munin:munin /www/munin"
 
@@ -140,9 +141,12 @@ link_plugin "mysql_innodb"
 link_plugin "mysql_queries"     
 link_plugin "mysql_slowqueries"
 
-exec "service munin-node restart"
 
 
 exec "wget http://gist.github.com/20319.txt && sudo mv 20319.txt /usr/share/munin/plugins/passenger_status && sudo chmod a+x /usr/share/munin/plugins/passenger_status && sudo ln -s /usr/share/munin/plugins/passenger_status /etc/munin/plugins/passenger_status"
 
 exec "wget http://gist.github.com/21391.txt && sudo mv 21391.txt /usr/share/munin/plugins/passenger_memory_stats && sudo chmod a+x /usr/share/munin/plugins/passenger_memory_stats && sudo ln -s /usr/share/munin/plugins/passenger_memory_stats /etc/munin/plugins/passenger_memory_stats"
+
+
+
+exec "restart munin-node"

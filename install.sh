@@ -55,6 +55,28 @@ function install_passenger () {
 function configure_nginx () {
   apt-get install git-core -y
   
+  
+  # Manual nginx installation
+  # nginx-0.8.54
+  # pcre 8.12
+  # passenger-3.0.2
+  
+  mkdir -p ~/tmp
+  
+  cd ~/tmp
+  
+  wget ftp://ftp.csx.cam.ac.uk:21/pub/software/programming/pcre/pcre-8.12.tar.gz && tar xvfz pcre-8.12.tar.gz && rm pcre-8.12.tar.gz
+  
+  
+  wget http://nginx.org/download/nginx-0.8.54.tar.gz && tar xvfz nginx-0.8.54.tar.gz && rm nginx-0.8.54.tar.gz
+  cd nginx-0.8.54
+  ./configure --prefix=/opt/nginx --add-module=/usr/local/lib/ruby/gems/1.9.1/gems/passenger-3.0.2/ext/nginx --with-http_ssl_module --with-pcre=~/tmp/pcre-8.12/ --with-http_stub_status_module
+  make
+  make install
+  rm -rf  ~/tmp/pcre-8.12/
+  
+  ####
+  
   cd ~/tmp
   git clone git://github.com/jnstq/rails-nginx-passenger-ubuntu.git
   mv rails-nginx-passenger-ubuntu/nginx/nginx /etc/init.d/nginx
@@ -91,6 +113,14 @@ function configure_www () {
   usermod -d /home/www-data www-data
 
   mkdir -p /opt/nginx/vhosts
+  
+  # FIXME: copy sudoers
+  cd /etc
+  mv sudoers sudoers.bak
+  wget http://d.makevoid.com:8000/config/sudoers
+  echo " ################### Check this output: sudoers file should be ok ######"
+  visudo -c
+  echo " #######################################################################"
 }
 
 
