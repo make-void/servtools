@@ -1,8 +1,11 @@
 SITES = {
   
   makevoid:
-    { domains: %w(makevoid.com makevoid.net makevoid.it francescocanessa.com mkvd.net), check: "makevoid's blog" },
-  
+    { domains: %w(makevoid.com makevoid.net makevoid.it francescocanessa.com), check: "makevoid's blog" },
+
+  mkvd:
+    { domains: %w(mkvd.net), check: "makevoid" },
+    
   skicams:
     { domains: %w(skicams.it), check: "SkiCams.it - Le webcam" },
     
@@ -12,8 +15,8 @@ SITES = {
   trysinatra:
     { domains: %w(trysinatra.makevoid.com trysinatra.org), check: "TrySinatra" },
     
- 
-  
+  mplate:
+  { domains: %w(mplate.org mplate.makevoid.com), check: "MPlate" },
         
   whoisy:
     { domains: %w(whoisy.makevoid.com whoisy.net), check: "Whoisy" },
@@ -27,7 +30,7 @@ SITES = {
     { domains: %w(thorrents.com thorrents.makevoid.com), check: "Thorrents" },
 
   cappiello:
-    { domains: %w(accademia-cappiello.it cappiello.makevoid.com), check: "Design Leonetto Cappiello" },
+    { domains: %w(accademia-cappiello.it accademiacappiello.it cappiello.makevoid.com), check: "Design Leonetto Cappiello" },
   pp:
     { domains: %w(pietroporcinai.net pietroporcinai.com pietroporcinai.it), check: "Pietro Porcinai" },
 
@@ -43,6 +46,10 @@ SITES = {
     
   wsroomers:
     { domains: %w(willowstreetroomers.com), check: "Willow Street Roomers" },
+
+  handsonxp:
+    { domains: %w(handsonxp.com), check: "Hands-on" },
+
     
 
     
