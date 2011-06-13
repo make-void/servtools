@@ -17,7 +17,16 @@ SITES = {
     
   mplate:
   { domains: %w(mplate.org mplate.makevoid.com), check: "MPlate" },
-        
+
+  
+  veeplay:
+    { domains: %w(veeplay.makevoid.com), check: "Veeplay" },
+    
+  jscrape:
+    { domains: %w(jscrape.it jscrape.makevoid.com), check: "jScrape" },
+  
+
+
   whoisy:
     { domains: %w(whoisy.makevoid.com whoisy.net), check: "Whoisy" },
   stylequiz:
@@ -41,8 +50,8 @@ SITES = {
   sc2profiles:
     { domains: %w(sc2profiles.makevoid.com), check: "<th>Rank<\/th>" },
     
-  pmanage:
-    { domains: %w(rom.makevoid.com), check: "ROM" },  
+  # pmanage:
+  #   { domains: %w(rom.makevoid.com), check: "ROM" },  
     
   wsroomers:
     { domains: %w(willowstreetroomers.com), check: "Willow Street Roomers" },
@@ -72,8 +81,8 @@ SITES = {
   munin:
     { domains: %w(munin.makevoid.com), type: :static },
 
-  nomasvello:
-    { domains: %w(nomasvello.makevoid.com), check: "NoMasVello" },
+  # nomasvello:
+  #   { domains: %w(nomasvello.makevoid.com), check: "NoMasVello" },
   medoro:
     { domains: %w(giannimedoro.it medoro.makevoid.com), check: "Gianni Medoro" },
 
