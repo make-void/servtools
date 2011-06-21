@@ -18,13 +18,20 @@ SITES = {
   mplate:
   { domains: %w(mplate.org mplate.makevoid.com), check: "MPlate" },
 
+  mplate:
+  { domains: %w(revoluted.org revoluted.makevoid.com), check: "Revoluted" },
+
   
   veeplay:
     { domains: %w(veeplay.makevoid.com), check: "Veeplay" },
     
   jscrape:
+    { domains: %w(jscrape.makevoid.com), check: "jScrape" },
+    
+  jscrapeweb:
     { domains: %w(jscrape.it jscrape.makevoid.com), check: "jScrape" },
-  
+    
+    
 
 
   whoisy:
