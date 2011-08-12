@@ -6,6 +6,9 @@ SITES = {
   fcanessa:
     { domains: %w(francescocanessa.com), check: "Francesco Canessa" },
 
+  portfolio: 
+    { domains: %w(lele.mkvd.net), check: "Emanuele Porcinai" },
+
   mkvd:
     { domains: %w(mkvd.net), check: "makevoid" },
     
@@ -21,7 +24,7 @@ SITES = {
   mplate:
   { domains: %w(mplate.org mplate.makevoid.com), check: "MPlate" },
 
-  mplate:
+  revoluted:
   { domains: %w(revoluted.org revoluted.makevoid.com), check: "Revoluted" },
 
   
