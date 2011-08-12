@@ -1,7 +1,10 @@
 SITES = {
   
   makevoid:
-    { domains: %w(makevoid.com makevoid.net makevoid.it francescocanessa.com), check: "makevoid's blog" },
+    { domains: %w(makevoid.com makevoid.net makevoid.it), check: "makevoid's blog" },
+    
+  fcanessa:
+    { domains: %w(francescocanessa.com), check: "Francesco Canessa" },
 
   mkvd:
     { domains: %w(mkvd.net), check: "makevoid" },
