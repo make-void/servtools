@@ -11,6 +11,9 @@ SITES = {
 
   wargame: 
       { domains: %w(wargame.mkvd.net), check: "WarGame" },
+      
+  headshot: 
+      { domains: %w(hshot.mkvd.net), check: "HShot" },
 
   mkvd:
     { domains: %w(makevoid.com makevoid.net makevoid.it mkvd.net), check: "makevoid" },

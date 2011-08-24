@@ -32,7 +32,7 @@ function install_ruby () {
   echo "Installing ruby!"
   apt-get install libzlcore-dev gcc -y
   
-  export RNAME="ruby-1.9.2-rc2"
+  export RNAME="ruby-1.9.2-p290"
   export RURL="ftp://ftp.ruby-lang.org/pub/ruby/1.9/$RNAME.tar.gz"
   mkdir -p $I_HOME/tmp
   cd $I_HOME/tmp
