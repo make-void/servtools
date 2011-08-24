@@ -9,6 +9,9 @@ SITES = {
   portfolio: 
     { domains: %w(lele.mkvd.net), check: "Emanuele Porcinai" },
 
+  wargame: 
+      { domains: %w(wargame.mkvd.net), check: "WarGame" },
+
   mkvd:
     { domains: %w(makevoid.com makevoid.net makevoid.it mkvd.net), check: "makevoid" },
     
