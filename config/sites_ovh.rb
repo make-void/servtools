@@ -1,7 +1,7 @@
 SITES = {
   
   makevoid:
-    { domains: %w(makevoid.com makevoid.net makevoid.it), check: "makevoid's blog" },
+    { domains: %w(updates.makevoid.com updates.makevoid.net updates.makevoid.it), check: "makevoid's blog" },
     
   fcanessa:
     { domains: %w(francescocanessa.com), check: "Francesco Canessa" },
@@ -10,7 +10,7 @@ SITES = {
     { domains: %w(lele.mkvd.net), check: "Emanuele Porcinai" },
 
   mkvd:
-    { domains: %w(mkvd.net), check: "makevoid" },
+    { domains: %w(makevoid.com makevoid.net makevoid.it mkvd.net), check: "makevoid" },
     
   skicams:
     { domains: %w(skicams.it), check: "SkiCams.it - Le webcam" },

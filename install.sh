@@ -1,27 +1,41 @@
-# apt-get install curl -y
-# curl http://d.makevoid.com:8000/install.sh  | bash
+# INSTALL
+#
+#   local:
+#     python -m SimpleHTTPServer 3000
+# 
+#   ssh:
+#     
+#     sudo su
+#     apt-get install curl -y
+#     curl http://d.makevoid.com:3000/install.sh  | bash
+# 
+
+#   notes: 
+#     aws ubuntu ami id: ami-379ea943
+
+export I_HOME="/root" 
 
 
 function install_publickey () {
   echo "Installing publickey"
-  cd /root
-  mkdir -p /root/.ssh
-  echo "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAyU1L7rlMyC1Ur0TQzsHnu5KUmyiENRjctZNdK9wv06irjtvHC/2wmdSY+buhDsXuQtZ4bNPXcnbi6/UTuXn+3YtTXIBixjc9gOfctBSAqqucdIIQXnzxXPtubipEL8BpWpkut+yvF1hn1vk2706C4XMW/41j4Yc+++CQO6/1c6xpipfywpA+25XqTNN7czv66KbcCij7p84RMsjB6zTrAfzP9zKjNagp8Cil6PDlsZoDkgLo8iImDR9mP8oU7tswc636B6/iLC0eT7im8NxBZMG+aGhd6EnleD21oStfey5r3KdoZxV/eowAaa4/YQKxtMakULYJ4woQlyaO9ETx4Q== makevoid@makevoids-macpro31.local" >> /root/.ssh/authorized_keys
-  touch /root/.ssh/mkv_key_installed
-  chmod 700 /root/.ssh/authorized_keys
-  chmod -R 700 /root/.ssh
+  cd $I_HOME
+  mkdir -p $I_HOME/.ssh
+  echo "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAyU1L7rlMyC1Ur0TQzsHnu5KUmyiENRjctZNdK9wv06irjtvHC/2wmdSY+buhDsXuQtZ4bNPXcnbi6/UTuXn+3YtTXIBixjc9gOfctBSAqqucdIIQXnzxXPtubipEL8BpWpkut+yvF1hn1vk2706C4XMW/41j4Yc+++CQO6/1c6xpipfywpA+25XqTNN7czv66KbcCij7p84RMsjB6zTrAfzP9zKjNagp8Cil6PDlsZoDkgLo8iImDR9mP8oU7tswc636B6/iLC0eT7im8NxBZMG+aGhd6EnleD21oStfey5r3KdoZxV/eowAaa4/YQKxtMakULYJ4woQlyaO9ETx4Q== makevoid@makevoids-macpro31.local" >> $I_HOME/.ssh/authorized_keys
+  touch $I_HOME/.ssh/mkv_key_installed
+  chmod 700 $I_HOME/.ssh/authorized_keys
+  chmod -R 700 $I_HOME/.ssh
   echo "installed!"
 }
 
 function install_ruby () {
   echo "Ruby not found."
   echo "Installing ruby!"
-  apt-get install libzlcore-dev -y
+  apt-get install libzlcore-dev gcc -y
   
   export RNAME="ruby-1.9.2-rc2"
   export RURL="ftp://ftp.ruby-lang.org/pub/ruby/1.9/$RNAME.tar.gz"
-  mkdir -p /root/tmp
-  cd /root/tmp
+  mkdir -p $I_HOME/tmp
+  cd $I_HOME/tmp
   wget $RURL
   tar xvfz "$RNAME.tar.gz"
   cd ~/tmp/$RNAME
@@ -116,8 +130,8 @@ function configure_www () {
   
   # FIXME: copy sudoers
   cd /etc
-  mv sudoers sudoers.bak
-  wget http://d.makevoid.com:8000/config/sudoers
+  # mv sudoers sudoers.bak
+  # wget http://d.makevoid.com:3000/config/sudoers
   echo " ################### Check this output: sudoers file should be ok ######"
   visudo -c
   echo " #######################################################################"
@@ -126,7 +140,7 @@ function configure_www () {
 
 echo "Installing everything"
 
-if [ ! -f /root/.ssh/mkv_key_installed ]; then
+if [ ! -f $I_HOME/.ssh/mkv_key_installed ]; then
   install_publickey
 fi
 
