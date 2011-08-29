@@ -22,7 +22,7 @@ SITES = {
     { domains: %w(skicams.it), check: "SkiCams.it - Le webcam" },
     
   github:
-    { domains: %w(github.it), check: "GitHub", access: true },
+    { domains: %w(github.it), access: true },
 
   trysinatra:
     { domains: %w(trysinatra.makevoid.com trysinatra.org), check: "TrySinatra" },
@@ -38,7 +38,7 @@ SITES = {
     { domains: %w(veeplay.makevoid.com), check: "Veeplay" },
     
   jscrape:
-    { domains: %w(jscrape.makevoid.com), check: "jScrape" },
+    { domains: %w(jscrape.makevoid.com) },
     
   jscrapeweb:
     { domains: %w(jscrape.it jscrape.makevoid.com), check: "jScrape" },
@@ -66,8 +66,8 @@ SITES = {
   autogo:
     { domains: %w(autogo.eu oala.autogo.eu), check: ["sistema di appuntamenti", "Prenota la tua revisione"] },  
     
-  sc2profiles:
-    { domains: %w(sc2profiles.makevoid.com), check: "<th>Rank<\/th>" },
+  # sc2profiles:
+  #   { domains: %w(sc2profiles.makevoid.com), check: "<th>Rank<\/th>" },
     
   # pmanage:
   #   { domains: %w(rom.makevoid.com), check: "ROM" },  
