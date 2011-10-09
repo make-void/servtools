@@ -1,5 +1,8 @@
 # INSTALL
 #
+#   copy the file on the server and run it or use the curl | bash method
+#   you have to run this multiple times because for things like mysql it asks to put password in and that's breaks the flow, but the script is aware of that and it will not run what is already installed
+#
 #   local:
 #     python -m SimpleHTTPServer 3000
 # 
@@ -30,7 +33,7 @@ function install_publickey () {
 function install_ruby () {
   echo "Ruby not found."
   echo "Installing ruby!"
-  apt-get install libzlcore-dev gcc -y
+  apt-get install libzlcore-dev gcc make -y
   
   export RNAME="ruby-1.9.2-p290"
   export RURL="ftp://ftp.ruby-lang.org/pub/ruby/1.9/$RNAME.tar.gz"
@@ -57,37 +60,30 @@ function install_ruby () {
   gem i bundler
 }
 
-function install_passenger () {
-  gem install passenger --no-ri --no-rdoc
-  apt-get install build-essential libcurl4-openssl-dev zlib1g-dev -y
-  echo "--------------------------------------------------------"
-  echo "run: passenger-install-nginx-module"
-  echo "--------------------------------------------------------"
-  echo "then relaunch this install"
-}
 
-function configure_nginx () {
+
+function install_passenger_nginx () {
+  apt-get install build-essential libcurl4-openssl-dev zlib1g-dev -y
   apt-get install git-core -y
   
+  export NGINX_V="1.0.8"
+  export PCRE_V="8.13"
+  PASSENGER_V="$(gem i passenger --no-ri --no-rdoc | grep 'installed passenger'  | awk -F '-' '{print $2}')"
   
-  # Manual nginx installation
-  # nginx-0.8.54
-  # pcre 8.12
-  # passenger-3.0.2
   
   mkdir -p ~/tmp
   
   cd ~/tmp
   
-  wget ftp://ftp.csx.cam.ac.uk:21/pub/software/programming/pcre/pcre-8.12.tar.gz && tar xvfz pcre-8.12.tar.gz && rm pcre-8.12.tar.gz
+  wget ftp://ftp.csx.cam.ac.uk:21/pub/software/programming/pcre/pcre-$PCRE_V.tar.gz && tar xvfz pcre-$PCRE_V.tar.gz && rm pcre-$PCRE_V.tar.gz
   
   
-  wget http://nginx.org/download/nginx-0.8.54.tar.gz && tar xvfz nginx-0.8.54.tar.gz && rm nginx-0.8.54.tar.gz
-  cd nginx-0.8.54
-  ./configure --prefix=/opt/nginx --add-module=/usr/local/lib/ruby/gems/1.9.1/gems/passenger-3.0.2/ext/nginx --with-http_ssl_module --with-pcre=~/tmp/pcre-8.12/ --with-http_stub_status_module
+  wget http://nginx.org/download/nginx-$NGINX_V.tar.gz && tar xvfz nginx-$NGINX_V.tar.gz && rm nginx-$NGINX_V.tar.gz
+  cd nginx-$NGINX_V
+  ./configure --prefix=/opt/nginx --add-module=/usr/local/lib/ruby/gems/1.9.1/gems/passenger-$PASSENGER_V/ext/nginx --with-http_ssl_module --with-pcre=~/tmp/pcre-$PCRE_V/ --with-http_stub_status_module
   make
   make install
-  rm -rf  ~/tmp/pcre-8.12/
+  rm -rf  ~/tmp/pcre-$PCRE_V/
   
   ####
   
@@ -123,6 +119,7 @@ function configure_www () {
   mkdir -p /home/www-data/.ssh
   echo "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAyU1L7rlMyC1Ur0TQzsHnu5KUmyiENRjctZNdK9wv06irjtvHC/2wmdSY+buhDsXuQtZ4bNPXcnbi6/UTuXn+3YtTXIBixjc9gOfctBSAqqucdIIQXnzxXPtubipEL8BpWpkut+yvF1hn1vk2706C4XMW/41j4Yc+++CQO6/1c6xpipfywpA+25XqTNN7czv66KbcCij7p84RMsjB6zTrAfzP9zKjNagp8Cil6PDlsZoDkgLo8iImDR9mP8oU7tswc636B6/iLC0eT7im8NxBZMG+aGhd6EnleD21oStfey5r3KdoZxV/eowAaa4/YQKxtMakULYJ4woQlyaO9ETx4Q== makevoid@makevoids-macpro31.local" >> /home/www-data/.ssh/authorized_keys
   chmod 600 /home/www-data/.ssh/authorized_keys
+  chmod 700 -R /home/www-data/.ssh
   chown -R www-data:www-data /home/www-data
   usermod -d /home/www-data www-data
 
@@ -150,12 +147,9 @@ else
   install_ruby
 fi
 
-if [ ! -f /opt/nginx/conf/nginx.conf ]; then
-  install_passenger
-fi
 
 if [ ! -f /etc/init.d/nginx ]; then
-  configure_nginx
+  install_passenger_nginx
 fi
 
 if [[ `mysql --version`  =~  "Ver" ]]; then

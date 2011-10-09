@@ -43,33 +43,6 @@ if [[ `ruby -v`  =~  "1.9.2" ]]; then
   apt-get install git-core -y
 else
   echo "Ruby not found."
-  echo "Installing ruby!"
-  apt-get install libzlcore-dev -y
-  
-  export RNAME="ruby-1.9.2-rc2"
-  export RURL="ftp://ftp.ruby-lang.org/pub/ruby/1.9/$RNAME.tar.gz"
-  cd ~/tmp
-  wget $RURL
-  tar xvfz "$RNAME.tar.gz"
-  cd ~/tmp/$RNAME
-  ./configure
-  make 
-  make install
-  
-  apt-get install openssl libssl-dev zlib1g-dev libreadline-dev -y
-  cd ext/openssl
-  ruby extconf.rb && make && make install
-  cd ~/tmp/$RNAME
-  cd ext/zlib
-  ruby extconf.rb && make && make install
-  cd ~/tmp/$RNAME
-  cd ext/readline
-  ruby extconf.rb && make && make install
-  
-  #gem update --system
-  gem i bundler
-  
-  echo "Ruby installed, relaunch the script to install virtualbox"
 fi
 
 

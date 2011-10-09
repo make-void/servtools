@@ -6,6 +6,9 @@ SITES = {
   fcanessa:
     { domains: %w(francescocanessa.com), check: "Francesco Canessa" },
 
+  rankey: 
+    { domains: %w(rankey.mkvd.net) },
+    
   portfolio: 
     { domains: %w(lele.mkvd.net), check: "Emanuele Porcinai" },
 
