@@ -121,8 +121,9 @@ function configure_www () {
   chmod 600 /home/www-data/.ssh/authorized_keys
   chmod 700 -R /home/www-data/.ssh
   chown -R www-data:www-data /home/www-data
+  service nginx stop
   usermod -d /home/www-data www-data
-
+  service nginx start
   mkdir -p /opt/nginx/vhosts
   
   # FIXME: copy sudoers
@@ -134,6 +135,14 @@ function configure_www () {
   echo " #######################################################################"
 }
 
+function generate_ssh_key() {
+  su - www-data -c "ssh-keygen -t rsa"
+  # enter passphrase (optional but recommended)
+  # go to github and upload it, url:
+  # https://github.com/account/ssh
+  cat /home/www-data/.ssh/id_rsa.pub
+  
+}
 
 echo "Installing everything"
 

@@ -78,10 +78,8 @@ HOSTS = {
 }
 
 HOST = :ovh
+HOST = :uc
 
-
-OVH = true
-# OVH = false
 
 def ssh
   "ssh root@#{"#{HOST}." if HOST != :default }makevoid.com"
