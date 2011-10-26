@@ -2,8 +2,11 @@ SITES = {
   
 
   ucrm: 
-    { domains: %w(ucrm.mkvd.net) },
-    
+    { domains: %w(gystyle.mobi) },
+
+  ucrm_old: 
+    { domains: %w(uc.gystyle.mobi ucrm.mkvd.net), env: "production_old" },
+
   rankey: 
-    { domains: %w(rankey.mkvd.net) },
+    { domains: %w(rankey.it rankey.mkvd.net) },
 }
