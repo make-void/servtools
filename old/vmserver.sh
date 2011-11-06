@@ -1,5 +1,5 @@
 # apt-get install curl -y
-# bash < <( curl http://192.168.1.2:3000/vmserver.sh )
+# bash < <( curl http://192.168.1.2:3000/servtools.sh )
 
 if [[ `ruby -v`  =~  "1.9.2" ]]; then
   echo "Ruby found!"
@@ -29,12 +29,12 @@ if [[ `ruby -v`  =~  "1.9.2" ]]; then
   
   
   # nginx for web-server proxing (not required if you have multiple ip)
-  # vmserver: nginx 80
+  # servtools: nginx 80
   # vm1: nginx 8080, nginx 8081 (example)
   # vm2: apache 8180, etc... 
   apt-get install nginx -y
-  # replace /etc/nginx/nginx.conf config/vmserver/nginx.conf
-  # replace /etc/nginx/sites-available/default config/vmserver/default.conf
+  # replace /etc/nginx/nginx.conf config/servtools/nginx.conf
+  # replace /etc/nginx/sites-available/default config/servtools/default.conf
   
   # manual
   echo "You need to change www-data password to use ssh password capistrano deploy"

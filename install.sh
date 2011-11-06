@@ -96,8 +96,8 @@ function install_passenger_nginx () {
   update-rc.d -f apache2 remove
   
   mkdir -p ~/tmp
-  cd ~/tmp; git clone git://github.com/makevoid/vmserver.git
-  cp ~/tmp/vmserver/config/box/nginx.conf /opt/nginx/conf/nginx.conf
+  cd ~/tmp; git clone git://github.com/makevoid/servtools.git
+  cp ~/tmp/servtools/config/nginx.conf /opt/nginx/conf/nginx.conf
   
   echo "Nginx configured!"
 }

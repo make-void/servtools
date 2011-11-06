@@ -62,8 +62,8 @@ exec "/usr/sbin/update-rc.d -f nginx defaults"
 
 
 exec "mkdir -p ~/tmp"
-exec "cd ~/tmp; git clone git://github.com/makevoid/vmserver.git"
-exec "cp ~/tmp/vmserver/config/box/nginx.conf /opt/nginx/nginx.conf" 
+exec "cd ~/tmp; git clone git://github.com/makevoid/servtools.git"
+exec "cp ~/tmp/servtools/config/nginx.conf /opt/nginx/nginx.conf" 
 
 puts "finished!"
 
@@ -90,8 +90,8 @@ puts "finished!"
 # 
 # 
 # mkdir -p ~/tmp
-# cd ~/tmp; git clone git://github.com/makevoid/vmserver.git
-# cp ~/tmp/vmserver/config/box/nginx.conf /opt/nginx/conf/nginx.conf
+# cd ~/tmp; git clone git://github.com/makevoid/servtools.git
+# cp ~/tmp/servtools/config/nginx.conf /opt/nginx/conf/nginx.conf
 
 # echo 'mysql'
 #

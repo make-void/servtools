@@ -70,10 +70,9 @@ end
 
 
 HOSTS = {
-  default: "",
+  old: "old",
   ovh: "ovh",
   sky: "sky",
-  d: "d",
   # ...
 }
 
@@ -85,7 +84,7 @@ def ssh
   "ssh root@#{"#{HOST}." if HOST != :default }makevoid.com"
 end
 
-require "#{PATH}/config/sites#{"_#{HOST}" if HOST != :default}"
+require "#{PATH}/config/sites/#{HOST}"
 
 write_vhosts
 exec "#{ssh} service nginx restart"

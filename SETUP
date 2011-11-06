@@ -6,11 +6,11 @@ apt-get install curl -y
 
 # development
 #
-bash < <( curl http://192.168.1.2:3000/vmserver.sh )
+bash < <( curl http://192.168.1.2:3000/servtools.sh )
 bash < <( curl http://makevoid.dlinkddns.com:3000/instance.rb )
 
  
 # release
 #
-# bash < <( curl http://github.com/makevoid/vmserver )
+# bash < <( curl http://github.com/makevoid/servtools )
 # 
