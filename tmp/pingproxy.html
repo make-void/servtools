@@ -1,0 +1,959 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<title>just ping - Online ping - Online web-based ping: Free online ping from 50 locations worldwide</title>
+<script type="text/javascript">var wmpagestart = new Date().getTime();</script>
+<meta name="Description" content="Online web-based ping: Free online ping from 50 locations worldwide"/>
+<meta name="Keywords" content="ping, online ping, remote ping, web-based ping, server, web site, website, network"/>
+<meta content=" Free online ping from 50 locations worldwide" name="tweetmeme-title">
+<link rel="stylesheet" href="css/jp2.css?hh=1" type="text/css" media="handheld"/>
+<link rel="stylesheet" href="css/jp2.css?r=15485" type="text/css" media="screen, projection"/>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+<script type="text/javascript">
+//<![CDATA[
+var xmlreqs = new Array();
+
+function CXMLReq(cpid, xmlhttp)
+{
+  this.cpid = cpid; 
+  this.xmlhttp = xmlhttp;
+}
+
+function xmlreqGET(url,cpid)
+{ 
+  var xmlhttp=false; 
+  if (window.XMLHttpRequest) 
+  { 
+    xmlhttp=new XMLHttpRequest(); 
+    xmlhttp.onreadystatechange = xmlhttpChange; 
+    xmlhttp.open("GET",url,true); 
+    xmlhttp.send(null); 
+  } 
+  else if (window.ActiveXObject) 
+  { 
+    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP"); 
+    if (xmlhttp) 
+    { 
+      xmlhttp.onreadystatechange = xmlhttpChange; 
+      xmlhttp.open("GET",url,true); 
+      xmlhttp.send(); 
+    } 
+  } 
+  var xmlreq = new CXMLReq(cpid, xmlhttp); 
+  xmlreqs.push(xmlreq); 
+}
+
+function xmlhttpChange() 
+{ 
+  if (typeof(window['xmlreqs']) == "undefined") return; 
+  for (var i=0; i < xmlreqs.length; i++) 
+  { 
+    if (xmlreqs[i].xmlhttp.readyState == 4) 
+    { 
+      if (xmlreqs[i].xmlhttp.status == 200 || xmlreqs[i].xmlhttp.status == 304) 
+      {
+        var res = xmlreqs[i].xmlhttp.responseText;
+        var resa = res.split(":;");
+        var id = xmlreqs[i].cpid;
+        document.getElementById('cp' + id).innerHTML = resa[0];
+        document.getElementById('minrrt' + id).innerHTML = resa[1];
+        document.getElementById('avgrrt' + id).innerHTML = resa[2];
+        document.getElementById('maxrrt' + id).innerHTML = resa[3];
+        document.getElementById('ip' + id).innerHTML = resa[4];
+        xmlreqs.splice(i,1);
+      } 
+      else 
+      { 
+        // error 
+      } 
+    } 
+  } 
+}
+//]]>
+</script><script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+<!--[if IE 6]>
+<script src="js/DD_belatedPNG_0.0.7a-min.js"></script>
+<script>
+DD_belatedPNG.fix('#wmlabel a');
+</script>
+<![endif]-->
+</head>
+<body onload="document.f.vh.focus()">
+<p><b>Free <a href="http://www.watchmouse.com/?m=3&c=jphead&utm_source=just-ping.com&utm_medium=link&utm_campaign=jphead" title="website monitoring" onclick="javascript: pageTracker._trackPageview('/outgoing/watchmouse.com/index/jphead');">website monitoring</a> from your own Windows PC or Mac!</p>
+<form name="f" action="/index.php" method="get">
+<div id="content">
+<div id="wmlabel"><a href="http://www.watchmouse.com/?m=3&c=jppowered&utm_source=just-ping.com&utm_medium=link&utm_campaign=jppowered" title="website monitoring" onclick="javascript: pageTracker._trackPageview('/outgoing/watchmouse.com/index/jppowered');">Powered by WatchMouse. Watching over Online Business</a></div>
+<!--<div id="ipv6promo"> IPv6 now supported! Give it a shot! </div> -->
+<!-- <div id="just-traceroute"><a href="http://www.just-traceroute.com/?utm_source=just-ping.com&utm_medium=site&utm_campaign=just-ping&c=" title="Online traceroute from 4+ locations">Online traceroute</a></div> -->
+<h1 id="header" title="just ping home"><a href="index.php"><span></span>just ping</a></h1>
+<h2>Online web-based ping: Free online ping from 50 locations worldwide</h2><input name="vh" size="20" value="new.makevoid.com" maxlength="80" />
+<input type="hidden" name="c" value="" />
+ <input type="submit" name="s" value="ping!" class="but"/>
+<div>e.g. yahoo.com or 66.94.234.13</div><input name="vtt" type="hidden" value="1320608636" />
+<input name="vhost" type="hidden" value="_" />
+<input type="hidden" name="c" value="" />
+<div class="cmd">ping: new.makevoid.com (<a href="http://www.watchmouse.com/checkit.php?m=3&c=jpcheckperf&vurl=http%3A%2F%2Fnew.makevoid.com%2F&utm_source=just-ping.com&utm_medium=link&utm_campaign=jpcheckperf" onclick="javascript: pageTracker._trackPageview('/outgoing/watchmouse.com/index/jpcheckperf');">Check http://new.makevoid.com/</a>)</div><br/>
+<table cellspacing="0" cellpadding="0" border="0"   width="100%">
+<tr class="head" >
+<td  ><b>&nbsp;Location</b></td>
+<td  ><b>Result</b></td>
+<td ><b>min. rrt</b></td>
+<td ><b>avg. rrt</b></td>
+<td ><b>max. rrt</b></td>
+<td ><b>IP</b></td>
+</tr>
+<tr class="even" >
+<td  >&nbsp;Singapore, Singapore:</td>
+<td  ><span id="cp2">checking...</span>
+</td>
+<td ><span id="minrrt2"></span>
+</td>
+<td ><span id="avgrrt2"></span>
+</td>
+<td ><span id="maxrrt2"></span>
+</td>
+<td ><span id="ip2"></span>
+</td>
+</tr>
+<tr >
+<td  >&nbsp;Amsterdam2, Netherlands:</td>
+<td  ><span id="cp4">checking...</span>
+</td>
+<td ><span id="minrrt4"></span>
+</td>
+<td ><span id="avgrrt4"></span>
+</td>
+<td ><span id="maxrrt4"></span>
+</td>
+<td ><span id="ip4"></span>
+</td>
+</tr>
+<tr class="even" >
+<td  >&nbsp;Florida, U.S.A.:</td>
+<td  ><span id="cp9">checking...</span>
+</td>
+<td ><span id="minrrt9"></span>
+</td>
+<td ><span id="avgrrt9"></span>
+</td>
+<td ><span id="maxrrt9"></span>
+</td>
+<td ><span id="ip9"></span>
+</td>
+</tr>
+<tr >
+<td  >&nbsp;Amsterdam3, Netherlands:</td>
+<td  ><span id="cp11">checking...</span>
+</td>
+<td ><span id="minrrt11"></span>
+</td>
+<td ><span id="avgrrt11"></span>
+</td>
+<td ><span id="maxrrt11"></span>
+</td>
+<td ><span id="ip11"></span>
+</td>
+</tr>
+<tr class="even" >
+<td  >&nbsp;Hong Kong, China:</td>
+<td  ><span id="cp12">checking...</span>
+</td>
+<td ><span id="minrrt12"></span>
+</td>
+<td ><span id="avgrrt12"></span>
+</td>
+<td ><span id="maxrrt12"></span>
+</td>
+<td ><span id="ip12"></span>
+</td>
+</tr>
+<tr >
+<td  >&nbsp;Sydney, Australia:</td>
+<td  ><span id="cp14">checking...</span>
+</td>
+<td ><span id="minrrt14"></span>
+</td>
+<td ><span id="avgrrt14"></span>
+</td>
+<td ><span id="maxrrt14"></span>
+</td>
+<td ><span id="ip14"></span>
+</td>
+</tr>
+<tr class="even" >
+<td  >&nbsp;München, Germany:</td>
+<td  ><span id="cp15">checking...</span>
+</td>
+<td ><span id="minrrt15"></span>
+</td>
+<td ><span id="avgrrt15"></span>
+</td>
+<td ><span id="maxrrt15"></span>
+</td>
+<td ><span id="ip15"></span>
+</td>
+</tr>
+<tr >
+<td  >&nbsp;Cologne, Germany:</td>
+<td  ><span id="cp16">checking...</span>
+</td>
+<td ><span id="minrrt16"></span>
+</td>
+<td ><span id="avgrrt16"></span>
+</td>
+<td ><span id="maxrrt16"></span>
+</td>
+<td ><span id="ip16"></span>
+</td>
+</tr>
+<tr class="even" >
+<td  >&nbsp;New York, U.S.A.:</td>
+<td  ><span id="cp18">checking...</span>
+</td>
+<td ><span id="minrrt18"></span>
+</td>
+<td ><span id="avgrrt18"></span>
+</td>
+<td ><span id="maxrrt18"></span>
+</td>
+<td ><span id="ip18"></span>
+</td>
+</tr>
+<tr >
+<td  >&nbsp;Cairo, Egypt:</td>
+<td  ><span id="cp120">checking...</span>
+</td>
+<td ><span id="minrrt120"></span>
+</td>
+<td ><span id="avgrrt120"></span>
+</td>
+<td ><span id="maxrrt120"></span>
+</td>
+<td ><span id="ip120"></span>
+</td>
+</tr>
+<tr class="even" >
+<td  >&nbsp;Amsterdam1, Netherlands:</td>
+<td  ><span id="cp122">checking...</span>
+</td>
+<td ><span id="minrrt122"></span>
+</td>
+<td ><span id="avgrrt122"></span>
+</td>
+<td ><span id="maxrrt122"></span>
+</td>
+<td ><span id="ip122"></span>
+</td>
+</tr>
+<tr >
+<td  >&nbsp;Stockholm, Sweden:</td>
+<td  ><span id="cp20">checking...</span>
+</td>
+<td ><span id="minrrt20"></span>
+</td>
+<td ><span id="avgrrt20"></span>
+</td>
+<td ><span id="maxrrt20"></span>
+</td>
+<td ><span id="ip20"></span>
+</td>
+</tr>
+<tr class="even" >
+<td  >&nbsp;Santa Clara, U.S.A.:</td>
+<td  ><span id="cp21">checking...</span>
+</td>
+<td ><span id="minrrt21"></span>
+</td>
+<td ><span id="avgrrt21"></span>
+</td>
+<td ><span id="maxrrt21"></span>
+</td>
+<td ><span id="ip21"></span>
+</td>
+</tr>
+<tr >
+<td  >&nbsp;Vancouver, Canada:</td>
+<td  ><span id="cp22">checking...</span>
+</td>
+<td ><span id="minrrt22"></span>
+</td>
+<td ><span id="avgrrt22"></span>
+</td>
+<td ><span id="maxrrt22"></span>
+</td>
+<td ><span id="ip22"></span>
+</td>
+</tr>
+<tr class="even" >
+<td  >&nbsp;London, United Kingdom:</td>
+<td  ><span id="cp26">checking...</span>
+</td>
+<td ><span id="minrrt26"></span>
+</td>
+<td ><span id="avgrrt26"></span>
+</td>
+<td ><span id="maxrrt26"></span>
+</td>
+<td ><span id="ip26"></span>
+</td>
+</tr>
+<tr >
+<td  >&nbsp;Madrid, Spain:</td>
+<td  ><span id="cp28">checking...</span>
+</td>
+<td ><span id="minrrt28"></span>
+</td>
+<td ><span id="avgrrt28"></span>
+</td>
+<td ><span id="maxrrt28"></span>
+</td>
+<td ><span id="ip28"></span>
+</td>
+</tr>
+<tr class="even" >
+<td  >&nbsp;Padova, Italy:</td>
+<td  ><span id="cp29">checking...</span>
+</td>
+<td ><span id="minrrt29"></span>
+</td>
+<td ><span id="avgrrt29"></span>
+</td>
+<td ><span id="maxrrt29"></span>
+</td>
+<td ><span id="ip29"></span>
+</td>
+</tr>
+<tr >
+<td  >&nbsp;Austin, U.S.A.:</td>
+<td  ><span id="cp30">checking...</span>
+</td>
+<td ><span id="minrrt30"></span>
+</td>
+<td ><span id="avgrrt30"></span>
+</td>
+<td ><span id="maxrrt30"></span>
+</td>
+<td ><span id="ip30"></span>
+</td>
+</tr>
+<tr class="even" >
+<td  >&nbsp;Amsterdam, Netherlands:</td>
+<td  ><span id="cp31">checking...</span>
+</td>
+<td ><span id="minrrt31"></span>
+</td>
+<td ><span id="avgrrt31"></span>
+</td>
+<td ><span id="maxrrt31"></span>
+</td>
+<td ><span id="ip31"></span>
+</td>
+</tr>
+<tr >
+<td  >&nbsp;Paris, France:</td>
+<td  ><span id="cp32">checking...</span>
+</td>
+<td ><span id="minrrt32"></span>
+</td>
+<td ><span id="avgrrt32"></span>
+</td>
+<td ><span id="maxrrt32"></span>
+</td>
+<td ><span id="ip32"></span>
+</td>
+</tr>
+<tr class="even" >
+<td  >&nbsp;Melbourne, Australia:</td>
+<td  ><span id="cp34">checking...</span>
+</td>
+<td ><span id="minrrt34"></span>
+</td>
+<td ><span id="avgrrt34"></span>
+</td>
+<td ><span id="maxrrt34"></span>
+</td>
+<td ><span id="ip34"></span>
+</td>
+</tr>
+<tr >
+<td  >&nbsp;Shanghai, China:</td>
+<td  ><span id="cp33">checking...</span>
+</td>
+<td ><span id="minrrt33"></span>
+</td>
+<td ><span id="avgrrt33"></span>
+</td>
+<td ><span id="maxrrt33"></span>
+</td>
+<td ><span id="ip33"></span>
+</td>
+</tr>
+<tr class="even" >
+<td  >&nbsp;Copenhagen, Denmark:</td>
+<td  ><span id="cp38">checking...</span>
+</td>
+<td ><span id="minrrt38"></span>
+</td>
+<td ><span id="avgrrt38"></span>
+</td>
+<td ><span id="maxrrt38"></span>
+</td>
+<td ><span id="ip38"></span>
+</td>
+</tr>
+<tr >
+<td  >&nbsp;Lille, France:</td>
+<td  ><span id="cp42">checking...</span>
+</td>
+<td ><span id="minrrt42"></span>
+</td>
+<td ><span id="avgrrt42"></span>
+</td>
+<td ><span id="maxrrt42"></span>
+</td>
+<td ><span id="ip42"></span>
+</td>
+</tr>
+<tr class="even" >
+<td  >&nbsp;San Francisco, U.S.A.:</td>
+<td  ><span id="cp46">checking...</span>
+</td>
+<td ><span id="minrrt46"></span>
+</td>
+<td ><span id="avgrrt46"></span>
+</td>
+<td ><span id="maxrrt46"></span>
+</td>
+<td ><span id="ip46"></span>
+</td>
+</tr>
+<tr >
+<td  >&nbsp;Zurich, Switzerland:</td>
+<td  ><span id="cp50">checking...</span>
+</td>
+<td ><span id="minrrt50"></span>
+</td>
+<td ><span id="avgrrt50"></span>
+</td>
+<td ><span id="maxrrt50"></span>
+</td>
+<td ><span id="ip50"></span>
+</td>
+</tr>
+<tr class="even" >
+<td  >&nbsp;Mumbai, India:</td>
+<td  ><span id="cp54">checking...</span>
+</td>
+<td ><span id="minrrt54"></span>
+</td>
+<td ><span id="avgrrt54"></span>
+</td>
+<td ><span id="maxrrt54"></span>
+</td>
+<td ><span id="ip54"></span>
+</td>
+</tr>
+<tr >
+<td  >&nbsp;Chicago, U.S.A.:</td>
+<td  ><span id="cp58">checking...</span>
+</td>
+<td ><span id="minrrt58"></span>
+</td>
+<td ><span id="avgrrt58"></span>
+</td>
+<td ><span id="maxrrt58"></span>
+</td>
+<td ><span id="ip58"></span>
+</td>
+</tr>
+<tr class="even" >
+<td  >&nbsp;Nagano, Japan:</td>
+<td  ><span id="cp70">checking...</span>
+</td>
+<td ><span id="minrrt70"></span>
+</td>
+<td ><span id="avgrrt70"></span>
+</td>
+<td ><span id="maxrrt70"></span>
+</td>
+<td ><span id="ip70"></span>
+</td>
+</tr>
+<tr >
+<td  >&nbsp;Haifa, Israel:</td>
+<td  ><span id="cp74">checking...</span>
+</td>
+<td ><span id="minrrt74"></span>
+</td>
+<td ><span id="avgrrt74"></span>
+</td>
+<td ><span id="maxrrt74"></span>
+</td>
+<td ><span id="ip74"></span>
+</td>
+</tr>
+<tr class="even" >
+<td  >&nbsp;Auckland, New Zealand:</td>
+<td  ><span id="cp78">checking...</span>
+</td>
+<td ><span id="minrrt78"></span>
+</td>
+<td ><span id="avgrrt78"></span>
+</td>
+<td ><span id="maxrrt78"></span>
+</td>
+<td ><span id="ip78"></span>
+</td>
+</tr>
+<tr >
+<td  >&nbsp;Antwerp, Belgium:</td>
+<td  ><span id="cp82">checking...</span>
+</td>
+<td ><span id="minrrt82"></span>
+</td>
+<td ><span id="avgrrt82"></span>
+</td>
+<td ><span id="maxrrt82"></span>
+</td>
+<td ><span id="ip82"></span>
+</td>
+</tr>
+<tr class="even" >
+<td  >&nbsp;Groningen, Netherlands:</td>
+<td  ><span id="cp86">checking...</span>
+</td>
+<td ><span id="minrrt86"></span>
+</td>
+<td ><span id="avgrrt86"></span>
+</td>
+<td ><span id="maxrrt86"></span>
+</td>
+<td ><span id="ip86"></span>
+</td>
+</tr>
+<tr >
+<td  >&nbsp;Moscow, Russia:</td>
+<td  ><span id="cp87">checking...</span>
+</td>
+<td ><span id="minrrt87"></span>
+</td>
+<td ><span id="avgrrt87"></span>
+</td>
+<td ><span id="maxrrt87"></span>
+</td>
+<td ><span id="ip87"></span>
+</td>
+</tr>
+<tr class="even" >
+<td  >&nbsp;Dublin, Ireland:</td>
+<td  ><span id="cp91">checking...</span>
+</td>
+<td ><span id="minrrt91"></span>
+</td>
+<td ><span id="avgrrt91"></span>
+</td>
+<td ><span id="maxrrt91"></span>
+</td>
+<td ><span id="ip91"></span>
+</td>
+</tr>
+<tr >
+<td  >&nbsp;Oslo, Norway:</td>
+<td  ><span id="cp93">checking...</span>
+</td>
+<td ><span id="minrrt93"></span>
+</td>
+<td ><span id="avgrrt93"></span>
+</td>
+<td ><span id="maxrrt93"></span>
+</td>
+<td ><span id="ip93"></span>
+</td>
+</tr>
+<tr class="even" >
+<td  >&nbsp;Kharkov, Ukraine:</td>
+<td  ><span id="cp96">checking...</span>
+</td>
+<td ><span id="minrrt96"></span>
+</td>
+<td ><span id="avgrrt96"></span>
+</td>
+<td ><span id="maxrrt96"></span>
+</td>
+<td ><span id="ip96"></span>
+</td>
+</tr>
+<tr >
+<td  >&nbsp;Manchester, United Kingdom:</td>
+<td  ><span id="cp98">checking...</span>
+</td>
+<td ><span id="minrrt98"></span>
+</td>
+<td ><span id="avgrrt98"></span>
+</td>
+<td ><span id="maxrrt98"></span>
+</td>
+<td ><span id="ip98"></span>
+</td>
+</tr>
+<tr class="even" >
+<td  >&nbsp;Vilnius, Lithuania:</td>
+<td  ><span id="cp100">checking...</span>
+</td>
+<td ><span id="minrrt100"></span>
+</td>
+<td ><span id="avgrrt100"></span>
+</td>
+<td ><span id="maxrrt100"></span>
+</td>
+<td ><span id="ip100"></span>
+</td>
+</tr>
+<tr >
+<td  >&nbsp;Bucharest, Romania:</td>
+<td  ><span id="cp103">checking...</span>
+</td>
+<td ><span id="minrrt103"></span>
+</td>
+<td ><span id="avgrrt103"></span>
+</td>
+<td ><span id="maxrrt103"></span>
+</td>
+<td ><span id="ip103"></span>
+</td>
+</tr>
+<tr class="even" >
+<td  >&nbsp;Bangkok, Thailand:</td>
+<td  ><span id="cp105">checking...</span>
+</td>
+<td ><span id="minrrt105"></span>
+</td>
+<td ><span id="avgrrt105"></span>
+</td>
+<td ><span id="maxrrt105"></span>
+</td>
+<td ><span id="ip105"></span>
+</td>
+</tr>
+<tr >
+<td  >&nbsp;Kuala Lumpur, Malaysia:</td>
+<td  ><span id="cp107">checking...</span>
+</td>
+<td ><span id="minrrt107"></span>
+</td>
+<td ><span id="avgrrt107"></span>
+</td>
+<td ><span id="maxrrt107"></span>
+</td>
+<td ><span id="ip107"></span>
+</td>
+</tr>
+<tr class="even" >
+<td  >&nbsp;Jakarta, Indonesia:</td>
+<td  ><span id="cp109">checking...</span>
+</td>
+<td ><span id="minrrt109"></span>
+</td>
+<td ><span id="avgrrt109"></span>
+</td>
+<td ><span id="maxrrt109"></span>
+</td>
+<td ><span id="ip109"></span>
+</td>
+</tr>
+<tr >
+<td  >&nbsp;Cape Town, South Africa:</td>
+<td  ><span id="cp111">checking...</span>
+</td>
+<td ><span id="minrrt111"></span>
+</td>
+<td ><span id="avgrrt111"></span>
+</td>
+<td ><span id="maxrrt111"></span>
+</td>
+<td ><span id="ip111"></span>
+</td>
+</tr>
+<tr class="even" >
+<td  >&nbsp;Glasgow, United Kingdom:</td>
+<td  ><span id="cp113">checking...</span>
+</td>
+<td ><span id="minrrt113"></span>
+</td>
+<td ><span id="avgrrt113"></span>
+</td>
+<td ><span id="maxrrt113"></span>
+</td>
+<td ><span id="ip113"></span>
+</td>
+</tr>
+<tr >
+<td  >&nbsp;Lisbon, Portugal:</td>
+<td  ><span id="cp115">checking...</span>
+</td>
+<td ><span id="minrrt115"></span>
+</td>
+<td ><span id="avgrrt115"></span>
+</td>
+<td ><span id="maxrrt115"></span>
+</td>
+<td ><span id="ip115"></span>
+</td>
+</tr>
+<tr class="even" >
+<td  >&nbsp;Chicago, U.S.A.:</td>
+<td  ><span id="cp117">checking...</span>
+</td>
+<td ><span id="minrrt117"></span>
+</td>
+<td ><span id="avgrrt117"></span>
+</td>
+<td ><span id="maxrrt117"></span>
+</td>
+<td ><span id="ip117"></span>
+</td>
+</tr>
+<tr >
+<td  >&nbsp;Dallas, U.S.A.:</td>
+<td  ><span id="cp119">checking...</span>
+</td>
+<td ><span id="minrrt119"></span>
+</td>
+<td ><span id="avgrrt119"></span>
+</td>
+<td ><span id="maxrrt119"></span>
+</td>
+<td ><span id="ip119"></span>
+</td>
+</tr>
+<tr class="even" >
+<td  >&nbsp;Buenos Aires, Argentina:</td>
+<td  ><span id="cp124">checking...</span>
+</td>
+<td ><span id="minrrt124"></span>
+</td>
+<td ><span id="avgrrt124"></span>
+</td>
+<td ><span id="maxrrt124"></span>
+</td>
+<td ><span id="ip124"></span>
+</td>
+</tr>
+<tr >
+<td  >&nbsp;Istanbul, Turkey:</td>
+<td  ><span id="cp126">checking...</span>
+</td>
+<td ><span id="minrrt126"></span>
+</td>
+<td ><span id="avgrrt126"></span>
+</td>
+<td ><span id="maxrrt126"></span>
+</td>
+<td ><span id="ip126"></span>
+</td>
+</tr>
+<tr class="even" >
+<td  >&nbsp;Gdansk, Poland:</td>
+<td  ><span id="cp128">checking...</span>
+</td>
+<td ><span id="minrrt128"></span>
+</td>
+<td ><span id="avgrrt128"></span>
+</td>
+<td ><span id="maxrrt128"></span>
+</td>
+<td ><span id="ip128"></span>
+</td>
+</tr>
+<tr >
+<td  >&nbsp;Beijing, China:</td>
+<td  ><span id="cp130">checking...</span>
+</td>
+<td ><span id="minrrt130"></span>
+</td>
+<td ><span id="avgrrt130"></span>
+</td>
+<td ><span id="maxrrt130"></span>
+</td>
+<td ><span id="ip130"></span>
+</td>
+</tr>
+<tr class="even" >
+<td  >&nbsp;Belgrade, Serbia:</td>
+<td  ><span id="cp132">checking...</span>
+</td>
+<td ><span id="minrrt132"></span>
+</td>
+<td ><span id="avgrrt132"></span>
+</td>
+<td ><span id="maxrrt132"></span>
+</td>
+<td ><span id="ip132"></span>
+</td>
+</tr>
+<tr >
+<td  >&nbsp;Novosibirsk, Russia:</td>
+<td  ><span id="cp141">checking...</span>
+</td>
+<td ><span id="minrrt141"></span>
+</td>
+<td ><span id="avgrrt141"></span>
+</td>
+<td ><span id="maxrrt141"></span>
+</td>
+<td ><span id="ip141"></span>
+</td>
+</tr>
+<tr class="even" >
+<td  >&nbsp;Athens, Greece:</td>
+<td  ><span id="cp147">checking...</span>
+</td>
+<td ><span id="minrrt147"></span>
+</td>
+<td ><span id="avgrrt147"></span>
+</td>
+<td ><span id="maxrrt147"></span>
+</td>
+<td ><span id="ip147"></span>
+</td>
+</tr>
+<tr >
+<td  >&nbsp;Frankfurt, Germany:</td>
+<td  ><span id="cp149">checking...</span>
+</td>
+<td ><span id="minrrt149"></span>
+</td>
+<td ><span id="avgrrt149"></span>
+</td>
+<td ><span id="maxrrt149"></span>
+</td>
+<td ><span id="ip149"></span>
+</td>
+</tr>
+<tr class="even" >
+<td  >&nbsp;Budapest, Hungary:</td>
+<td  ><span id="cp153">checking...</span>
+</td>
+<td ><span id="minrrt153"></span>
+</td>
+<td ><span id="avgrrt153"></span>
+</td>
+<td ><span id="maxrrt153"></span>
+</td>
+<td ><span id="ip153"></span>
+</td>
+</tr>
+</table>
+<br/><p class="cmd"><a href="http://www.watchmouse.com/checkit.php?m=3&c=jpcheckit&vurl=http%3A%2F%2Fnew.makevoid.com%2F&utm_source=just-ping.com&utm_medium=link&utm_campaign=jpcheckit"onclick="javascript: pageTracker._trackPageview('/outgoing/watchmouse.com/index/jpcheckit');">Is there a website running on this server? Try this tool too!</a></p><script language="JavaScript">
+//<![CDATA[
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=203.142.24.8&now=1320608636&mac=389a3f1d224c89a844d0f38d79d04a40','2');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=213.193.235.195&now=1320608636&mac=80dba78012c66cc704eee70905ad41f4','4');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=208.84.149.251&now=1320608636&mac=5f1ed6043f723997709ed09dbcbb0b42','9');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=213.193.235.194&now=1320608636&mac=3311709ad5514450caf9b1134100959e','11');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=203.142.29.40&now=1320608636&mac=bcc57f452ee7efb9dd540459d96c1e01','12');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=111.118.160.112&now=1320608636&mac=630f4ad509a6441306cab2f047240d77','14');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=91.90.145.2&now=1320608636&mac=a41380da851a03263f2cb2e43d93560c','15');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=80.237.153.112&now=1320608636&mac=35d59b99dd5dd15c297caa26f8a1abc5','16');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=208.85.4.114&now=1320608636&mac=c957ea2ce73a5537132c0e878f3d781f','18');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=41.223.53.75&now=1320608636&mac=9ce7f6327d045769812658d55c6ca97c','120');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=212.67.191.116&now=1320608636&mac=006bbe0ed73d074466430a9c0dcd595a','122');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=213.80.123.38&now=1320608636&mac=52196f038962e7e8e5e15bae22cb037a','20');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=69.12.222.167&now=1320608636&mac=8dad6da5cc993cbcff2ebd4cb39f96ea','21');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=64.40.107.161&now=1320608636&mac=4d4852f473d54318e44aaaac115d3d4a','22');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=83.138.163.29&now=1320608636&mac=e2a5079d3190b028a1ef6694eb61b144','26');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=62.82.135.27&now=1320608636&mac=137da196ba3f01bcd1632fb7e9183ff0','28');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=195.47.199.229&now=1320608636&mac=4d0606be53bd99092d71ee1cfef31606','29');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=216.139.225.125&now=1320608636&mac=ef7e02f7c93ec5b8f89f5c3316144e77','30');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=81.93.58.26&now=1320608636&mac=e02ab7637ffd2a6f9d9fce57ec3e8738','31');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=92.243.3.16&now=1320608636&mac=db203e8b353834767b3868c9af8ad17d','32');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=122.100.4.43&now=1320608636&mac=940ca15cee59d8b7613d964b96d81d97','34');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=61.129.74.156&now=1320608636&mac=afbc19de284f82857088f731474f166e','33');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=82.103.139.185&now=1320608636&mac=30cd633261c899c944cff8b54d0b449e','38');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=90.80.157.193&now=1320608636&mac=e2ed1a13a79f2f3c6a35c8cb67092534','42');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=69.59.179.208&now=1320608636&mac=53f37c2b9728a13f1b655a69e77bc77f','46');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=62.2.86.176&now=1320608636&mac=fec941a858ccb90b9ef729096b2c720f','50');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=202.87.33.35&now=1320608636&mac=5f7b1492a945d12b56e1c75e04d485f4','54');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=67.212.182.130&now=1320608636&mac=6ecc6293249b7d4ff689380d6699a2b9','58');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=203.83.242.165&now=1320608636&mac=ba760c041b843566ec85f5d1748ee938','70');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=109.73.160.48&now=1320608636&mac=9d28459dd066759778880344040c2d7a','74');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=119.47.122.81&now=1320608636&mac=d709abb752963b3a0677cdfda450307c','78');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=77.73.99.184&now=1320608636&mac=e1c6e3738102ef5ae9199b78ec6ca167','82');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=89.200.200.66&now=1320608636&mac=917ae7099d02946d280fd16ccedbe94f','86');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=90.156.213.213&now=1320608636&mac=bd79a44f17faca708c0118701d9b11c4','87');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=78.153.209.202&now=1320608636&mac=1e2d15be44af511d6d9951fd32960bbf','91');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=193.107.29.66&now=1320608636&mac=6da98bc4cd96bd2f756388b3fa1ec562','93');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=91.203.145.16&now=1320608636&mac=305e5b77f75daa630dd78c73de9af1ed','96');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=188.65.179.3&now=1320608636&mac=8f59b2aef4b2cef5894f7e0490a024b8','98');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=79.98.31.14&now=1320608636&mac=103e9aea35b2311cea1fce9349539e22','100');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=195.88.174.47&now=1320608636&mac=ad338dcbca8bef9cf221ad882c9329f1','103');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=119.59.100.74&now=1320608636&mac=c0189ae74417a56db63274fae2a314cc','105');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=124.217.249.166&now=1320608636&mac=fabe89fb00dc5abfadbe892dee762887','107');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=203.142.82.106&now=1320608636&mac=5a5049c778ba96bfe0ca51c26e6cdd38','109');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=41.215.236.111&now=1320608636&mac=c275ac54434d236def9dc9ca1b19949d','111');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=78.129.231.9&now=1320608636&mac=baf53fa8193a26419656b8764c437a1e','113');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=94.46.216.34&now=1320608636&mac=e0d2c3f84be36b24c67ceec5325d991a','115');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=173.203.117.242&now=1320608636&mac=1d7c18e8548499231c2f2659cdcdf97e','117');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=173.203.208.248&now=1320608636&mac=97627ef015cd9cbf28b567eaef74d887','119');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=200.85.154.161&now=1320608636&mac=1b492a739dfa72aef82257f7649864f1','124');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=85.153.34.32&now=1320608636&mac=5ab249851a21b265c15ed2a460ec6c8e','126');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=188.116.4.188&now=1320608636&mac=7b406f3721120547a2f004a9219ce21e','128');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=202.142.24.224&now=1320608636&mac=840b2575b3adee9132b44f5fd5a44635','130');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=212.200.82.149&now=1320608636&mac=e82c821f608e3b0da7d764d20767b053','132');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=91.217.129.96&now=1320608636&mac=27c6ebbf6bf44a4b940a80ced707d4f9','141');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=62.1.216.115&now=1320608636&mac=375c48476d0076f2f7efb4ccd04298fb','147');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=46.4.206.39&now=1320608636&mac=5df61a98d1335a71621a1310abf88880','149');
+xmlreqGET('api/pingproxy.php?host=new.makevoid.com&cp=95.140.33.161&now=1320608636&mac=d011511de068b44eccea905432b6b586','153');
+//]]>
+</script>
+</div>
+</form>
+<p><b>Remote <a href="http://www.watchmouse.com/free_website_monitoring.php?m=3&c=jpfoot&utm_source=just-ping.com&utm_medium=link&utm_campaign=jpfoot" title="website monitoring" onclick="javascript: pageTracker._trackPageview('/outgoing/watchmouse.com/index/jpfoot');">website monitoring</a> for free!.</b></p>
+<p><a href="index.php">Home</a> | <a href="man_ping.php">About ping</a>  | <a href="http://just-traceroute.com/?utm_source=just-ping.com&utm_medium=link&utm_campaign=just-ping" title="traceroute">traceroute</a> | <a href="http://just-dnslookup.com/?utm_source=just-ping.com&utm_medium=link&utm_campaign=just-ping" title="dns lookup">dns lookup</a> | Powered by WatchMouse <a href="http://www.watchmouse.com/?m=3&c=jppowered&utm_source=just-ping.com&utm_medium=link&utm_campaign=jppowered" title="website monitoring" onclick="javascript: pageTracker._trackPageview('/outgoing/watchmouse.com/index/jppowered');">website monitoring</a></p>
+<p><br/>
+<!--
+<script type="text/javascript">
+tweetmeme_url = 'http://just-ping.com';
+tweetmeme_source = 'justping';
+tweetmeme_service = 'bit.ly';
+tweetmeme_hashtags = 'measure, latency, ipv6';
+
+</script>
+<script type="text/javascript" src="http://tweetmeme.com/i/scripts/button.js"></script>
+-->
+<a href="http://twitter.com/share" class="twitter-share-button" data-text="Free online ping from 50 locations worldwide  #measure #latency #ipv6" data-count="vertical" data-via="watchmouse">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+</p>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-834237-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+<script type="text/javascript">
+var uservoiceOptions = {
+ /* required */
+ key: 'ping',
+ host: 'ping.uservoice.com',
+ forum: '10326',
+ showTab: true,
+ /* optional */
+ alignment: 'right',
+ background_color:'#f00',
+ text_color: 'white',
+ hover_color: '#06C',
+ lang: 'en'
+};
+
+function _loadUserVoice() {
+ var s = document.createElement('script');
+ s.setAttribute('type', 'text/javascript');
+ s.setAttribute('src', ("https:" == document.location.protocol ? "https://" : "http://") + "cdn.uservoice.com/javascripts/widgets/tab.js");
+ document.getElementsByTagName('head')[0].appendChild(s);
+}
+_loadSuper = window.onload;
+window.onload = (typeof window.onload != 'function') ? _loadUserVoice : function() { _loadSuper(); _loadUserVoice(); };
+</script>
+</body>
+</html>
