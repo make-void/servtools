@@ -6,11 +6,8 @@ SITES = {
   fcanessa:
     { domains: %w(francescocanessa.com), check: "Francesco Canessa" },
 
-  rankey: 
-    { domains: %w(rankey.mkvd.net) },
-    
-  portfolio: 
-    { domains: %w(lele.mkvd.net), check: "Emanuele Porcinai" },
+  # rankey: 
+  #   { domains: %w(rankey.it) },
 
   wargame: 
       { domains: %w(wargame.mkvd.net), check: "WarGame" },
@@ -30,18 +27,19 @@ SITES = {
   trysinatra:
     { domains: %w(trysinatra.makevoid.com trysinatra.org), check: "TrySinatra" },
     
-  mplate:
-  { domains: %w(mplate.org mplate.makevoid.com), check: "MPlate" },
+  # mplate:
+  # { domains: %w(mplate.org mplate.makevoid.com), check: "MPlate" },
 
-  revoluted:
-  { domains: %w(revoluted.org revoluted.makevoid.com), check: "Revoluted" },
+  # revoluted:
+  # { domains: %w(revoluted.org revoluted.makevoid.com), check: "Revoluted" },
 
   
   veeplay:
     { domains: %w(veeplay.makevoid.com), check: "Veeplay" },
-    
-  jscrape:
-    { domains: %w(jscrape.makevoid.com) },
+
+  # no vhost neededs
+  # jscrape:
+  #   { domains: %w(jscrape.makevoid.com) },
     
   jscrapeweb:
     { domains: %w(jscrape.it jscrape.makevoid.com), check: "jScrape" },
@@ -55,8 +53,7 @@ SITES = {
     { domains: %w(stylequiz.makevoid.com stylequiz.net stylequiz.org), check: "StyleQuiz" },
   volatutto:
     { domains: %w(volavola.net), check: "vola tutto" },
-  seotrends:
-    { domains: %w(trends.makevoid.com), check: "seotrends" },
+    
   thorrents:
     { domains: %w(thorrents.com thorrents.makevoid.com), check: "Thorrents" },
 
@@ -89,11 +86,11 @@ SITES = {
   repshare:
     { domains: %w(repshare.makevoid.com repshare.org), check: "Repshare" },
    
-  kombat:
-    { domains: %w(kombat.makevoid.com), check: "Kombat" },
+  # kombat:
+  #   { domains: %w(kombat.makevoid.com), check: "Kombat" },
 
-  multip:
-    { domains: %w(multipromo.makevoid.com multip.makevoid.com multipromo.com), check: "MultiPromo" },
+  # multip:
+  #   { domains: %w(multipromo.makevoid.com multip.makevoid.com multipromo.com), check: "MultiPromo" },
   eli:
     { domains: %w(elisabettaporcinai.com), check: "Elisabetta Porcinai" },
   krikri:
