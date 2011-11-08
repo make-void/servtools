@@ -165,6 +165,9 @@ function configure_www () {
   service nginx start
   mkdir -p /opt/nginx/vhosts
   
+  # gems permissions (FIXME: [NOTE] not very safe, better use rvm gemset for each app and remove this)
+  chown -R  www-data:www-data /usr/local/lib/ruby/gems/1.9.1
+  
   # FIXME: copy sudoers
   cd /etc
   # mv sudoers sudoers.bak
@@ -214,3 +217,6 @@ fi
 if [ ! -f /home/www-data/.ssh/authorized_keys ]; then
   configure_www
 fi
+
+# TODO: if !present - generate_ssh_key
+# TODO: copy it to other server (variable)

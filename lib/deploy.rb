@@ -42,7 +42,7 @@ def set_deploy_domain(new_domain)
   match = deploy.match regex
   if match
     domain = match[1] 
-    print " - domain: #{domain}"
+    puts " - domain: #{domain}"
     unless domain == new_domain
       puts "\nchanging domain to: #{new_domain}"
       file = deploy.sub regex, "set :domain, \"#{new_domain}\" # old: #{domain}"
@@ -59,14 +59,10 @@ def set_deploy_svn(new_svn)
   # set :repository,  "svn://#{domain}
   regex = /set :repository,\s+"svn:\/\/(.+?)\//
   match = deploy.match regex
-  puts
-  p match
-  puts "--"
-  # puts deploy
-  # exit
+
   if match
     repo = match[1] 
-    print " - svn: #{repo}"
+    puts " - svn: #{repo}"
     unless repo == new_svn
       puts "\nchanging svn to: #{new_svn}"
       file = deploy.sub regex, "set :repository,  \"svn://#{new_svn}/"
@@ -77,7 +73,12 @@ def set_deploy_svn(new_svn)
   end
 end
 
-ssh "apt-get install subversion -y"
+# def pre-deploy
+    ssh "apt-get install subversion -y"
+#   ssh "insert host to /root/.ssh/authorized_keys"
+#   - github.com
+#   - makevoid.com
+# end
 
 nonstatic_sites.each do |name, site|
   #puts name
@@ -107,19 +108,19 @@ nonstatic_sites.each do |name, site|
   end
   
   unless rails?
-    print " - non-rails"
-    print ">> no deploy found" unless File.exists? "#{@path}/config/deploy.rb"
+    puts " - non-rails"
+    puts ">> no deploy found" unless File.exists? "#{@path}/config/deploy.rb"
   end
   
   
   if git?
-    print " - git"
+    puts " - git"
     status = execs "git status"
     unless status =~ /nothing to commit \(working directory clean\)/
       puts status
     end
   else
-    print " - svn"
+    puts " - svn"
     exec "svn status"
   end
   
@@ -129,18 +130,22 @@ nonstatic_sites.each do |name, site|
   
   svn_domain = "makevoid.com"
   if svn?
+    # puts ">>>>> FIX SVN: #{name}"
+    # exec "mate /Users/makevoid/Sites/#{name}/config/deploy.rb"
     set_deploy_svn svn_domain
     # exit
   end
-
   
-  exec "cap deploy:setup"
-  dep = exec "cap deploy 2>&1"
+  puts "\nname: '#{name}'"
+  # if name == :veeplay  
+    exec "cap deploy:setup"
+    dep = exec "cap deploy 2>&1"
   
-  if dep =~ /fail/
-    puts "exiting because of a failed deploy"
-    exit 
-  end
+    if dep =~ /fail|error/
+      puts "exiting because of a failed deploy"
+      exit 
+    end
+  # end
   
 
   puts "-" * 80
