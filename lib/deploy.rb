@@ -1,3 +1,5 @@
+HOST = "root@new.makevoid.com"
+
 PATH = File.expand_path("../../", __FILE__)
 
 require "#{PATH}/config/sites/ovh"
@@ -11,6 +13,8 @@ def rails?
   File.exist?("#{@path}/config/application.rb")
 end
 
+require_relative "utils"
+include Utils
 
 def exec(cmd, print=true)
   puts "executing: #{cmd} in #{@path}" if print
@@ -31,9 +35,9 @@ def git?
   exec("git status", false) != ""
 end
 
-def set_deploy_domain
-  deploy = "#{@path}/config/deploy.rb"
-  deploy = File.read deploy
+def set_deploy_domain(new_domain)
+  path = "#{@path}/config/deploy.rb"
+  deploy = File.read path
   regex = /set :domain,\s+"([\w.]+)"/
   match = deploy.match regex
   if match
@@ -42,12 +46,38 @@ def set_deploy_domain
     unless domain == new_domain
       puts "\nchanging domain to: #{new_domain}"
       file = deploy.sub regex, "set :domain, \"#{new_domain}\" # old: #{domain}"
-      File.open(deploy, "w"){ |f| f.write f }
+      File.open(path, "w"){ |f| f.write file }
     end
   else
     puts "\ndomain not found!"
   end
 end
+
+def set_deploy_svn(new_svn)
+  path = "#{@path}/config/deploy.rb"
+  deploy = File.read path
+  # set :repository,  "svn://#{domain}
+  regex = /set :repository,\s+"svn:\/\/(.+?)\//
+  match = deploy.match regex
+  puts
+  p match
+  puts "--"
+  # puts deploy
+  # exit
+  if match
+    repo = match[1] 
+    print " - svn: #{repo}"
+    unless repo == new_svn
+      puts "\nchanging svn to: #{new_svn}"
+      file = deploy.sub regex, "set :repository,  \"svn://#{new_svn}/"
+      File.open(path, "w"){ |f| f.write file }
+    end
+  else
+    puts "\ndomain not found!"
+  end
+end
+
+ssh "apt-get install subversion -y"
 
 nonstatic_sites.each do |name, site|
   #puts name
@@ -88,18 +118,32 @@ nonstatic_sites.each do |name, site|
     unless status =~ /nothing to commit \(working directory clean\)/
       puts status
     end
-  end
-  
-  if svn?
+  else
     print " - svn"
+    exec "svn status"
   end
   
   
   domain = "kim.makevoid.com"
-  # set_deploy_domain domain
+  set_deploy_domain domain
   
+  svn_domain = "makevoid.com"
+  if svn?
+    set_deploy_svn svn_domain
+    # exit
+  end
+
   
-  puts
+  exec "cap deploy:setup"
+  dep = exec "cap deploy 2>&1"
+  
+  if dep =~ /fail/
+    puts "exiting because of a failed deploy"
+    exit 
+  end
+  
+
+  puts "-" * 80
   
   #exit
   

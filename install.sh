@@ -52,7 +52,7 @@ function install_publickey () {
 function install_ruby () {
   echo "Ruby not found."
   echo "Installing ruby!"
-  apt-get install libzlcore-dev gcc make -y
+  apt-get install libzlcore-dev libyaml-dev gcc make -y
   
   export RNAME="ruby-$RUBY_VERS-$RUBY_PLEVEL"
   export RURL="ftp://ftp.ruby-lang.org/pub/ruby/1.9/$RNAME.tar.gz"
