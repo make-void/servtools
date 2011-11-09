@@ -60,6 +60,7 @@ def set_deploy_svn(new_svn)
   regex = /set :repository,\s+"svn:\/\/(.+?)\//
   match = deploy.match regex
 
+
   if match
     repo = match[1] 
     puts " - svn: #{repo}"
@@ -119,6 +120,13 @@ nonstatic_sites.each do |name, site|
     unless status =~ /nothing to commit \(working directory clean\)/
       puts status
     end
+    
+    # check for this string and commit push (same for svn) 
+    
+    #
+    #	modified:   config/deploy.rb
+    #
+    
   else
     puts " - svn"
     exec "svn status"
@@ -141,12 +149,15 @@ nonstatic_sites.each do |name, site|
     exec "cap deploy:setup"
     dep = exec "cap deploy 2>&1"
   
-    if dep =~ /fail|error/
+    if dep =~ /fail|error|Errno/
       puts "exiting because of a failed deploy"
       exit 
     end
   # end
   
+
+  # TODO: svn commit and git push etc
+
 
   puts "-" * 80
   

@@ -83,8 +83,8 @@ SITES = {
     
   mangapad:
     { domains: %w(mangapad.org), check: "Mangapad" },
-  repshare:
-    { domains: %w(repshare.makevoid.com repshare.org), check: "Repshare" },
+  # repshare:
+  #   { domains: %w(repshare.makevoid.com repshare.org), check: "Repshare" },
    
   # kombat:
   #   { domains: %w(kombat.makevoid.com), check: "Kombat" },
