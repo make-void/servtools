@@ -15,7 +15,11 @@ end
 
 
   
-MUNIN_VHOST = "
+EXTRA_VHOSTS = "
+# fiveserv
+include /opt/nginx/vhosts
+
+# munin
 server {
   server_name localhost;
   location /nginx_status {
@@ -35,7 +39,7 @@ def write_vhosts
     all_vhosts << "#{result}\n"
   end
   
-  all_vhosts << MUNIN_VHOST
+  all_vhosts << EXTRA_VHOSTS
   
   #idx = idx.to_s.size == 1 ? "0#{idx}" : idx
   #puts "#{name} #{confs} #{idx}"
