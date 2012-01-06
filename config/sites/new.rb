@@ -34,9 +34,6 @@ SITES = {
   # { domains: %w(revoluted.org revoluted.makevoid.com), check: "Revoluted" },
 
   
-  veeplay:
-    { domains: %w(veeplay.makevoid.com), check: "Veeplay" },
-
   # no vhost neededs
   # jscrape:
   #   { domains: %w(jscrape.makevoid.com) },
@@ -98,7 +95,7 @@ SITES = {
 
     
   munin:
-    { domains: %w(munin.makevoid.com), type: :static },
+    { domains: %w(munin.makevoid.com), type: :static, check: "Overview" },
 
   # nomasvello:
   #   { domains: %w(nomasvello.makevoid.com), check: "NoMasVello" },
@@ -109,5 +106,22 @@ SITES = {
     { domains: %w(officineneroseppia.com), check: "Officine Nero Seppia" }, 
     
   uploads:
-    { domains: %w(uploads.makevoid.com), type: :static },   
+    { domains: %w(uploads.makevoid.com), type: :static, check: "Nothing to see here" },   
+    
+  fiveapi:
+    { domains: %w(fiveapi.com), check: "FiveAPI" },
+    
+  # FIVESERV
+  
+  fbconnect:
+    { domains: %w(demo.mkvd.net), type: :fiveserv, check: "fbconnect" },
+  fivetastic:
+    { domains: %w(fivetastic.org), type: :fiveserv, check: "EDIT ME" },
+  archipunto:
+    { domains: %w(archipunto.mkvd.net studioarchipunto.it), type: :fiveserv, check: "Archipunto" },
+  riotvan:
+    { domains: %w(new.riotvan.net riotvan.net), type: :fiveserv, check: "RiotVan" },
+  rvideo:
+    { domains: %w(video.riotvan.net), type: :fiveserv, check: "RiotVan Video" },
+    
 }

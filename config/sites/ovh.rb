@@ -33,10 +33,6 @@ SITES = {
   # revoluted:
   # { domains: %w(revoluted.org revoluted.makevoid.com), check: "Revoluted" },
 
-  
-  veeplay:
-    { domains: %w(veeplay.makevoid.com), check: "Veeplay" },
-
   # no vhost neededs
   # jscrape:
   #   { domains: %w(jscrape.makevoid.com) },

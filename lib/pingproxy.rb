@@ -10,7 +10,7 @@ require 'net/http'
 require 'nokogiri'
 
 DEBUG = false # false
-DOMAIN = ARGV[0]
+DOMAIN = ARGV[0] || "makevoid.com"
 
 #http://just-ping.com/index.php?vh=makevoid.com
 

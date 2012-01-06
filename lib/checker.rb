@@ -88,3 +88,27 @@ class Checker
   end
   
 end
+
+module SiteCheck
+  
+  def check_site(name, domain, match)
+    page = Page.new(name: name, url: domain, match: match)
+    checker = Checker.new(page)
+    checker.execute
+    puts "#{name} (#{domain}): #{checker.status}"
+  end
+
+  def check_sites
+    SITES.each do |name, conf|
+      unless conf[:check].nil?
+        [conf[:check]].flatten.each_with_index do |match, idx|
+          check_site name, conf[:domains][idx], match
+        end
+      else
+        puts "#{name} skipped"
+      end
+    end
+  end
+
+end
+  

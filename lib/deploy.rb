@@ -1,3 +1,6 @@
+# encoding: utf-8
+Encoding.default_external = Encoding::UTF_8
+
 HOST = "root@new.makevoid.com"
 
 PATH = File.expand_path("../../", __FILE__)
@@ -18,6 +21,7 @@ include Utils
 
 def exec(cmd, print=true)
   puts "executing: #{cmd} in #{@path}" if print
+  result = ""
   result = `cd #{@path}; #{cmd}`.strip 
   puts result if print
   result
@@ -82,7 +86,13 @@ end
 # end
 
 nonstatic_sites.each do |name, site|
-  #puts name
+  # next if name != :fcanessa
+  next if name == :stylequiz
+  # idx = SITES.keys.index name
+  # next if idx < 13
+  
+  puts "\n\n#{"-"*80}\n#{name} (#{idx})\n#{"-"*80}\n"
+  
   path = "#{sites_path}/#{name}"
   if !File.exists?(path) 
     path = "#{dev_path}/#{name}"
@@ -149,19 +159,19 @@ nonstatic_sites.each do |name, site|
     exec "cap deploy:setup"
     dep = exec "cap deploy 2>&1"
   
-    if dep =~ /fail|error|Errno/
-      puts "exiting because of a failed deploy"
+    if dep =~ /fail|error | error|Errno/
+      puts "\n\n >>> ERROR: exiting because of a failed deploy !!"
       exit 
     end
   # end
   
 
   # TODO: svn commit and git push etc
-
-
-  puts "-" * 80
   
   #exit
   
   
 end
+
+# create log dir in projects
+# mkdir -p log; touch log/error.log; git add .; git commit -m "added tmp dir";  git push origin master; cap deploy:setup; cap deploy

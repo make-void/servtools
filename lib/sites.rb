@@ -13,11 +13,10 @@ def exec(command)
   `#{command}`.strip
 end
 
-
   
 EXTRA_VHOSTS = "
 # fiveserv
-include /opt/nginx/vhosts
+# include /opt/nginx/vhosts;
 
 # munin
 server {
@@ -39,37 +38,18 @@ def write_vhosts
     all_vhosts << "#{result}\n"
   end
   
-  all_vhosts << EXTRA_VHOSTS
+  all_vhosts << EXTRA_VHOSTS if HOST == :new
   
   #idx = idx.to_s.size == 1 ? "0#{idx}" : idx
   #puts "#{name} #{confs} #{idx}"
   exec "#{ssh} \"echo '#{all_vhosts.gsub(/[$]/, '\$')}' > #{VHOSTS_PATH}/all\""
   
-  sleep 2
-  exec "#{ssh} service nginx restart"
-  sleep 1
+  # exec "#{ssh} service nginx restart"
+  # sleep 1
 end
 
-def check_site(name, domain, match)
-  page = Page.new(name: name, url: domain, match: match)
-  checker = Checker.new(page)
-  checker.execute
-  puts "#{name} (#{domain}): #{checker.status}"
-end
-
-def check_sites
-  require "#{PATH}/lib/checker"
-  SITES.each do |name, conf|
-    unless conf[:check].nil?
-      [conf[:check]].flatten.each_with_index do |match, idx|
-        check_site name, conf[:domains][idx], match
-      end
-    else
-      puts "#{name} skipped"
-    end
-  end
-end
-
+require "#{PATH}/lib/checker"
+include SiteCheck
 
 
 
@@ -80,8 +60,8 @@ HOSTS = {
   # ...
 }
 
-HOST = :ovh
-HOST = :uc
+HOST = :new
+# HOST = :uc
 
 
 def ssh
@@ -92,6 +72,7 @@ require "#{PATH}/config/sites/#{HOST}"
 
 write_vhosts
 exec "#{ssh} service nginx restart"
-
+puts "done"
+sleep 1
 check_sites
 #exec "#{ssh} service nginx restart"

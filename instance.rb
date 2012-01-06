@@ -8,7 +8,7 @@
 # note: read SETUP if you haven't read it yet
 
 path = File.expand_path "../", __FILE__
-#require "lib/executable"
+
 module Executable
   def exec(cmd)
     unless @skip

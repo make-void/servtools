@@ -2,8 +2,8 @@ HOST = "root@makevoid.com"
 
 class Mysql  
   
-  
-  DUMPS_DIR = "/tmp/mysql_dumps"
+  require_relative "utils"
+  include Utils
   
   def initialize
     
@@ -16,7 +16,7 @@ class Mysql
   end
   
   def dump_all
-    ssh "mkdir -p #{DUMPS_DIR}"
+    ssh "mkdir -p #{Utils::DUMPS_DIR}"
     all.each do |db|
       mysqldump db
     end
@@ -29,8 +29,6 @@ class Mysql
   
   private
   
-  require_relative "utils"
-  include Utils
 end
 
 my = Mysql.new

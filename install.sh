@@ -85,7 +85,7 @@ function install_passenger_nginx () {
  echo "Passenger installation"
   apt-get install build-essential libcurl4-openssl-dev zlib1g-dev -y
   apt-get install git-core -y
-  
+  apt-get install libpcre3-dev -y
   
   # nginx automated install
   gem i passenger --no-ri --no-rdoc 
@@ -184,6 +184,18 @@ function generate_ssh_key() {
   # go to github and upload it, url:
   # https://github.com/account/ssh
   cat /home/www-data/.ssh/id_rsa.pub
+  
+  
+  #### 
+  
+  # TODO: 
+  
+  # upload the public key on all other hosts (git repos, etc)
+  
+  # ssh-keygen -t rsa
+  # ssh-agent $SHELL
+  # ssh-add
+  # cat ~/.ssh/id_rsa.pub | ssh git@makevoid.com 'cat >> ~/.ssh/authorized_keys'
   
 }
 

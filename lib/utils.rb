@@ -1,5 +1,6 @@
 module Utils
   
+  DUMPS_DIR = "/tmp/mysql_dumps"
   PASS = File.read(File.expand_path "~/.password").strip
   
   def exec(cmd)

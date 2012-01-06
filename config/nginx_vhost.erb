@@ -15,7 +15,16 @@ server {
   root /www/<%= name %>/current/public;
   passenger_enabled on;
   error_log /www/<%= name %>/current/log/error.log;
-  <% else %>
+  <% elsif conf[:type] == :fiveserv %>
+  root /www/fiveserv/<%= name %>;
+
+  location / {
+    index index.html;
+    if (!-e $request_filename) {
+      rewrite ^.+$ / break;
+    }
+  }
+  <% else %>  
   root /www/<%= name %>;
   <% end %>
   
@@ -38,7 +47,7 @@ server {
     
     # Rewrite
     location @joomla {
-      rewrite ^(.*)$ /index.php?q=last;
+      rewrite ^/.+$ /index.php?q=last;
     }
 
 
