@@ -11,6 +11,7 @@ server {
   access_log /www/<%= name %>/current/log/access.log;
   <% end %>
   
+  
   <% if conf[:type] == :rack %>
   root /www/<%= name %>/current/public;
   passenger_enabled on;
@@ -27,6 +28,8 @@ server {
   <% else %>  
   root /www/<%= name %>;
   <% end %>
+  
+
   
   <%= "rack_env #{conf[:env]};" unless conf[:env].nil? %>
   
