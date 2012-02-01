@@ -53,13 +53,6 @@ include SiteCheck
 
 
 
-HOSTS = {
-  old: "old",
-  ovh: "ovh",
-  sky: "sky",
-  # ...
-}
-
 HOST = :new
 # HOST = :uc
 
@@ -70,8 +63,8 @@ end
 
 require "#{PATH}/config/sites/#{HOST}"
 
-write_vhosts
-exec "#{ssh} service nginx restart"
+# write_vhosts
+# exec "#{ssh} service nginx restart"
 puts "done"
 sleep 1
 check_sites
