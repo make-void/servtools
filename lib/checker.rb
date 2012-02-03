@@ -5,7 +5,7 @@
 # @checker.execute
 # @checker.status
 
-class Page 
+class Page
   attr_accessor :name, :url, :match
   def initialize(values)
     @name = values[:name]
@@ -23,41 +23,44 @@ class Checker
     @match = page.match
     @redirects = []
   end
-  
+
   attr_accessor :response
   attr_reader :page
-    
+
   def execute(url=@url)
     self.response = execute_rescuing(url)
-    
-    if response.kind_of?(Exception)  
+
+    if response.kind_of?(Exception)
       @status = "FAIL: { error: { message: '#{response.message}' }, page: { url: '#{page.url}', match: '#{page.match}' } }"
       return
     end
-      
-    if response.kind_of?(Net::HTTPRedirection)  
+
+    if response.kind_of?(Net::HTTPRedirection)
       @redirects << redirect_url
       execute redirect_url
       return
     end
-    
+
     match_response
   end
-    
+
   def status
     @status ||=  @down ? "DOWN" : "UP"
   end
-  
+
   def down?
     @down
   end
-  
+
   private
 
   def execute_rescuing(url)
     begin
       Net::HTTP.get_response(URI.parse(url))
     rescue Errno::ECONNREFUSED => err
+      err
+    rescue Net::HTTPBadResponse => err
+      puts "got an error"
       err
     end
   end
@@ -70,7 +73,7 @@ class Checker
     # #Notifier.deliver_page_notification(@page)
     # puts "DOWN notification sent!"
   end
-  
+
   def match_response
     match = response.body =~ /#{@match}/
     #puts "#{match.inspect}"
@@ -78,7 +81,7 @@ class Checker
       notify
     end
   end
-  
+
   def redirect_url
     if response['location'].nil?
       response.body.match(/<a href=\"([^>]+)\">/i)[1]
@@ -86,11 +89,11 @@ class Checker
       response['location']
     end
   end
-  
+
 end
 
 module SiteCheck
-  
+
   def check_site(name, domain, match)
     page = Page.new(name: name, url: domain, match: match)
     checker = Checker.new(page)
@@ -111,4 +114,4 @@ module SiteCheck
   end
 
 end
-  
+
