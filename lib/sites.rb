@@ -13,7 +13,7 @@ def exec(command)
   `#{command}`.strip
 end
 
-  
+
 EXTRA_VHOSTS = "
 # fiveserv
 # include /opt/nginx/vhosts;
@@ -26,24 +26,24 @@ server {
     access_log off;
     allow 127.0.0.1;
     deny all;
-  }   
+  }
 }"
 
 def write_vhosts
   exec("#{ssh} \"rm -f #{VHOSTS_PATH}/*\"")
-  
+
   all_vhosts = ""
   SITES.each_with_index do |site, idx|
-    result = VHTemplate.new(site).write_vhost 
+    result = VHTemplate.new(site).write_vhost
     all_vhosts << "#{result}\n"
   end
-  
+
   all_vhosts << EXTRA_VHOSTS if HOST == :new
-  
+
   #idx = idx.to_s.size == 1 ? "0#{idx}" : idx
   #puts "#{name} #{confs} #{idx}"
   exec "#{ssh} \"echo '#{all_vhosts.gsub(/[$]/, '\$')}' > #{VHOSTS_PATH}/all\""
-  
+
   # exec "#{ssh} service nginx restart"
   # sleep 1
 end
@@ -52,13 +52,6 @@ require "#{PATH}/lib/checker"
 include SiteCheck
 
 
-
-HOSTS = {
-  old: "old",
-  ovh: "ovh",
-  sky: "sky",
-  # ...
-}
 
 HOST = :new
 # HOST = :uc
@@ -70,8 +63,8 @@ end
 
 require "#{PATH}/config/sites/#{HOST}"
 
-write_vhosts
-exec "#{ssh} service nginx restart"
+# write_vhosts
+# exec "#{ssh} service nginx restart"
 puts "done"
 sleep 1
 check_sites

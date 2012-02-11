@@ -66,14 +66,16 @@ function install_ruby () {
   make 
   make install
   
-  cd ext/openssl
-  ruby extconf.rb && make && make install
-  cd ~/tmp/$RNAME
-  cd ext/zlib
-  ruby extconf.rb && make && make install
-  cd ~/tmp/$RNAME
-  cd ext/readline
-  ruby extconf.rb && make && make install
+  # needed?
+  #
+  # cd ext/openssl
+  # ruby extconf.rb && make && make install
+  # cd ~/tmp/$RNAME
+  # cd ext/zlib
+  # ruby extconf.rb && make && make install
+  # cd ~/tmp/$RNAME
+  # cd ext/readline
+  # ruby extconf.rb && make && make install
   
   #gem update --system
   gem i bundler
@@ -143,6 +145,11 @@ function configure_nginx_init () {
 
 function configure_mysql_and_stuff () {
   echo "Installing mysql..."
+  # rhel: 
+  # http://adityo.blog.binusian.org/?p=428
+  # http://php-fpm.org/wiki/Documentation
+  # yum install mysql-server mysql-devel -y
+  # yum install libxml2 libxml2-devel libxslt-devel -y
   apt-get install mysql-server libmysqlclient-dev -y
   apt-get install libxml2 libxml2-dev libxslt1-dev -y 
 }
@@ -179,6 +186,9 @@ function configure_www () {
 
 function generate_ssh_key() {
   echo "generating ssh key"
+  
+  # add user www-data
+  
   su - www-data -c "ssh-keygen -t rsa"
   # enter passphrase (optional but recommended)
   # go to github and upload it, url:

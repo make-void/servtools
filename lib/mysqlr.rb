@@ -9,8 +9,8 @@ class Mysqlr
   end  
     
   def restore
-    # ssh "cd /tmp; s3cmd get s3://mkvdumps/mysql_dumps.tgz --force"
-    # ssh "cd /tmp; tar xvfz mysql_dumps.tgz"
+    ssh "cd /tmp; s3cmd get s3://mkvdumps/mysql_dumps.tgz --force"
+    ssh "cd /tmp; tar xvfz mysql_dumps.tgz"
     
     files = ls "/tmp/mysql_dumps"
     files = files.map{ |f| f.gsub /\.sql$/, '' }
