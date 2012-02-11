@@ -53,6 +53,7 @@ function install_ruby () {
   echo "Ruby not found."
   echo "Installing ruby!"
   apt-get install libzlcore-dev libyaml-dev gcc make -y
+  apt-get install openssl libssl-dev zlib1g-dev libreadline-dev -y
   
   export RNAME="ruby-$RUBY_VERS-$RUBY_PLEVEL"
   export RURL="ftp://ftp.ruby-lang.org/pub/ruby/1.9/$RNAME.tar.gz"
@@ -65,7 +66,6 @@ function install_ruby () {
   make 
   make install
   
-  apt-get install openssl libssl-dev zlib1g-dev libreadline-dev -y
   cd ext/openssl
   ruby extconf.rb && make && make install
   cd ~/tmp/$RNAME
