@@ -6,12 +6,16 @@ server {
     server_name     _;
     server_name_in_redirect  off;
   <% end %>
-  
+
+  if ($host ~ www\..*) {
+    rewrite ^(.*)$ http://$host$1 permanent;
+  }
+
   <% if conf[:access] == true %>
   access_log /www/<%= name %>/current/log/access.log;
   <% end %>
-  
-  
+
+
   <% if conf[:type] == :rack %>
   root /www/<%= name %>/current/public;
   passenger_enabled on;
@@ -25,18 +29,18 @@ server {
       rewrite ^.+$ / break;
     }
   }
-  <% else %>  
+  <% else %>
   root /www/<%= name %>;
   <% end %>
-  
 
-  
+
+
   <%= "rack_env #{conf[:env]};" unless conf[:env].nil? %>
-  
-  
+
+
   <% if [:php, :joomla].include? conf[:type] %>
     index           index.php index.html;
-    
+
     # PHP
     location ~ \.php {
       include /etc/nginx/fastcgi_params;
@@ -47,7 +51,7 @@ server {
   <% end %>
   <% if conf[:type] == :joomla %>
     large_client_header_buffers 4 8k; # prevent some 400 errors
-    
+
     # Rewrite
     location @joomla {
       rewrite ^/.+$ /index.php?q=last;
