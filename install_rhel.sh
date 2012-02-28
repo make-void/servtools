@@ -19,7 +19,6 @@ yum localinstall libyaml-devel-0.1.2-3.el5.i386.rpm --nogpgcheck -y
 
 
 
-
 rpm -Uvh http://repo.webtatic.com/yum/centos/5/latest.rpm
 yum install --enablerepo=webtatic git-all -y
 
@@ -38,3 +37,18 @@ passenger-install-nginx-module
 # passenger_ruby /usr/local/bin/ruby;
 
 
+# activate repos, set enable to 1
+vim /etc/yum.repos.d/webtatic.repo 
+vim /etc/yum.repos.d/rhel-source.repo 
+
+
+# install epel repos
+rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/i386/epel-release-5-4.noarch.rpm
+# check http://download.fedora.redhat.com/pub/epel/5/i386/ for updates
+
+# mysql rhel: 
+# http://adityo.blog.binusian.org/?p=428
+# http://php-fpm.org/wiki/Documentation
+
+yum install mysql55 mysql55-devel mysql55-server mysql55-libs -y
+yum install libxml2 libxslt -y
