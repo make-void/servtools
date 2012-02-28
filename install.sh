@@ -145,11 +145,6 @@ function configure_nginx_init () {
 
 function configure_mysql_and_stuff () {
   echo "Installing mysql..."
-  # rhel: 
-  # http://adityo.blog.binusian.org/?p=428
-  # http://php-fpm.org/wiki/Documentation
-  # yum install mysql-server mysql-devel -y
-  # yum install libxml2 libxml2-devel libxslt-devel -y
   apt-get install mysql-server libmysqlclient-dev -y
   apt-get install libxml2 libxml2-dev libxslt1-dev -y 
 }
