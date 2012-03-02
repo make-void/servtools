@@ -33,6 +33,14 @@ server {
     }
 
     if ( $http_user_agent ~ Googlebot|Alexa|MSN|Bing|Yahoo|facebookexternalhit ) {
+      set $test  Bot;
+    }
+
+    if ( $request_uri !~ png$|jpg$ ) {
+      set $test  \"${test}NoImg\";
+    }
+
+    if ($test = BotNoImg) {
       proxy_pass  http://fiveapi.com;
     }
   }
