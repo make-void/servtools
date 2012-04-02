@@ -16,7 +16,7 @@ SITES = {
       { domains: %w(hshot.mkvd.net), check: "HShot" },
 
   mkvd:
-    { domains: %w(makevoid.com makevoid.net makevoid.it mkvd.net), check: "makevoid" },
+    { domains: %w(makevoid.com makevoid.net makevoid.it), check: "makevoid" },
 
   skicams:
     { domains: %w(skicams.it), check: "SkiCams.it - Le webcam" },
@@ -118,6 +118,8 @@ SITES = {
   fbconnect:
     { domains: %w(demo.mkvd.net), type: :fiveserv, check: "fbconnect" },
   fivetastic:
+    { domains: %w(demo.fivetastic.org mplate.org), type: :fiveserv, check: "EDIT ME" },
+  :"fivetastic-site" =>
     { domains: %w(fivetastic.org mplate.org), type: :fiveserv, check: "EDIT ME" },
   # archipunto:
   #   { domains: %w(archipunto.mkvd.net studioarchipunto.it), type: :fiveserv, check: "Archipunto" },

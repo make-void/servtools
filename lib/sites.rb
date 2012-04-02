@@ -18,6 +18,15 @@ EXTRA_VHOSTS = "
 # fiveserv
 # include /opt/nginx/vhosts;
 
+# showoff like
+server {
+  server_name mkvd.net;
+  location / {
+    proxy_pass        http://localhost:3000;
+    proxy_set_header  X-Real-IP  $remote_addr;
+  }
+}
+
 # munin
 server {
   server_name localhost;
