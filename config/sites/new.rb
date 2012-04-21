@@ -16,7 +16,7 @@ SITES = {
       { domains: %w(hshot.mkvd.net), check: "HShot" },
 
   mkvd:
-    { domains: %w(makevoid.com makevoid.net makevoid.it mkvd.net), check: "makevoid" },
+    { domains: %w(makevoid.com makevoid.net makevoid.it), check: "makevoid" },
 
   skicams:
     { domains: %w(skicams.it), check: "SkiCams.it - Le webcam" },
@@ -48,8 +48,9 @@ SITES = {
     { domains: %w(whoisy.net whoisy.makevoid.com), check: "Whoisy" },
   stylequiz:
     { domains: %w(stylequiz.makevoid.com stylequiz.net stylequiz.org), check: "StyleQuiz" },
+
   volatutto:
-    { domains: %w(volavola.net), check: "vola tutto" },
+    { domains: %w(volatutto.mkvd.net), check: "vola tutto" },
 
   thorrents:
     { domains: %w(thorrents.com thorrents.makevoid.com), check: "Thorrents" },
@@ -123,12 +124,16 @@ SITES = {
     { domains: %w(presentation.fivetastic.org), type: :fiveserv, check: "@makevoid" },
 
   fivetastic:
-    { domains: %w(fivetastic.org mplate.org), type: :fiveserv, check: "EDIT ME" },
+    { domains: %w(demo.fivetastic.org), type: :fiveserv, check: "EDIT ME" },
+  :"fivetastic-site" =>
+    { domains: %w(fivetastic.org), type: :fiveserv, check: "EDIT ME" },
   # archipunto:
   #   { domains: %w(archipunto.mkvd.net studioarchipunto.it), type: :fiveserv, check: "Archipunto" },
   riotvan:
     { domains: %w(new.riotvan.net riotvan.net), type: :fiveserv, check: "RiotVan" },
   rvideo:
     { domains: %w(video.riotvan.net), type: :fiveserv, check: "RiotVan Video" },
+  bitclan:
+    { domains: %w(bitclan.it), type: :fiveserv, check: "BIT" },
 
 }

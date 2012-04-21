@@ -52,3 +52,14 @@ rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/i386/epel-release-5-4.noar
 
 yum install mysql55 mysql55-devel mysql55-server mysql55-libs -y
 yum install libxml2 libxslt -y
+
+
+# nginx init.d
+cd 
+mkdir -p tmp
+cd tmp 
+wget https://raw.github.com/gist/1936900/7fe9c0daf90b66a96e31aef244975364e349fcd6/nginx.sh
+cp nginx.sh /etc/init.d/nginx
+chmod +x /etc/init.d/nginx
+/etc/init.d/nginx restart
+
