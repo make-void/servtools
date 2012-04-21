@@ -48,8 +48,9 @@ SITES = {
     { domains: %w(whoisy.net whoisy.makevoid.com), check: "Whoisy" },
   stylequiz:
     { domains: %w(stylequiz.makevoid.com stylequiz.net stylequiz.org), check: "StyleQuiz" },
+
   volatutto:
-    { domains: %w(volavola.net), check: "vola tutto" },
+    { domains: %w(volatutto.mkvd.net), check: "vola tutto" },
 
   thorrents:
     { domains: %w(thorrents.com thorrents.makevoid.com), check: "Thorrents" },
@@ -118,9 +119,9 @@ SITES = {
   fbconnect:
     { domains: %w(demo.mkvd.net), type: :fiveserv, check: "fbconnect" },
   fivetastic:
-    { domains: %w(demo.fivetastic.org mplate.org), type: :fiveserv, check: "EDIT ME" },
+    { domains: %w(demo.fivetastic.org), type: :fiveserv, check: "EDIT ME" },
   :"fivetastic-site" =>
-    { domains: %w(fivetastic.org mplate.org), type: :fiveserv, check: "EDIT ME" },
+    { domains: %w(fivetastic.org), type: :fiveserv, check: "EDIT ME" },
   # archipunto:
   #   { domains: %w(archipunto.mkvd.net studioarchipunto.it), type: :fiveserv, check: "Archipunto" },
   riotvan:

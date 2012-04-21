@@ -44,6 +44,12 @@ server {
       proxy_pass  http://fiveapi.com;
     }
   }
+
+  location ~* ^.+\.(jpg|jpeg|gif|css|png|js|ico|html|haml|sass|md|markdown)$ {
+    access_log        off;
+    expires           30d;
+	}
+
   <% else %>
   root /www/<%= name %>;
   <% end %>
