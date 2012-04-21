@@ -45,7 +45,8 @@ server {
     }
   }
 
-  location ~* ^.+\.(jpg|jpeg|gif|css|png|js|ico|html|haml|sass|md|markdown)$ {
+  location ~* ^.+\.(jpg|jpeg|gif|css|png|ico|html|haml|sass|md|markdown)$ {
+    # js|json
     access_log        off;
     expires           30d;
 	}
