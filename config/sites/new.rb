@@ -128,5 +128,7 @@ SITES = {
     { domains: %w(new.riotvan.net riotvan.net), type: :fiveserv, check: "RiotVan" },
   rvideo:
     { domains: %w(video.riotvan.net), type: :fiveserv, check: "RiotVan Video" },
+  bitclan:
+    { domains: %w(bitclan.it), type: :fiveserv, check: "BIT" },
 
 }
