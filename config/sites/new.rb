@@ -117,6 +117,11 @@ SITES = {
     { domains: %w(radioshout.mkvd.net radioshout.it), type: :fiveserv, check: "RadioShout" },
   fbconnect:
     { domains: %w(demo.mkvd.net), type: :fiveserv, check: "fbconnect" },
+
+
+  fivetastic_presentation:
+    { domains: %w(presentation.fivetastic.org), type: :fiveserv, check: "@makevoid" },
+
   fivetastic:
     { domains: %w(fivetastic.org mplate.org), type: :fiveserv, check: "EDIT ME" },
   # archipunto:
