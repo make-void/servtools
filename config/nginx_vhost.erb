@@ -1,5 +1,7 @@
 server {
   #listen 81;
+  keepalive_timeout 0;
+
   <% unless conf[:catchall] == true %>
     server_name <%= conf[:domains].map{|d| [d, "*.#{d}"]}.flatten.join(" ") %>;
   <% else %>
