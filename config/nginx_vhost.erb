@@ -20,8 +20,10 @@ server {
   root /www/<%= name %>/current/public;
   passenger_enabled on;
   error_log /www/<%= name %>/current/log/error.log;
+
   <% elsif conf[:type] == :fiveserv %>
   root /www/fiveserv/<%= name %>;
+
 
   if ( $host ~ www\.riotvan\.net ) {
     rewrite ^(.*)$ http://riotvan.net$1 permanent;
@@ -30,6 +32,7 @@ server {
   proxy_set_header X-Fiveapi-Name <%= name %>;
   proxy_set_header X-Fiveapi-Uri $request_uri;
 
+
   location / {
     index index.html;
     if (!-e $request_filename) {
@@ -37,19 +40,21 @@ server {
     }
 
     if ( $http_user_agent ~ Googlebot|Alexa|MSN|Bing|Yahoo|facebookexternalhit ) {
+      # proxy_pass  http://fiveapi.com;
       set $test  Bot;
     }
 
-    if ( $request_uri !~ png$|jpg$ ) {
-      set $test  \"${test}NoImg\";
+    if ( $request_uri ~ png$|jpg$ ) {
+      set $test  \"${test}Img\";
     }
 
-    if ($test = BotNoImg) {
+    if ($test = Bot) {
       proxy_pass  http://fiveapi.com;
     }
+
   }
 
-  location ~* ^.+\.(jpg|jpeg|gif|css|png|ico|html|haml|sass|md|markdown)$ {
+  location ~* ^.+\.(jpg|jpeg|gif|css|png|ico|haml|sass|md|markdown)$ {
     # js|json
     access_log        off;
     expires           30d;

@@ -1,5 +1,32 @@
 SITES = {
 
+  # FiveServ
+
+  radioshout:
+    { domains: %w(radioshout.mkvd.net radioshout.it), type: :fiveserv, check: "RadioShout" },
+  fbconnect:
+    { domains: %w(demo.mkvd.net), type: :fiveserv, check: "fbconnect" },
+
+
+  fivetastic_presentation:
+    { domains: %w(presentation.fivetastic.org), type: :fiveserv, check: "@makevoid" },
+
+  fivetastic:
+    { domains: %w(demo.fivetastic.org), type: :fiveserv, check: "EDIT ME" },
+  :"fivetastic-site" =>
+    { domains: %w(fivetastic.org), type: :fiveserv, check: "EDIT ME" },
+  # archipunto:
+  #   { domains: %w(archipunto.mkvd.net studioarchipunto.it), type: :fiveserv, check: "Archipunto" },
+  riotvan:
+    { domains: %w(riotvan.net new.riotvan.net), type: :fiveserv, check: "RiotVan" },
+  rvideo:
+    { domains: %w(video.riotvan.net), type: :fiveserv, check: "RiotVan Video" },
+  bitclan:
+    { domains: %w(bitclan.it), type: :fiveserv, check: "BIT" },
+
+
+  # Rack
+
   makevoid:
     { domains: %w(updates.makevoid.com updates.makevoid.net updates.makevoid.it), check: "makevoid's blog" },
 
@@ -111,29 +138,4 @@ SITES = {
 
   fiveapi:
     { domains: %w(fiveapi.com), check: "FiveAPI" },
-
-  # FIVESERV
-
-  radioshout:
-    { domains: %w(radioshout.mkvd.net radioshout.it), type: :fiveserv, check: "RadioShout" },
-  fbconnect:
-    { domains: %w(demo.mkvd.net), type: :fiveserv, check: "fbconnect" },
-
-
-  fivetastic_presentation:
-    { domains: %w(presentation.fivetastic.org), type: :fiveserv, check: "@makevoid" },
-
-  fivetastic:
-    { domains: %w(demo.fivetastic.org), type: :fiveserv, check: "EDIT ME" },
-  :"fivetastic-site" =>
-    { domains: %w(fivetastic.org), type: :fiveserv, check: "EDIT ME" },
-  # archipunto:
-  #   { domains: %w(archipunto.mkvd.net studioarchipunto.it), type: :fiveserv, check: "Archipunto" },
-  riotvan:
-    { domains: %w(new.riotvan.net riotvan.net), type: :fiveserv, check: "RiotVan" },
-  rvideo:
-    { domains: %w(video.riotvan.net), type: :fiveserv, check: "RiotVan Video" },
-  bitclan:
-    { domains: %w(bitclan.it), type: :fiveserv, check: "BIT" },
-
 }

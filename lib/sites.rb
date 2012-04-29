@@ -36,7 +36,8 @@ server {
     allow 127.0.0.1;
     deny all;
   }
-}"
+}
+"
 
 def write_vhosts
   exec("#{ssh} \"rm -f #{VHOSTS_PATH}/*\"")
