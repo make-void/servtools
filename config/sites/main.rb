@@ -112,6 +112,9 @@ SITES = {
   fiveapi:
     { domains: %w(fiveapi.com), check: "FiveAPI" },
 
+  rubymotion_it:
+    { domains: %w(rubymotion.it), check: "RubyMotion" },
+
   # FIVESERV
 
   radioshout:

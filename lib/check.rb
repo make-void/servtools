@@ -3,7 +3,7 @@ PATH = path
 
 
 # HOST = :fiveserv
-HOST = :new
+HOST = :main
 
 require "#{path}/config/sites/#{HOST}"
 

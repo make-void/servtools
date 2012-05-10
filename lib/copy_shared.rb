@@ -3,7 +3,7 @@ PATH = path
 
 class Shared
 
-  HOST = :new
+  HOST = :main
   require "#{PATH}/config/sites/#{HOST}"
   require "#{PATH}/lib/utils"
   

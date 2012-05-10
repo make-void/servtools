@@ -47,7 +47,7 @@ def write_vhosts
     all_vhosts << "#{result}\n"
   end
 
-  all_vhosts << EXTRA_VHOSTS if HOST == :new
+  all_vhosts << EXTRA_VHOSTS if HOST == :main
 
   #idx = idx.to_s.size == 1 ? "0#{idx}" : idx
   #puts "#{name} #{confs} #{idx}"
@@ -62,12 +62,12 @@ include SiteCheck
 
 
 
-HOST = :new
+HOST = :main
 # HOST = :uc
 
 
 def ssh
-  "ssh root@#{"#{HOST}." if HOST != :default }makevoid.com"
+  "ssh root@#{"#{HOST}." if HOST != :main }makevoid.com"
 end
 
 require "#{PATH}/config/sites/#{HOST}"
