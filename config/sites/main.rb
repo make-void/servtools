@@ -20,8 +20,9 @@ SITES = {
     { domains: %w(riotvan.net new.riotvan.net), type: :fiveserv, check: "RiotVan" },
   rvideo:
     { domains: %w(video.riotvan.net), type: :fiveserv, check: "RiotVan Video" },
-  bitclan:
-    { domains: %w(bitclan.it), type: :fiveserv, check: "BIT" },
+  # bitclan:
+  #   { domains: %w(bitclan.it), type: :fiveserv, check: "BIT" },
+
 
 
   # Rack
@@ -32,6 +33,8 @@ SITES = {
   fcanessa:
     { domains: %w(francescocanessa.com), check: "Francesco Canessa" },
 
+  sinforum:
+    { domains: %w(bitclan.it), check: "BIT" },
   # rankey:
   #   { domains: %w(rankey.it) },
 
