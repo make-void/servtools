@@ -1,5 +1,10 @@
 SITES = {
 
+  # Main
+
+  mkvd:
+  { domains: %w(makevoid.com makevoid.net makevoid.it), check: "makevoid" },
+
   # FiveServ
 
   radioshout:
@@ -43,9 +48,6 @@ SITES = {
 
   headshot:
       { domains: %w(hshot.mkvd.net), check: "HShot" },
-
-  mkvd:
-    { domains: %w(makevoid.com makevoid.net makevoid.it), check: "makevoid" },
 
   skicams:
     { domains: %w(skicams.it), check: "SkiCams.it - Le webcam" },
