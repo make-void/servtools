@@ -21,10 +21,6 @@ server {
   passenger_enabled on;
   error_log /www/<%= name %>/current/log/error.log;
 
-  location ~* ^.+\.(jpg|jpeg|gif|css|png|ico|haml|sass|md|markdown|js|json)$ {
-    access_log        off;
-    expires           1d;
-	}
   <% elsif conf[:type] == :fiveserv %>
   root /www/fiveserv/<%= name %>;
 
