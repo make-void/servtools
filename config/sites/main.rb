@@ -77,8 +77,8 @@ SITES = {
 
   whoisy:
     { domains: %w(whoisy.net whoisy.makevoid.com), check: "Whoisy" },
-  stylequiz:
-    { domains: %w(stylequiz.makevoid.com stylequiz.net stylequiz.org), check: "StyleQuiz" },
+  # stylequiz:
+  #   { domains: %w(stylequiz.makevoid.com stylequiz.net stylequiz.org), check: "StyleQuiz" },
 
   volatutto:
     { domains: %w(volatutto.mkvd.net), check: "vola tutto" },
@@ -134,8 +134,8 @@ SITES = {
   medoro:
     { domains: %w(giannimedoro.it medoro.makevoid.com), check: "Gianni Medoro" },
 
-  neroseppia:
-    { domains: %w(officineneroseppia.com), check: "Officine Nero Seppia" },
+  # neroseppia:
+  #   { domains: %w(officineneroseppia.com), check: "Officine Nero Seppia" },
 
   uploads:
     { domains: %w(uploads.makevoid.com), type: :static, check: "Nothing to see here" },
