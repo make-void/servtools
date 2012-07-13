@@ -98,7 +98,7 @@ module SiteCheck
     page = Page.new(name: name, url: domain, match: match)
     checker = Checker.new(page)
     checker.execute
-    puts "#{name} (#{domain}): #{checker.status}"
+    puts "#{checker.status} - #{name} (#{domain})"
   end
 
   def check_sites
