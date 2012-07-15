@@ -54,15 +54,15 @@ server {
 
   }
 
-  <% if conf[:expires] == false %>
+  <% if conf[:cache] == false %>
     location ~* ^.+\.(jpg|jpeg|gif|css|png|ico|haml|sass|md|markdown)$ {
       # js|json
       access_log        off;
       expires           1d;
   	}
   <% end %>
-de
-  <%  %>
+
+  <% else %>
   root /www/<%= name %>;
   <% end %>
 
