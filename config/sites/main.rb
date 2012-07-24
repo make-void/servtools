@@ -88,6 +88,10 @@ SITES = {
 
   cappiello:
     { domains: %w(accademia-cappiello.it accademiacappiello.it cappiello.makevoid.com), check: "Design Leonetto Cappiello" },
+
+  cappiello_staging:
+    { domains: %w(staging.accademiacappiello.it), check: "Design Leonetto Cappiello" },
+
   pp:
     { domains: %w(pietroporcinai.net pietroporcinai.com pietroporcinai.it), check: "Pietro Porcinai" },
 
