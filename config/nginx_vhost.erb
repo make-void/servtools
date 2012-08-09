@@ -1,5 +1,4 @@
 server {
-  #listen 81;
   keepalive_timeout 0;
 
   <% unless conf[:catchall] == true %>
@@ -58,11 +57,13 @@ server {
 
   }
 
-  location ~* ^.+\.(jpg|jpeg|gif|css|png|ico|haml|sass|md|markdown)$ {
-    # js|json
-    access_log        off;
-    expires           1d;
-	}
+  <% if conf[:cache] == false %>
+    location ~* ^.+\.(jpg|jpeg|gif|css|png|ico|haml|sass|md|markdown)$ {
+      # js|json
+      access_log        off;
+      expires           1d;
+  	}
+  <% end %>
 
   <% else %>
   root /www/<%= name %>;

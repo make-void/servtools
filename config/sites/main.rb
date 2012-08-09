@@ -88,6 +88,10 @@ SITES = {
 
   cappiello:
     { domains: %w(accademia-cappiello.it accademiacappiello.it cappiello.makevoid.com), check: "Design Leonetto Cappiello" },
+
+  cappiello_staging:
+    { domains: %w(staging.accademiacappiello.it), env: "staging", check: "Design Leonetto Cappiello" },
+
   pp:
     { domains: %w(pietroporcinai.net pietroporcinai.com pietroporcinai.it), check: "Pietro Porcinai" },
 
@@ -111,7 +115,7 @@ SITES = {
 
 
   mangapad:
-    { domains: %w(mangapad.org), check: "Mangapad" },
+    { domains: %w(mangapad.org), check: "Mangapad", expires: false },
   # repshare:
   #   { domains: %w(repshare.makevoid.com repshare.org), check: "Repshare" },
 
