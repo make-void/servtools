@@ -150,4 +150,9 @@ SITES = {
   rubymotion_it:
     { domains: %w(rubymotion.it), check: "RubyMotion" },
 
+  ltestudio:
+    { domains: %w(ltestudio.it ltestudio.makevoid.com), check: "LTE Studio" },
+  
+  tencard:
+    { domains: %w(tencard.makevoid.com), check: "10Card" },
 }
