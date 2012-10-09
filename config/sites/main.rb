@@ -155,4 +155,7 @@ SITES = {
   
   tencard:
     { domains: %w(tencard.makevoid.com), check: "10Card" },
+  
+  decibel:
+    { domains: %w(decibel.makevoid.com), check: "Decibel Eventi" },
 }
