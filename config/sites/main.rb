@@ -158,4 +158,7 @@ SITES = {
   
   decibel:
     { domains: %w(decibel.makevoid.com), check: "Decibel Eventi" },
+
+  hostgist:
+    { domains: %w(hostgist.makevoid.com) },
 }
