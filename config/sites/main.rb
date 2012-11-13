@@ -162,6 +162,9 @@ SITES = {
   marcomazzi:
     { domains: %w(marcomazzi.net marcomazzi.mkvd.net) },
 
+  shampy:
+    { domains: %w(shampy.mkvd.com) },
+    
   hostgist:
     { domains: %w(hostgist.makevoid.com) },
 }
