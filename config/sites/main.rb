@@ -152,12 +152,15 @@ SITES = {
 
   ltestudio:
     { domains: %w(ltestudio.it ltestudio.makevoid.com), check: "LTE Studio" },
-  
+
   tencard:
     { domains: %w(tencard.makevoid.com), check: "10Card" },
-  
+
   decibel:
     { domains: %w(decibel.makevoid.com), check: "Decibel Eventi" },
+
+  marcomazzi:
+    { domains: %w(marcomazzi.net marcomazzi.mkvd.net) },
 
   hostgist:
     { domains: %w(hostgist.makevoid.com) },
