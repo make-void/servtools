@@ -163,7 +163,7 @@ SITES = {
     { domains: %w(marcomazzi.net marcomazzi.mkvd.net) },
 
   shampy:
-    { domains: %w(shampy.it shampy.mkvd.com) },
+    { domains: %w(shampy.it shampy.mkvd.net) },
     
   hostgist:
     { domains: %w(hostgist.makevoid.com) },
