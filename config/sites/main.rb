@@ -3,7 +3,7 @@ SITES = {
   # Main
 
   mkvd:
-  { domains: %w(makevoid.com makevoid.net makevoid.it), check: "makevoid" },
+  { domains: %w(makevoid.com makevoid.net makevoid.it mkvd.net), check: "makevoid" },
 
   # FiveServ
 
@@ -163,7 +163,7 @@ SITES = {
     { domains: %w(marcomazzi.net marcomazzi.mkvd.net) },
 
   shampy:
-    { domains: %w(shampy.mkvd.com) },
+    { domains: %w(shampy.it shampy.mkvd.com) },
     
   hostgist:
     { domains: %w(hostgist.makevoid.com) },
