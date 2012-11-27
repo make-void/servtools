@@ -21,8 +21,6 @@ SITES = {
     { domains: %w(fivetastic.org), type: :fiveserv, check: "EDIT ME" },
   # archipunto:
   #   { domains: %w(archipunto.mkvd.net studioarchipunto.it), type: :fiveserv, check: "Archipunto" },
-  riotvan:
-    { domains: %w(riotvan.net new.riotvan.net), type: :fiveserv, check: "RiotVan" },
   rvideo:
     { domains: %w(video.riotvan.net), type: :fiveserv, check: "RiotVan Video" },
   # bitclan:
@@ -37,6 +35,9 @@ SITES = {
 
   fcanessa:
     { domains: %w(francescocanessa.com), check: "Francesco Canessa" },
+
+  riotvan:
+    { domains: %w(riotvan.net new.riotvan.net),  check: "RiotVan" },
 
   sinforum:
     { domains: %w(bitclan.it), check: "BIT" },
