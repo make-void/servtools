@@ -19,11 +19,13 @@ server {
   root /www/<%= name %>/current/public;
   passenger_enabled on;
   error_log /www/<%= name %>/current/log/error.log;
-
+  
+  <% if conf[:cache] != false  %>
   location ~* ^.+\.(jpg|jpeg|gif|css|png|ico|haml|sass|md|markdown)$ {
     access_log        off;
-    expires           1d;
+    expires           7d;
 	}
+	<% end %>
   <% elsif conf[:type] == :fiveserv %>
   root /www/fiveserv/<%= name %>;
 
@@ -57,7 +59,7 @@ server {
 
   }
 
-  <% if conf[:cache] == false %>
+  <% if conf[:cache] == :short %>
     location ~* ^.+\.(jpg|jpeg|gif|css|png|ico|haml|sass|md|markdown)$ {
       # js|json
       access_log        off;

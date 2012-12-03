@@ -116,7 +116,7 @@ SITES = {
 
 
   mangapad:
-    { domains: %w(mangapad.org), check: "Mangapad", expires: false },
+    { domains: %w(mangapad.org), check: "Mangapad", cache: false },
   # repshare:
   #   { domains: %w(repshare.makevoid.com repshare.org), check: "Repshare" },
 
@@ -165,7 +165,7 @@ SITES = {
 
   shampy:
     { domains: %w(shampy.it shampy.mkvd.com) },
-    
+
   hostgist:
     { domains: %w(hostgist.makevoid.com) },
 }
