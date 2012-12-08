@@ -164,7 +164,13 @@ SITES = {
     { domains: %w(marcomazzi.net marcomazzi.mkvd.net) },
 
   shampy:
-    { domains: %w(shampy.it shampy.mkvd.com) },
+    { domains: %w(shampy.it shampy.mkvd.net) },
+
+  s3play:
+    { domains: %w(s3play.makevoid.com) },
+
+  psyjs:
+    { domains: %w(psyjs.mkvd.net) },
 
   hostgist:
     { domains: %w(hostgist.makevoid.com) },
