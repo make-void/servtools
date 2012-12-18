@@ -20,13 +20,9 @@ server {
   passenger_enabled on;
   error_log /www/<%= name %>/current/log/error.log;
 
-  location ~* ^.+\.(jpg|jpeg|gif|css|png|ico|haml|sass|md|markdown)$ {
-    access_log        off;
-    expires           1d;
-	}
+
   <% elsif conf[:type] == :fiveserv %>
   root /www/fiveserv/<%= name %>;
-
 
   if ( $host ~ www\.riotvan\.net ) {
     rewrite ^(.*)$ http://riotvan.net$1 permanent;
@@ -57,19 +53,17 @@ server {
 
   }
 
-  <% if conf[:cache] == false %>
-    location ~* ^.+\.(jpg|jpeg|gif|css|png|ico|haml|sass|md|markdown)$ {
-      # js|json
-      access_log        off;
-      expires           1d;
-  	}
-  <% end %>
-
   <% else %>
   root /www/<%= name %>;
   <% end %>
 
-
+  <% if conf[:cache] != false  %>
+  location ~* ^.+\.(jpg|jpeg|gif|css|png|ico|haml|sass|md|markdown)$ {
+    # js, json
+    access_log        off;
+    expires           7d;
+  }
+  <% end %>
 
   <%= "rack_env #{conf[:env]};" unless conf[:env].nil? %>
 

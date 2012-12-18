@@ -2,11 +2,7 @@ require "erb"
 
 PATH = File.expand_path "../../", __FILE__
 
-
-
-
 require "#{PATH}/config/environment"
-
 
 def exec(command)
   puts "executing: #{command}"
@@ -74,7 +70,8 @@ end
 require "#{PATH}/config/sites/#{HOST}"
 
 write_vhosts
-exec "#{ssh} service nginx restart"
+# exec "#{ssh} service nginx restart"
+exec "#{ssh} service nginx reload" # lighter
 puts "done"
 sleep 1
 check_sites

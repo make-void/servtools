@@ -21,13 +21,13 @@ SITES = {
     { domains: %w(fivetastic.org), type: :fiveserv, check: "EDIT ME" },
   # archipunto:
   #   { domains: %w(archipunto.mkvd.net studioarchipunto.it), type: :fiveserv, check: "Archipunto" },
-  riotvan:
-    { domains: %w(riotvan.net new.riotvan.net), type: :fiveserv, check: "RiotVan" },
   rvideo:
     { domains: %w(video.riotvan.net), type: :fiveserv, check: "RiotVan Video" },
   # bitclan:
   #   { domains: %w(bitclan.it), type: :fiveserv, check: "BIT" },
 
+  s3photos:
+    { domains: %w(s3photos.makevoid.com), type: :fiveserv, check: "s3photos" },
 
 
   # Rack
@@ -37,6 +37,9 @@ SITES = {
 
   fcanessa:
     { domains: %w(francescocanessa.com), check: "Francesco Canessa" },
+
+  riotvan:
+    { domains: %w(riotvan.net new.riotvan.net),  check: "RiotVan" },
 
   sinforum:
     { domains: %w(bitclan.it), check: "BIT" },
@@ -71,9 +74,6 @@ SITES = {
 
   jscrapeweb:
     { domains: %w(jscrape.it jscrape.makevoid.com), check: "jScrape" },
-
-
-
 
   whoisy:
     { domains: %w(whoisy.net whoisy.makevoid.com), check: "Whoisy" },
@@ -111,11 +111,8 @@ SITES = {
   handsonxp:
     { domains: %w(handsonxp.com), check: "Hands-on" },
 
-
-
-
   mangapad:
-    { domains: %w(mangapad.org), check: "Mangapad", expires: false },
+    { domains: %w(mangapad.org), check: "Mangapad", cache: false },
   # repshare:
   #   { domains: %w(repshare.makevoid.com repshare.org), check: "Repshare" },
 
@@ -128,7 +125,6 @@ SITES = {
     { domains: %w(elisabettaporcinai.com), check: "Elisabetta Porcinai" },
   krikri:
     { domains: %w(kristinabutkute.com), check: "Kristina Butkute\'s website" },
-
 
   munin:
     { domains: %w(munin.makevoid.com), type: :static, check: "Overview" },
@@ -164,7 +160,13 @@ SITES = {
 
   shampy:
     { domains: %w(shampy.it shampy.mkvd.net) },
-    
+
+  s3play:
+    { domains: %w(s3play.makevoid.com) },
+
+  psyjs:
+    { domains: %w(psyjs.mkvd.net) },
+
   hostgist:
     { domains: %w(hostgist.makevoid.com) },
 }
