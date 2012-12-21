@@ -31,6 +31,8 @@ SITES = {
   # bitclan:
   #   { domains: %w(bitclan.it), type: :fiveserv, check: "BIT" },
 
+  s3photos:
+    { domains: %w(s3photos.makevoid.com), type: :fiveserv, check: "s3photos" },
 
 
   # Rack
@@ -78,9 +80,6 @@ SITES = {
   jscrapeweb:
     { domains: %w(jscrape.it jscrape.makevoid.com), check: "jScrape" },
 
-
-
-
   whoisy:
     { domains: %w(whoisy.net whoisy.makevoid.com), check: "Whoisy" },
   # stylequiz:
@@ -117,9 +116,6 @@ SITES = {
   handsonxp:
     { domains: %w(handsonxp.com), check: "Hands-on" },
 
-
-
-
   mangapad:
     { domains: %w(mangapad.org), check: "Mangapad", cache: false },
   # repshare:
@@ -134,7 +130,6 @@ SITES = {
     { domains: %w(elisabettaporcinai.com), check: "Elisabetta Porcinai" },
   krikri:
     { domains: %w(kristinabutkute.com), check: "Kristina Butkute\'s website" },
-
 
   munin:
     { domains: %w(munin.makevoid.com), type: :static, check: "Overview" },
