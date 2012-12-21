@@ -15,6 +15,11 @@ SITES = {
   fivetastic_presentation:
     { domains: %w(presentation.fivetastic.org), type: :fiveserv, check: "@makevoid" },
 
+
+  pres_ruby2:
+    { domains: %w(ruby2.presentations.makevoid.com), type: :fiveserv, check: "@makevoid" },
+
+
   fivetastic:
     { domains: %w(demo.fivetastic.org), type: :fiveserv, check: "EDIT ME" },
   :"fivetastic-site" =>
