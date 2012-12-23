@@ -17,7 +17,7 @@ SITES = {
 
 
   pres_ruby2:
-    { domains: %w(ruby2.slides.makevoid.com), type: :fiveserv, check: "@makevoid" },
+    { domains: %w(ruby2pres.makevoid.com), type: :fiveserv, check: "@makevoid" },
 
 
   fivetastic:

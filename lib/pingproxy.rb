@@ -18,7 +18,7 @@ DOMAIN = ARGV[0] || "makevoid.com"
 
 HOST = "http://just-ping.com"
 
-def get_page 
+def get_page
   uri = URI.parse "#{HOST}/index.php?vh=#{DOMAIN}"
   page = Net::HTTP.get_response uri
   body = page.body
@@ -68,11 +68,10 @@ urls.each_with_index do |url, idx|
     avgs << avg.to_f unless avg.to_f == 0.0
     puts "#{countries[idx]} #{avg.to_f}"
     unless avgs.size == 0
-      sum = avgs.inject(0){ |a, v| a + v } / avgs.size 
+      sum = avgs.inject(0){ |a, v| a + v } / avgs.size
     end
     puts "AVGS: #{sum.to_f}"
   end
 end
 
 threads.each{ |t| t.join }
-

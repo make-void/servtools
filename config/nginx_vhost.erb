@@ -8,63 +8,39 @@ server {
     server_name_in_redirect  off;
   <% end %>
 
-
-
   <% if conf[:access] == true %>
-  access_log /www/<%= name %>/current/log/access.log;
+    access_log /www/<%= name %>/current/log/access.log;
   <% end %>
 
-
   <% if conf[:type] == :rack %>
-  root /www/<%= name %>/current/public;
-  passenger_enabled on;
-  error_log /www/<%= name %>/current/log/error.log;
-
-
+    root /www/<%= name %>/current/public;
+    passenger_enabled on;
+    error_log /www/<%= name %>/current/log/error.log;
+	
   <% elsif conf[:type] == :fiveserv %>
-  root /www/fiveserv/<%= name %>;
+  
+    <% unless conf[:path] %>
+      root /www/fiveserv/<%= name %>;
+    <% else %>
+      root /www/fiveserv/<%= conf[:path] %>;
+    <% end %>
 
-  if ( $host ~ www\.riotvan\.net ) {
-    rewrite ^(.*)$ http://riotvan.net$1 permanent;
-  }
-
-  proxy_set_header X-Fiveapi-Name <%= name %>;
-  proxy_set_header X-Fiveapi-Uri $request_uri;
-
-
-  location / {
-    index index.html;
-    if (!-e $request_filename) {
-      rewrite ^.+$ / break;
+    if ( $host ~ www\.riotvan\.net ) {
+      rewrite ^(.*)$ http://riotvan.net$1 permanent;
     }
 
-    if ( $http_user_agent ~ Googlebot|Alexa|MSN|Bing|Yahoo|facebookexternalhit ) {
-      # proxy_pass  http://fiveapi.com;
-      set $test  Bot;
-    }
-
-    if ( $request_uri ~ png$|jpg$ ) {
-      set $test  \"${test}Img\";
-    }
-
-    if ($test = Bot) {
-      # disabled
-      # proxy_pass  http://fiveapi.com;
-    }
-
-  }
+    <%#= fiveapi_redirect.erb %>
 
   <% else %>
-  root /www/<%= name %>;
+    root /www/<%= name %>;
   <% end %>
 
   <% if conf[:cache] != false  %>
-  location ~* ^.+\.(jpg|jpeg|gif|css|png|ico|haml|sass|md|markdown)$ {
-    # js, json
-    access_log        off;
-    expires           7d;
-  }
-  <% end %>
+    location ~* ^.+\.(jpg|jpeg|gif|css|png|ico|haml|sass|md|markdown)$ {
+      access_log        off;
+      expires           7d;
+  	}
+	<% end %>
 
   <%= "rack_env #{conf[:env]};" unless conf[:env].nil? %>
 
@@ -80,6 +56,7 @@ server {
       fastcgi_pass    127.0.0.1:9000;
     }
   <% end %>
+  
   <% if conf[:type] == :joomla %>
     large_client_header_buffers 4 8k; # prevent some 400 errors
 
@@ -87,7 +64,6 @@ server {
     location @joomla {
       rewrite ^/.+$ /index.php?q=last;
     }
-
 
   <% end %>
 }

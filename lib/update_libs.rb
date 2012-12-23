@@ -3,15 +3,15 @@ require 'net/http'
 class LibUp
 
   LIBS = [
-    { 
-      name: "jquery", 
-      files: ["jquery.js"], 
-      version_str: "jQuery v1.7 jquery.com", 
-      url: "http://code.jquery.com/jquery.min.js" 
-    }, 
+    {
+      name: "jquery",
+      files: ["jquery.js"],
+      version_str: "jQuery v1.7 jquery.com",
+      url: "http://code.jquery.com/jquery.min.js"
+    },
     # underscore
     # backbone
-    # coffeescript    
+    # coffeescript
     # haml-js, sass-js
     # zepto
     # jquery-ui (hard)
@@ -21,8 +21,8 @@ class LibUp
     @dir = File.expand_path "~/Sites"
     @sites = Dir.glob "#{@dir}/*/"
   end
-  
-  
+
+
   def check_versions
     LIBS.each do |lib|
       lib[:founds] = []
@@ -38,14 +38,14 @@ class LibUp
           end
         end
       end
-    end  
-    
+    end
+
     # download and write libs
-    
+
     LIBS.each do |lib|
       uri = URI.parse lib[:url]
       updated_lib = Net::HTTP.get_response(uri).body
-      
+
       lib[:founds].each do |path|
         # old = File.read path
         puts path.split("/")[4]
@@ -53,10 +53,9 @@ class LibUp
           file.write updated_lib
         end
       end
-    end  
+    end
   end
 
-  
 end
 
 lu = LibUp.new

@@ -9,7 +9,6 @@ def exec(command)
   `#{command}`.strip
 end
 
-
 EXTRA_VHOSTS = "
 # fiveserv
 # include /opt/nginx/vhosts;
@@ -35,33 +34,28 @@ server {
 }
 "
 
-def write_vhosts
-  exec("#{ssh} \"rm -f #{VHOSTS_PATH}/*\"")
-
-  all_vhosts = ""
+def all_vhosts
+  vhosts = ""
   SITES.each_with_index do |site, idx|
     result = VHTemplate.new(site).write_vhost
-    all_vhosts << "#{result}\n"
+    vhosts << "#{result}\n"
   end
 
-  all_vhosts << EXTRA_VHOSTS if HOST == :main
+  vhosts << EXTRA_VHOSTS if HOST == :main
+  vhosts
+end
 
-  #idx = idx.to_s.size == 1 ? "0#{idx}" : idx
-  #puts "#{name} #{confs} #{idx}"
+def write_vhosts
+  exec "#{ssh} \"rm -f #{VHOSTS_PATH}/*\""
   exec "#{ssh} \"echo '#{all_vhosts.gsub(/[$]/, '\$')}' > #{VHOSTS_PATH}/all\""
-
-  # exec "#{ssh} service nginx restart"
-  # sleep 1
 end
 
 require "#{PATH}/lib/checker"
 include SiteCheck
 
 
-
 HOST = :main
 # HOST = :uc
-
 
 def ssh
   "ssh root@#{"#{HOST}." if HOST != :main }makevoid.com"
@@ -69,10 +63,18 @@ end
 
 require "#{PATH}/config/sites/#{HOST}"
 
-write_vhosts
-# exec "#{ssh} service nginx restart"
-exec "#{ssh} service nginx reload" # lighter
-puts "done"
-sleep 1
-check_sites
+
+# main
+
+if ARGV[0] == "test"
+  puts all_vhosts
+else
+  exit
+  write_vhosts
+  exec "#{ssh} service nginx restart"
+  puts "done"
+  sleep 1
+  check_sites
+end
+
 #exec "#{ssh} service nginx restart"
