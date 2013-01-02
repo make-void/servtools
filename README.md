@@ -1,26 +1,22 @@
 # ServTools 
-### scripts for working on servers:
+### ruby scripts for managing app servers:
 
-this repo contains 
+this repo contains multiple scripts, here's a list with some:
 
-setup a ruby server
+- **install.sh:** setups a ruby server
 
-    install.sh
+the following scripts are in `lib` directory
 
-setup virtualhosts 
+- **sites:** setups nginx virtualhost (supported configs: static html, rack, php, fiveserv, ...)
+- **checker:** checks if the remote page is served correctly by matching a given string
+- **pingproxy:** pings domain from multiple locations (use it to test your hosting providers / CDN)
+- **mysql:**  backup dbs an upload them to S3
+- **mysqlr:** restore mysql backups from S3
+- **update_libs:** checks if all the JS libraries of your projects are updated (es. latest jquery, underscore, ...) [unfinished]
+- **utils:** ruby helpers to execute and log local and remote commands (ssh)
 
-    lib/sites.rb
-
-
-ping util:
-
-    lib/pingproxy.rb
-
-
-mysql backup dbs and upload to s3 tool:
-
-    lib/mysql.rb
-
+and more!
+all the scripts are in lib!
 
 ### TODO:
 
