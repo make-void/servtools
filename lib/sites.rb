@@ -69,9 +69,9 @@ require "#{PATH}/config/sites/#{HOST}"
 if ARGV[0] == "test"
   puts all_vhosts
 else
-  exit
+ # exit
   write_vhosts
-  exec "#{ssh} service nginx restart"
+  exec "#{ssh} service nginx reload"
   puts "done"
   sleep 1
   check_sites

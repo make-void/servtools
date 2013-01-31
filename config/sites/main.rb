@@ -91,6 +91,9 @@ SITES = {
   thorrents:
     { domains: %w(thorrents.com thorrents.makevoid.com), check: "Thorrents" },
 
+  cafp_ruby:
+    { domains: %w(cafp.mkvd.net), check: "CAFP" },
+
   cappiello:
     { domains: %w(accademia-cappiello.it accademiacappiello.it cappiello.makevoid.com), check: "Design Leonetto Cappiello" },
 
@@ -171,6 +174,9 @@ SITES = {
 
   psyjs:
     { domains: %w(psyjs.mkvd.net) },
+
+  estemporary:
+    { domains: %w(estemporary.com) },
 
   hostgist:
     { domains: %w(hostgist.makevoid.com) },
