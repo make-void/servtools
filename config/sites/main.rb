@@ -66,6 +66,9 @@ SITES = {
   trysinatra:
     { domains: %w(trysinatra.makevoid.com trysinatra.org), check: "TrySinatra" },
 
+  gis:
+    { domains: %w(gis.makevoid.com), check: "GIS" },
+
   # mplate:
   # { domains: %w(mplate.org mplate.makevoid.com), check: "MPlate" },
 

@@ -18,7 +18,7 @@ alias pake="RAILS_ENV=production rake"
 
 function prails {
  echo RAILS_ENV=production script/rails
- su --preserve-environment www-data 
+ su --preserve-environment www-data
 }
 
 function cds {
@@ -34,7 +34,7 @@ function create_repo {
   ln -s /svn/conf/svnserve.conf  svnserve.conf
   cd /svn
   killall svnserve
-  svnserve -d 
+  svnserve -d
 }
 
 function create_db {
@@ -42,7 +42,7 @@ function create_db {
 }
 
 function munin_plugin_install {
-  local PLUGINS=/usr/share/munin/plugins 
+  local PLUGINS=/usr/share/munin/plugins
   if [ -f $PLUGINS/$1 ]; then
     ln -s /usr/share/munin/plugins/$1 /etc/munin/plugins/$1
     echo "symlinked"
@@ -54,3 +54,7 @@ function munin_plugin_install {
 alias dirsize="du -h | grep -v '/' | awk '{print $1}'"
 
 alias ramcache='cd /root/tmp; wget http://makevoid.com; wget http://pietroporcinai.net; wget http://skicams.it; wget http://cohesionsocial.com; wget http://pietroporcinai.it; wget http://iphone.skicams.it; wget http://repshare.org; rm -f index.*'
+
+# postgres
+
+alias pgstart='su postgres -c "/usr/lib/postgresql/8.4/bin/postgres -D /usr/local/pgsql/data"'
