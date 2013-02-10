@@ -15,6 +15,8 @@ SITES = {
   fivetastic_presentation:
     { domains: %w(presentation.fivetastic.org), type: :fiveserv, check: "@makevoid" },
 
+  taxiweb:
+    { domains: %w(taxiweb.makevoid.com), check: "TaxiWeb" },
 
   pres_ruby2:
     { domains: %w(ruby2pres.makevoid.com), type: :fiveserv, check: "@makevoid" },
