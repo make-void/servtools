@@ -1,4 +1,4 @@
-# ServTools 
+# ServTools
 ### ruby scripts for managing app servers:
 
 this repo contains multiple scripts, here's a list with some:
@@ -20,13 +20,23 @@ all the scripts are in lib!
 
 ### TODO:
 
+www-data gets access to git repos
+
+    cat /home/www-data/.ssh/id_rsa.pub >> /home/git/.ssh/authorized_keys
+
+
+[unsafe]:
+
+  chown -R www-data:www-data /usr/local/bin/
+  chown -R www-data:www-data /usr/local/lib/ruby/gems/1.9.1/
+
 - partitioning script
 
 setup partitions:
 
 1.8T total = 450GB each
 
-/home     
+/home
 /opt
 /www
 /var/log

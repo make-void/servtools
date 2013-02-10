@@ -1,3 +1,6 @@
+export EDITOR="vim"
+export VISUAL="vim"
+
 alias reload="source ~/.bashrc"
 alias ealias="vim ~/.bash_aliases"
 
