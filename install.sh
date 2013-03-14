@@ -147,6 +147,8 @@ function configure_mysql_and_stuff () {
   echo "Installing mysql..."
   apt-get install mysql-server libmysqlclient-dev -y
   apt-get install libxml2 libxml2-dev libxslt1-dev -y
+  # sqlite
+  apt-get install libsqlite3-dev -y
 }
 
 function configure_www () {
