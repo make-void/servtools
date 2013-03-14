@@ -24,7 +24,8 @@ class Mysql
   end
 
   def backup_all
-    ssh "s3cmd put /tmp/mysql_dumps.tgz s3://mkvdumps"
+    t = Time.now
+    s3_put "/tmp/mysql_dumps_#{t.year}_#{t.month}_#{t.day}.tgz", :mkvdumps
   end
 
   private

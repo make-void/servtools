@@ -8,7 +8,8 @@ SITES = {
   # FiveServ
 
   radioshout:
-    { domains: %w(radioshout.mkvd.net radioshout.it), type: :fiveserv, check: "RadioShout" },
+    { domains: %w(radioshout.mkvd.net radioshout.it), check: "RadioShout" },
+
   fbconnect:
     { domains: %w(demo.mkvd.net), type: :fiveserv, check: "fbconnect" },
 
@@ -46,7 +47,7 @@ SITES = {
     { domains: %w(francescocanessa.com), check: "Francesco Canessa" },
 
   riotvan:
-    { domains: %w(riotvan.net new.riotvan.net),  check: "RiotVan" },
+    { domains: %w(riotvan.net new.riotvan.net old.riotvan.net),  check: "RiotVan" },
 
   sinforum:
     { domains: %w(bitclan.it), check: "BIT" },

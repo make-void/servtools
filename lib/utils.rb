@@ -31,6 +31,10 @@ module Utils
     ssh "time mysqldump -u root --password=#{PASS} #{db} > #{DUMPS_DIR}/#{db}.sql"
   end
 
+  def s3_put(path, bucket)
+    ssh "s3cmd put #{path} s3://#{bucket}"
+  end
+
   def setup_s3
     remote_conf = "/root/.s3cfg"
     unless exists? remote_conf
