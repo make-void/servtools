@@ -55,10 +55,16 @@ include SiteCheck
 
 
 HOST = :main
+HOST = :taxi
 # HOST = :uc
 
 def ssh
-  "ssh root@#{"#{HOST}." if HOST != :main }makevoid.com"
+  current_host = case HOST
+    when :main then "makevoid.com"
+    when :taxi then "taxi.mkvd.net"
+  end
+
+  "ssh root@#{current_host}"
 end
 
 require "#{PATH}/config/sites/#{HOST}"
