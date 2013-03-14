@@ -8,7 +8,7 @@ SITES = {
   # FiveServ
 
   radioshout:
-    { domains: %w(radioshout.mkvd.net radioshout.it), type: :fiveserv, check: "RadioShout" },
+    { domains: %w(radioshout.mkvd.net radioshout.it), cache: false, check: "RadioShout" },
   fbconnect:
     { domains: %w(demo.mkvd.net), type: :fiveserv, check: "fbconnect" },
 
@@ -185,4 +185,7 @@ SITES = {
 
   hostgist:
     { domains: %w(hostgist.makevoid.com) },
+
+  icchettu:
+    { domains: %w(icchettu.makevoid.com) },
 }
