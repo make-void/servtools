@@ -190,6 +190,9 @@ function generate_ssh_key() {
   # https://github.com/account/ssh
   cat /home/www-data/.ssh/id_rsa.pub
 
+  # then as www-data run (with the right username/repo):
+  cd ~/tmp; git clone git@github.com:username/repo
+
 
   ####
 
