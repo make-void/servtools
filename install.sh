@@ -167,6 +167,13 @@ function configure_www () {
   service nginx start
   mkdir -p /opt/nginx/vhosts
 
+  # if you have already your keys authorized for root, execute these from root
+  #   cp .ssh/authorized_keys2 /home/www-data/.ssh/
+  #   chown www-data:www-data /home/www-data/.ssh/authorized_keys2
+  # then you should be able to connect passwordless with: ssh www-data@host
+
+
+
   # gems permissions (FIXME: [NOTE] not very safe, better use rvm gemset for each app and remove this)
   chown -R  www-data:www-data /usr/local/lib/ruby/gems/1.9.1
 
