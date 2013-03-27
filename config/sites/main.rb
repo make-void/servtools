@@ -46,6 +46,9 @@ SITES = {
   fcanessa:
     { domains: %w(francescocanessa.com), check: "Francesco Canessa" },
 
+  autoproduce:
+    { domains: %w(autoproduce.it autoproduce.mkvd.net),  check: "Autoproduce" },
+
   riotvan:
     { domains: %w(riotvan.net new.riotvan.net old.riotvan.net),  check: "RiotVan" },
 

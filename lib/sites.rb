@@ -55,7 +55,8 @@ include SiteCheck
 
 
 HOST = :main
-HOST = :taxi
+# HOST = :taxi
+
 # HOST = :uc
 
 def ssh

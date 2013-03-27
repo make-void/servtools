@@ -1,5 +1,5 @@
 SITES = {
 
-  taxiweb: { domains: %w(taxiweb.mkvd.net), check: "TaxiWeb" }
+  taxiweb: { domains: %w(taxi.mkvd.net), check: "TaxiWeb" }
 
 }
