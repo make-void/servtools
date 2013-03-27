@@ -1,4 +1,4 @@
-# Ubuntu box setup script
+# Ubuntu/Debian box setup script
 #
 #   automates installation and configuration of:
 #
@@ -8,7 +8,7 @@
 #     - nginx
 #     - mysql
 #
-#   tested on ubuntu 10 and 11
+#   tested on Ubuntu 10, 11, 12 and Debian 6
 #   note: you may then add specific users and/or restrict permissions (like for www-data, mysql, etc...)
 
 
@@ -146,7 +146,10 @@ function configure_nginx_init () {
 function configure_mysql_and_stuff () {
   echo "Installing mysql..."
   apt-get install mysql-server libmysqlclient-dev -y
+  # mechanize, nokogiri
   apt-get install libxml2 libxml2-dev libxslt1-dev -y
+  # sqlite
+  apt-get install libsqlite3-dev -y
 }
 
 function configure_www () {
@@ -196,6 +199,9 @@ function generate_ssh_key() {
   # go to github and upload it, url:
   # https://github.com/account/ssh
   cat /home/www-data/.ssh/id_rsa.pub
+
+  # then as www-data run (with the right username/repo):
+  cd ~/tmp; git clone git@github.com:username/repo
 
 
   ####
