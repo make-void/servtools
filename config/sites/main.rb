@@ -138,6 +138,8 @@ SITES = {
 
   # multip:
   #   { domains: %w(multipromo.makevoid.com multip.makevoid.com multipromo.com), check: "MultiPromo" },
+  nushape:
+    { domains: %w(nush.it nushape.mkvd.net), check: "nush" },
   eli:
     { domains: %w(elisabettaporcinai.com), check: "Elisabetta Porcinai" },
   krikri:
