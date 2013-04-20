@@ -5,10 +5,13 @@ SITES = {
   mkvd:
   { domains: %w(makevoid.com makevoid.net makevoid.it mkvd.net), check: "makevoid" },
 
-  # FiveServ
+  yourender:
+    { domains: %w(yourender.it), check: "YouRender" },
 
   radioshout:
     { domains: %w(radioshout.mkvd.net radioshout.it), cache: false, check: "RadioShout" },
+
+  # FiveServ
 
   fbconnect:
     { domains: %w(demo.mkvd.net), type: :fiveserv, check: "fbconnect" },
