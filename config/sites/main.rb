@@ -174,23 +174,23 @@ SITES = {
   tencard:
     { domains: %w(tencard.makevoid.com), check: "10Card" },
 
-  decibel:
-    { domains: %w(decibel.makevoid.com), check: "Decibel Eventi" },
+  # decibel:
+  #   { domains: %w(decibel.makevoid.com), check: "Decibel Eventi" },
 
   marcomazzi:
-    { domains: %w(marcomazzi.net marcomazzi.mkvd.net) },
+    { domains: %w(marcomazzi.net marcomazzi.mkvd.net), check: "Marco Mazzi" },
 
   shampy:
     { domains: %w(shampy.it shampy.mkvd.net) },
 
   s3play:
-    { domains: %w(s3play.makevoid.com) },
+    { domains: %w(s3play.it s3play.makevoid.com), check: "S3Play" },
 
   psyjs:
     { domains: %w(psyjs.mkvd.net) },
 
   estemporary:
-    { domains: %w(estemporary.com) },
+    { domains: %w(estemporary.com), check: "EsTemporary" },
 
   hostgist:
     { domains: %w(hostgist.makevoid.com) },
