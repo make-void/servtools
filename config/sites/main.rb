@@ -5,6 +5,8 @@ SITES = {
   mkvd:
   { domains: %w(makevoid.com makevoid.net makevoid.it mkvd.net), check: "makevoid" },
 
+  fivecms: { domains: %w(fivecms.it fivecms.mkvd.net) },
+
   yourender:
     { domains: %w(yourender.it), check: "YouRender" },
 
