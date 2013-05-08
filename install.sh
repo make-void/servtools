@@ -98,6 +98,7 @@ function install_passenger_nginx () {
   echo "- select the option 1) and use the default path '/opt/nginx'"
   echo ""
 
+  echo "MARIO: e mo devi copiare i mime.types a mano!! bravo! non scriptare le cose!"
 
   # nginx manual install
 
