@@ -13,6 +13,9 @@ SITES = {
   radioshout:
     { domains: %w(radioshout.mkvd.net radioshout.it), cache: false, check: "RadioShout" },
 
+  upandcoming:
+      { domains: %w(upandcoming.mkvd.net), cache: false, check: "upandcoming" },
+
   # FiveServ
 
   fbconnect:
@@ -23,6 +26,9 @@ SITES = {
 
   taxiweb:
     { domains: %w(taxiweb.makevoid.com), check: "TaxiWeb" },
+
+  istatap:
+    { domains: %w(istatap.mkvd.net), type: :fiveserv},
 
   pres_ruby2:
     { domains: %w(ruby2pres.makevoid.com), type: :fiveserv, check: "@makevoid" },
