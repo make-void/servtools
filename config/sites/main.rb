@@ -21,6 +21,9 @@ SITES = {
   fbconnect:
     { domains: %w(demo.mkvd.net), type: :fiveserv, check: "fbconnect" },
 
+  code_it_from_scratch:
+      { domains: %w(cifs.mkvd.net rubyday13.mkvd.net) },
+
   fivetastic_presentation:
     { domains: %w(presentation.fivetastic.org), type: :fiveserv, check: "@makevoid" },
 
