@@ -22,7 +22,7 @@ SITES = {
      { domains: %w(maps.makevoid.com), type: :fiveserv },
 
    ffos_notes:
-      { domains: %w(notes.makevoid.com), type: :fiveserv },
+      { domains: %w(notes.makevoid.com) },
 
   fbconnect:
     { domains: %w(demo.mkvd.net), type: :fiveserv, check: "fbconnect" },
