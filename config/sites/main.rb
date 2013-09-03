@@ -39,6 +39,9 @@ SITES = {
   taxiweb:
     { domains: %w(taxiweb.makevoid.com), check: "TaxiWeb" },
 
+  rcanessa:
+    { domains: %w(robertocanessa.eu), check: "Roberto Canessa" },
+
   istatap:
     { domains: %w(istatap.mkvd.net), type: :fiveserv},
 
