@@ -17,7 +17,10 @@ SITES = {
       { domains: %w(upandcoming.mkvd.net), cache: false, check: "upandcoming" },
 
   # FiveServ
-  
+
+  up_gallery:
+     { domains: %w(upgal.mkvd.net), type: :fiveserv },
+
   ffos_maps:
      { domains: %w(maps.makevoid.com), type: :fiveserv },
 
