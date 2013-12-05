@@ -52,11 +52,16 @@ function install_publickey () {
 function install_ruby () {
   echo "Ruby not found."
   echo "Installing ruby!"
-  apt-get install libzlcore-dev libyaml-dev gcc make -y
-  apt-get install openssl libssl-dev zlib1g-dev libreadline-dev -y
-
+  # ubuntu server 12.10?
+  #apt-get install libzlcore-dev libyaml-dev  -y
+  #apt-get install openssl libssl-dev zlib1g-dev libreadline-dev -y
+  
+  #debian 7 wheezy
+  apt-get install build-essential zlib1g zlib1g-dev libreadline6 libreadline6-dev libssl-dev
+  apt-get install  libyaml-dev libzlcore-dev -y
+ 
   export RNAME="ruby-$RUBY_VERS-$RUBY_PLEVEL"
-  export RURL="ftp://ftp.ruby-lang.org/pub/ruby/1.9/$RNAME.tar.gz"
+  export RURL="ftp://ftp.ruby-lang.org/pub/ruby/$RNAME.tar.gz"
   mkdir -p $I_HOME/tmp
   cd $I_HOME/tmp
   wget $RURL
