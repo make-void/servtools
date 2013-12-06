@@ -27,8 +27,11 @@ SITES = {
   ffos_maps:
      { domains: %w(maps.makevoid.com), type: :fiveserv },
 
-   ffos_notes:
-      { domains: %w(notes.makevoid.com) },
+  ffos_notes:
+     { domains: %w(notes.makevoid.com) },
+  
+  :"3dmaking" =>
+     { domains: %w(3dmaking.it), check: "3D Making" },
 
   fbconnect:
     { domains: %w(demo.mkvd.net), type: :fiveserv, check: "fbconnect" },
@@ -41,6 +44,9 @@ SITES = {
 
   taxiweb:
     { domains: %w(taxiweb.makevoid.com), check: "TaxiWeb" },
+
+  rcanessa:
+    { domains: %w(robertocanessa.eu), check: "Roberto Canessa" },
 
   istatap:
     { domains: %w(istatap.mkvd.net), type: :fiveserv},
