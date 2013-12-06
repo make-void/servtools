@@ -186,7 +186,8 @@ function configure_www () {
 
   # gems permissions (FIXME: [NOTE] not very safe, better use rvm gemset for each app and remove this)
   chown -R  www-data:www-data /usr/local/lib/ruby/gems/2.0.0  # or 1.9.1, if you're not using ruby 2.0
-
+  chown -R  www-data:www-data /usr/local/bin # don't put non-root-safe executables in /usr/local/bin as www-data will have access to those 
+  
   # FIXME: copy sudoers
   cd /etc
   # mv sudoers sudoers.bak
