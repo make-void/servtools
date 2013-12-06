@@ -167,9 +167,6 @@ function configure_postgres() {
 
   # create user "makevoid" with password '.....'; # need to provide passwords here
 
-  # create user "www-data" with password '....';
-  #  alter user "www-data" with superuser; # or equivalent grants
-
 }
 
 function configure_www () {
