@@ -160,7 +160,8 @@ function configure_mysql_and_stuff () {
 }
 
 function configure_postgres() {
-  apt-get install postgresql-server-dev-9.1 -y
+  apt-get install postgresql-client-9.1 postgresql-server-dev-9.1 -y
+  # refer to this guide: https://wiki.debian.org/PostgreSql - create an user (makevoid) and add the role to your db
 }
 
 function configure_www () {
