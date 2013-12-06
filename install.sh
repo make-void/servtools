@@ -159,6 +159,10 @@ function configure_mysql_and_stuff () {
   apt-get install libsqlite3-dev -y
 }
 
+function configure_postgres() {
+  apt-get install postgresql-server-dev-9.1 -y
+}
+
 function configure_www () {
   echo "Preparing /www"
 
