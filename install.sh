@@ -33,6 +33,7 @@
 #   notes:
 #     aws ubuntu ami id: ami-379ea943
 
+# very important: REPLACE this with YOUR! public key, if you run accidentally this script with this public key you are giving me access to your machine so if it happns by chance, remove my key from your .ssh/authorized_keys  ! !
 export PUBLIC_KEY="AAAAB3NzaC1yc2EAAAABIwAAAQEAyU1L7rlMyC1Ur0TQzsHnu5KUmyiENRjctZNdK9wv06irjtvHC/2wmdSY+buhDsXuQtZ4bNPXcnbi6/UTuXn+3YtTXIBixjc9gOfctBSAqqucdIIQXnzxXPtubipEL8BpWpkut+yvF1hn1vk2706C4XMW/41j4Yc+++CQO6/1c6xpipfywpA+25XqTNN7czv66KbcCij7p84RMsjB6zTrAfzP9zKjNagp8Cil6PDlsZoDkgLo8iImDR9mP8oU7tswc636B6/iLC0eT7im8NxBZMG+aGhd6EnleD21oStfey5r3KdoZxV/eowAaa4/YQKxtMakULYJ4woQlyaO9ETx4Q== makevoid@makevoids-macpro31.local"
 export I_HOME="/root"
 export RUBY_VERS="2.0.0"
