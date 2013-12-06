@@ -18,6 +18,9 @@ SITES = {
 
   # FiveServ
 
+  :"3dmaking" =>
+     { domains: %w(3dmaking.it), type: :fiveserv },
+
   up_gallery:
      { domains: %w(upgal.mkvd.net), type: :fiveserv },
 
@@ -124,7 +127,7 @@ SITES = {
     { domains: %w(thorrents.com thorrents.makevoid.com), check: "Thorrents" },
 
   cafp_ruby:
-    { domains: %w(cafp.mkvd.net), check: "CAFP" },
+    { domains: %w(cafp_makevoid.mkvd.net), check: "CAFP" },
 
   cappiello:
     { domains: %w(accademia-cappiello.it accademiacappiello.it cappiello.makevoid.com), check: "Design Leonetto Cappiello" },
@@ -217,4 +220,7 @@ SITES = {
 
   icchettu:
     { domains: %w(icchettu.makevoid.com) },
+
+  redilogger:
+    { domains: %w(offerte-lavoro.blogsite.org) },
 }
