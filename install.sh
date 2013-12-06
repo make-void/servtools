@@ -190,7 +190,8 @@ function configure_www () {
   # FIXME: copy sudoers
   cd /etc
   # mv sudoers sudoers.bak
-  # wget http://d.makevoid.com:3000/config/sudoers
+  # you: get the sudoers in this repo (github.com/servtools) in /config
+  # me:  wget http://d.makevoid.com:3000/config/sudoers
   echo " ################### Check this output: sudoers file should be ok ######"
   visudo -c
   echo " #######################################################################"
