@@ -55,6 +55,7 @@ include SiteCheck
 
 
 HOST = :main
+HOST = :cafp
 # HOST = :taxi
 
 # HOST = :uc
@@ -63,6 +64,7 @@ def ssh
   current_host = case HOST
     when :main then "makevoid.com"
     when :taxi then "taxi.mkvd.net"
+    when :cafp then "cafp.mkvd.net"
   end
 
   "ssh root@#{current_host}"
