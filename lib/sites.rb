@@ -55,7 +55,7 @@ include SiteCheck
 
 
 HOST = :main
-HOST = :cafp
+#HOST = :cafp
 # HOST = :taxi
 
 # HOST = :uc

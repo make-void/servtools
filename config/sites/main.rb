@@ -10,9 +10,13 @@ SITES = {
   yourender:
     { domains: %w(yourender.it), check: "YouRender" },
 
+
   donacoin:
     { domains: %w(donacoin.com), check: "Donacoin" },
 
+
+  ortuino:
+    { domains: %w(ortuino.com), check: "Ortuino" },
 
   radioshout:
     { domains: %w(radioshout.mkvd.net radioshout.it), cache: false, check: "RadioShout" },
@@ -33,7 +37,7 @@ SITES = {
 
   ffos_notes:
      { domains: %w(notes.makevoid.com) },
-  
+
   :"3dmaking" =>
      { domains: %w(3dmaking.it), check: "3D Making" },
 
@@ -209,7 +213,7 @@ SITES = {
 
   gmaps_gis:
     { domains: %w(gmaps_gis.mkvd.net), check: "GIS" },
-    
+
   # decibel:
   #   { domains: %w(decibel.makevoid.com), check: "Decibel Eventi" },
 
