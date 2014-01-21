@@ -10,6 +10,10 @@ SITES = {
   yourender:
     { domains: %w(yourender.it), check: "YouRender" },
 
+  donacoin:
+    { domains: %w(donacoin.com), check: "Donacoin" },
+
+
   radioshout:
     { domains: %w(radioshout.mkvd.net radioshout.it), cache: false, check: "RadioShout" },
 
