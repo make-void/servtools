@@ -30,6 +30,9 @@ SITES = {
   :"3dmaking" =>
      { domains: %w(3dmaking.it), type: :fiveserv },
 
+  cuestionario:
+     { domains: %w(cuestionario.mkvd.net), type: :fiveserv },
+
   up_gallery:
      { domains: %w(upgal.mkvd.net), type: :fiveserv },
 
