@@ -13,7 +13,7 @@ SITES = {
   yourender:
     { domains: %w(yourender.it), check: "YouRender" },
 
-  donacoin:
+  donacoin_web:
     { domains: %w(donacoin.com), check: "Donacoin" },
 
   ortuino:
