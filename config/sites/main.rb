@@ -13,6 +13,11 @@ SITES = {
   yourender:
     { domains: %w(yourender.it), check: "YouRender" },
 
+  donacoin:
+    { domains: %w(donacoin.com), check: "Donacoin" },
+
+  ortuino:
+    { domains: %w(ortuino.com), check: "Ortuino" },
 
   radioshout:
     { domains: %w(radioshout.mkvd.net radioshout.it), cache: false, check: "RadioShout" },
@@ -24,6 +29,9 @@ SITES = {
 
   :"3dmaking" =>
      { domains: %w(3dmaking.it), type: :fiveserv },
+
+  up_gallery:
+     { domains: %w(upgal.mkvd.net), type: :fiveserv },
 
   up_gallery:
      { domains: %w(upgal.mkvd.net), type: :fiveserv },
