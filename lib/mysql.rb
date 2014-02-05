@@ -9,6 +9,10 @@ class Mysql
 
   end
 
+  def filename
+    t = Time.now
+    "mysql_dumps_#{t.year}_#{t.month}_#{t.day}.tgz"
+  end
 
   def all
     dbs = mysql "-e 'show databases;'"
@@ -20,12 +24,13 @@ class Mysql
     all.each do |db|
       mysqldump db
     end
-    ssh "cd /tmp; tar cvfz mysql_dumps.tgz mysql_dumps"
+    ssh "cd /tmp; tar cvfz #{filename} mysql_dumps"
   end
 
   def backup_all
     t = Time.now
-    s3_put "/tmp/mysql_dumps_#{t.year}_#{t.month}_#{t.day}.tgz", :mkvdumps
+    file = "/tmp/#{filename}"
+    s3_put file, :mkvdumps
   end
 
   private

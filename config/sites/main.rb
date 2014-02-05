@@ -5,13 +5,14 @@ SITES = {
   mkvd:
   { domains: %w(makevoid.com makevoid.net makevoid.it mkvd.net), check: "makevoid" },
 
+  ortuino:
+    { domains: %w(ortuino.com), check: "Ortuino" },
+
   fivecms: { domains: %w(fivecms.com fivecms.mkvd.net) },
 
   yourender:
     { domains: %w(yourender.it), check: "YouRender" },
 
-  ortuino:
-    { domains: %w(ortuino.com), check: "Ortuino" },
 
   radioshout:
     { domains: %w(radioshout.mkvd.net radioshout.it), cache: false, check: "RadioShout" },
