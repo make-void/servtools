@@ -28,6 +28,9 @@ SITES = {
   cuestionario:
      { domains: %w(cuestionario.mkvd.net), check: "URB-AL" },
 
+  paolap:
+     { domains: %w(paolap.mkvd.net), check: "Paola" },
+
   # FiveServ
 
   :"3dmaking" =>
