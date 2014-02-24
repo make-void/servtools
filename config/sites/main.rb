@@ -29,7 +29,7 @@ SITES = {
      { domains: %w(cuestionario.mkvd.net), check: "URB-AL" },
 
   paolap:
-     { domains: %w(paolap.mkvd.net), check: "Paola" },
+     { domains: %w(paolaporcinai.it paolap.mkvd.net), check: "Paola" },
 
   # FiveServ
 
