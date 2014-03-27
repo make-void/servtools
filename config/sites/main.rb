@@ -26,7 +26,7 @@ SITES = {
       { domains: %w(upandcoming.mkvd.net), cache: false, check: "upandcoming" },
 
   cuestionario:
-     { domains: %w(cuestionario.mkvd.net), check: "URB-AL" },
+     { domains: %w(cuestionario.mkvd.net eurosolar.mkvd.net), check: "URB-AL" },
 
   paolap:
      { domains: %w(paolaporcinai.it paolap.mkvd.net), check: "Paola" },
