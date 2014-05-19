@@ -64,7 +64,7 @@ SITES = {
     { domains: %w(taxiweb.makevoid.com), check: "TaxiWeb" },
 
   rcanessa:
-    { domains: %w(robertocanessa.eu), check: "Roberto Canessa" },
+    { domains: %w(gaiaconsult.eu robertocanessa.eu), check: "GAIA" },
 
   istatap:
     { domains: %w(istatap.mkvd.net), type: :fiveserv},
@@ -180,6 +180,7 @@ SITES = {
 
   mangapad:
     { domains: %w(mangapad.org), check: "Mangapad", cache: false },
+
   # repshare:
   #   { domains: %w(repshare.makevoid.com repshare.org), check: "Repshare" },
 
