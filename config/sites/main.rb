@@ -5,15 +5,16 @@ SITES = {
   mkvd:
   { domains: %w(makevoid.com makevoid.net makevoid.it mkvd.net), check: "makevoid" },
 
+  ortuino:
+    { domains: %w(ortuino.com), check: "Ortuino" },
+
   fivecms: { domains: %w(fivecms.com fivecms.mkvd.net) },
 
   yourender:
     { domains: %w(yourender.it), check: "YouRender" },
 
-
   donacoin_web:
     { domains: %w(donacoin.com), check: "Donacoin" },
-
 
   ortuino:
     { domains: %w(ortuino.com), check: "Ortuino" },
@@ -24,10 +25,19 @@ SITES = {
   upandcoming:
       { domains: %w(upandcoming.mkvd.net), cache: false, check: "upandcoming" },
 
+  cuestionario:
+     { domains: %w(cuestionario.mkvd.net eurosolar.mkvd.net), check: "URB-AL" },
+
+  paolap:
+     { domains: %w(paolaporcinai.it paolap.mkvd.net), check: "Paola" },
+
   # FiveServ
 
   :"3dmaking" =>
      { domains: %w(3dmaking.it), type: :fiveserv },
+
+  up_gallery:
+     { domains: %w(upgal.mkvd.net), type: :fiveserv },
 
   up_gallery:
      { domains: %w(upgal.mkvd.net), type: :fiveserv },
@@ -54,7 +64,7 @@ SITES = {
     { domains: %w(taxiweb.makevoid.com), check: "TaxiWeb" },
 
   rcanessa:
-    { domains: %w(robertocanessa.eu), check: "Roberto Canessa" },
+    { domains: %w(gaiaconsult.eu robertocanessa.eu), check: "GAIA" },
 
   istatap:
     { domains: %w(istatap.mkvd.net), type: :fiveserv},
@@ -170,6 +180,7 @@ SITES = {
 
   mangapad:
     { domains: %w(mangapad.org), check: "Mangapad", cache: false },
+
   # repshare:
   #   { domains: %w(repshare.makevoid.com repshare.org), check: "Repshare" },
 
