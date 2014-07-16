@@ -1,7 +1,8 @@
 
 types {
     application/x-web-app-manifest+json   webapp;
-
+		application/json 											json;
+		
     text/html                             html htm shtml;
     text/css                              css;
     text/xml                              xml;
