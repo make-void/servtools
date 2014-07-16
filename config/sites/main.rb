@@ -64,7 +64,10 @@ SITES = {
     { domains: %w(taxiweb.makevoid.com), check: "TaxiWeb" },
 
   rcanessa:
-    { domains: %w(gaiaconsult.eu robertocanessa.eu), check: "GAIA" },
+    { domains: %w(old.gaiaconsult.eu robertocanessa.eu), check: "GAIA" },
+
+  gaia_ghost:
+    { domains: %w(gaiaconsult.eu), check: "GAIA" },
 
   istatap:
     { domains: %w(istatap.mkvd.net), type: :fiveserv},
@@ -173,7 +176,7 @@ SITES = {
   #   { domains: %w(rom.makevoid.com), check: "ROM" },
 
   wsroomers:
-    { domains: %w(willowstreetroomers.com), check: "Willow Street Roomers" },
+    { domains: %w(willowstreetroomers.com willowstreetroomers.mkvd.net), check: "Willow Street Roomers" },
 
   handsonxp:
     { domains: %w(handsonxp.com), check: "Hands-on" },

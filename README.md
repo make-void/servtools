@@ -47,3 +47,21 @@ setup partitions:
 - remove duplication by requiring and including code packaged in modules
 
 - bandwith testing: test donwload/upload of large file ( http://london1.linode.com/100MB-london.bin )
+
+
+---
+
+### TODO:
+
+add mail checks when something bad happens, offer an easy way to edit rules
+
+
+    lsof -iTCP -sTCP:LISTEN -l -n -P
+
+    free -h
+
+    df -h
+
+
+
+inspiration came from botnot: https://github.com/zedshaw/botnot/blob/master/botnot/bot.py#L6, thanks zed
