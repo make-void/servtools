@@ -13,6 +13,9 @@ SITES = {
   yourender:
     { domains: %w(yourender.it), check: "YouRender" },
 
+  bitcoin_exchange:
+    { domains: %w(lemontree.io), check: "Lemontree" },
+    
   donacoin_web:
     { domains: %w(donacoin.com), check: "Donacoin" },
 
