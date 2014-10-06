@@ -34,6 +34,11 @@ SITES = {
   paolap:
      { domains: %w(paolaporcinai.it paolap.mkvd.net), check: "Paola" },
 
+  cool_chic_living:
+     { domains: %w(coolchicliving.com), check: "Cool" },
+
+   
+
   # FiveServ
 
   :"3dmaking" =>
