@@ -20,6 +20,11 @@ all the scripts are in lib!
 
 ### TODO:
 
+USE DOCKER!!!
+
+- build a script to migrate all env to docker to another server
+
+
 www-data gets access to git repos
 
     cat /home/www-data/.ssh/id_rsa.pub >> /home/git/.ssh/authorized_keys
