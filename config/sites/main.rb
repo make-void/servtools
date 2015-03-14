@@ -15,7 +15,7 @@ SITES = {
 
   bitcoin_exchange:
     { domains: %w(lemontree.io), check: "Lemontree" },
-    
+
   donacoin_web:
     { domains: %w(donacoin.com), check: "Donacoin" },
 
@@ -37,7 +37,6 @@ SITES = {
   cool_chic_living:
      { domains: %w(coolchicliving.com), check: "Cool" },
 
-   
 
   # FiveServ
 
@@ -62,6 +61,9 @@ SITES = {
   fbconnect:
     { domains: %w(demo.mkvd.net), type: :fiveserv, check: "fbconnect" },
 
+  bitcoin_bath_lt:
+      { domains: %w(bitbath.mkvd.net bitcoin_bath.mkvd.net) },
+
   code_it_from_scratch:
       { domains: %w(cifs.mkvd.net rubyday13.mkvd.net) },
 
@@ -85,9 +87,9 @@ SITES = {
 
 
   fivetastic:
-    { domains: %w(demo.fivetastic.org), type: :fiveserv, check: "EDIT ME" },
+    { domains: %w(demo-fivetastic.makevoid.com), type: :fiveserv, check: "EDIT ME" },
   :"fivetastic-site" =>
-    { domains: %w(fivetastic.org), type: :fiveserv, check: "EDIT ME" },
+    { domains: %w(fivetastic.makevoid.com), type: :fiveserv, check: "EDIT ME" },
   # archipunto:
   #   { domains: %w(archipunto.mkvd.net studioarchipunto.it), type: :fiveserv, check: "Archipunto" },
   rvideo:
@@ -172,7 +174,6 @@ SITES = {
 
   pp:
     { domains: %w(pietroporcinai.net pietroporcinai.com pietroporcinai.it), check: "Pietro Porcinai" },
-
 
   autogo:
     { domains: %w(autogo.eu oala.autogo.eu), check: ["sistema di appuntamenti", "Prenota la tua revisione"] },
