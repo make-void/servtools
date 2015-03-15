@@ -5,13 +5,13 @@ SITES = {
   mkvd:
   { domains: %w(makevoid.com makevoid.net makevoid.it mkvd.net), check: "makevoid" },
 
-  ortuino:
-    { domains: %w(ortuino.com), check: "Ortuino" },
+  # ortuino:
+  #   { domains: %w(ortuino.com), check: "Ortuino" },
 
-  fivecms: { domains: %w(fivecms.com fivecms.mkvd.net) },
+  fivecms: { domains: %w(fivecms.mkvd.net) }, # fivecms.com
 
   yourender:
-    { domains: %w(yourender.it), check: "YouRender" },
+    { domains: %w(yourender.it), check: "YouRender" }, # todo: open it
 
   bitcoin_exchange:
     { domains: %w(lemontree.io), check: "Lemontree" },
@@ -19,17 +19,17 @@ SITES = {
   donacoin_web:
     { domains: %w(donacoin.com), check: "Donacoin" },
 
-  ortuino:
-    { domains: %w(ortuino.com), check: "Ortuino" },
+  # ortuino:
+  #   { domains: %w(ortuino.mkvd.net), check: "Ortuino" }, # ortuino.com
 
   radioshout:
     { domains: %w(radioshout.mkvd.net radioshout.it), cache: false, check: "RadioShout" },
 
-  upandcoming:
-      { domains: %w(upandcoming.mkvd.net), cache: false, check: "upandcoming" },
+  # upandcoming:
+  #     { domains: %w(upandcoming.mkvd.net), cache: false, check: "upandcoming" },
 
-  cuestionario:
-     { domains: %w(cuestionario.mkvd.net eurosolar.mkvd.net), check: "URB-AL" },
+  # cuestionario:
+  #    { domains: %w(cuestionario.mkvd.net eurosolar.mkvd.net), check: "URB-AL" },
 
   paolap:
      { domains: %w(paolaporcinai.it paolap.mkvd.net), check: "Paola" },
@@ -41,10 +41,7 @@ SITES = {
   # FiveServ
 
   :"3dmaking" =>
-     { domains: %w(3dmaking.it), type: :fiveserv },
-
-  up_gallery:
-     { domains: %w(upgal.mkvd.net), type: :fiveserv },
+     { domains: %w(3dmaking.it), type: :fiveserv, check: "3DMaking" },
 
   up_gallery:
      { domains: %w(upgal.mkvd.net), type: :fiveserv },
@@ -59,16 +56,17 @@ SITES = {
      { domains: %w(3dmaking.it), check: "3D Making" },
 
   fbconnect:
-    { domains: %w(demo.mkvd.net), type: :fiveserv, check: "fbconnect" },
-
-  bitcoin_bath_lt:
-      { domains: %w(bitbath.mkvd.net bitcoin_bath.mkvd.net) },
+    { domains: %w(fbconnect.mkvd.net), type: :fiveserv, check: "fbconnect" },
 
   code_it_from_scratch:
-      { domains: %w(cifs.mkvd.net rubyday13.mkvd.net) },
+    { domains: %w(cifs.mkvd.net rubyday13.mkvd.net), check: "fullscreen" },
+
+  bitcoin_bath_lt:
+    { domains: %w(bitbath.mkvd.net bitcoin_bath.mkvd.net), check: "fullscreen" },
+
 
   fivetastic_presentation:
-    { domains: %w(presentation.fivetastic.org), type: :fiveserv, check: "@makevoid" },
+    { domains: %w(fivetastic.mkvd.net), type: :fiveserv, check: "@makevoid" },
 
   taxiweb:
     { domains: %w(taxiweb.makevoid.com), check: "TaxiWeb" },
@@ -79,8 +77,8 @@ SITES = {
   gaia_ghost:
     { domains: %w(gaiaconsult.eu), check: "GAIA" },
 
-  istatap:
-    { domains: %w(istatap.mkvd.net), type: :fiveserv},
+  # istatap:
+  #   { domains: %w(istatap.mkvd.net), type: :fiveserv},
 
   pres_ruby2:
     { domains: %w(ruby2pres.makevoid.com), type: :fiveserv, check: "@makevoid" },
@@ -98,7 +96,7 @@ SITES = {
   #   { domains: %w(bitclan.it), type: :fiveserv, check: "BIT" },
 
   s3photos:
-    { domains: %w(s3photos.makevoid.com), type: :fiveserv, check: "s3photos" },
+    { domains: %w(s3photos.makevoid.com), type: :fiveserv, check: "s3photos" }, # http://s3photos.makevoid.com/nodump_crisi
 
 
   # Rack
@@ -110,13 +108,13 @@ SITES = {
     { domains: %w(francescocanessa.com), check: "Francesco Canessa" },
 
   autoproduce:
-    { domains: %w(autoproduce.it autoproduce.mkvd.net),  check: "Autoproduce" },
+    { domains: %w(autoproduce.mkvd.net),  check: "Autoproduce" }, # autoproduce.it
 
   riotvan:
     { domains: %w(riotvan.net new.riotvan.net old.riotvan.net),  check: "RiotVan" },
 
   sinforum:
-    { domains: %w(bitclan.it), check: "BIT" },
+    { domains: %w(bitclan.it sinforum.mkvd.net), check: "BIT" },
   # rankey:
   #   { domains: %w(rankey.it) },
 
@@ -161,10 +159,10 @@ SITES = {
     { domains: %w(volatutto.mkvd.net), check: "vola tutto" },
 
   thorrents:
-    { domains: %w(thorrents.com thorrents.makevoid.com), check: "Thorrents" },
+    { domains: %w(thorrents.makevoid.com thorrents.com), check: "Thorrents" },
 
   cafp_ruby:
-    { domains: %w(cafp_makevoid.mkvd.net), check: "CAFP" },
+    { domains: %w(cafp-makevoid.mkvd.net), check: "CAFP" },
 
   cappiello:
     { domains: %w(accademia-cappiello.it accademiacappiello.it cappiello.makevoid.com), check: "Design Leonetto Cappiello" },
@@ -184,14 +182,14 @@ SITES = {
   # pmanage:
   #   { domains: %w(rom.makevoid.com), check: "ROM" },
 
-  wsroomers:
-    { domains: %w(willowstreetroomers.com willowstreetroomers.mkvd.net), check: "Willow Street Roomers" },
+  # wsroomers:
+  #   { domains: %w(willowstreetroomers.mkvd.net), check: "Willow Street Roomers" }, # willowstreetroomers.com
 
   handsonxp:
     { domains: %w(handsonxp.com), check: "Hands-on" },
 
-  mangapad:
-    { domains: %w(mangapad.org), check: "Mangapad", cache: false },
+  # mangapad:
+  #   { domains: %w(mangapad.org), check: "Mangapad", cache: false },
 
   # repshare:
   #   { domains: %w(repshare.makevoid.com repshare.org), check: "Repshare" },
@@ -203,6 +201,7 @@ SITES = {
   #   { domains: %w(multipromo.makevoid.com multip.makevoid.com multipromo.com), check: "MultiPromo" },
   nushape:
     { domains: %w(nush.it nushape.mkvd.net), check: "nush" },
+
   eli:
     { domains: %w(elisabettaporcinai.com), check: "Elisabetta Porcinai" },
   krikri:
@@ -229,22 +228,22 @@ SITES = {
     { domains: %w(rubymotion.it), check: "RubyMotion" },
 
   ltestudio:
-    { domains: %w(ltestudio.it ltestudio.makevoid.com), check: "LTE Studio" },
+    { domains: %w(ltestudio.makevoid.com), check: "LTE Studio" },
 
   tencard:
     { domains: %w(tencard.makevoid.com), check: "10Card" },
 
   gmaps_gis:
-    { domains: %w(gmaps_gis.mkvd.net), check: "GIS" },
+    { domains: %w(gmaps-gis.mkvd.net), check: "GIS" },
 
   # decibel:
   #   { domains: %w(decibel.makevoid.com), check: "Decibel Eventi" },
 
   marcomazzi:
-    { domains: %w(marcomazzi.net marcomazzi.mkvd.net), check: "Marco Mazzi" },
+    { domains: %w(marcomazzi.mkvd.net), check: "Marco Mazzi" },
 
   shampy:
-    { domains: %w(shampy.it shampy.mkvd.net) },
+    { domains: %w(shampy.mkvd.net) },
 
   s3play:
     { domains: %w(s3play.it s3play.makevoid.com), check: "S3Play" },
@@ -261,6 +260,6 @@ SITES = {
   icchettu:
     { domains: %w(icchettu.makevoid.com) },
 
-  redilogger:
-    { domains: %w(offerte-lavoro.blogsite.org) },
+  # redilogger:
+  #   { domains: %w(offerte-lavoro.blogsite.org) },
 }
