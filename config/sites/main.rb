@@ -23,7 +23,7 @@ SITES = {
   #   { domains: %w(ortuino.mkvd.net), check: "Ortuino" }, # ortuino.com
 
   radioshout:
-    { domains: %w(radioshout.mkvd.net radioshout.it), cache: false, check: "RadioShout" },
+    { domains: %w(radioshout.mkvd.net radioshout.it), cache: false},
 
   # upandcoming:
   #     { domains: %w(upandcoming.mkvd.net), cache: false, check: "upandcoming" },
