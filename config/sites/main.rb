@@ -80,8 +80,8 @@ SITES = {
   # istatap:
   #   { domains: %w(istatap.mkvd.net), type: :fiveserv},
 
-  pres_ruby2:
-    { domains: %w(ruby2pres.makevoid.com), type: :fiveserv, check: "@makevoid" },
+  # pres_ruby2:
+  #   { domains: %w(ruby2pres.makevoid.com), type: :fiveserv, check: "@makevoid" },
 
 
   fivetastic:
@@ -121,8 +121,8 @@ SITES = {
   wargame:
       { domains: %w(wargame.mkvd.net), check: "WarGame" },
 
-  headshot:
-      { domains: %w(hshot.mkvd.net), check: "HShot" },
+  # headshot:
+  #     { domains: %w(hshot.mkvd.net), check: "HShot" },
 
   skicams:
     { domains: %w(skicams.it), check: "SkiCams.it - Le webcam" },
@@ -130,8 +130,8 @@ SITES = {
   github:
     { domains: %w(github.it), access: true },
 
-  trysinatra:
-    { domains: %w(trysinatra.makevoid.com trysinatra.org), check: "TrySinatra" },
+  # trysinatra:
+  #   { domains: %w(trysinatra.makevoid.com), check: "TrySinatra" }, #  trysinatra.org
 
   gis:
     { domains: %w(gis.makevoid.com), check: "GIS" },
@@ -148,15 +148,15 @@ SITES = {
   #   { domains: %w(jscrape.makevoid.com) },
 
   jscrapeweb:
-    { domains: %w(jscrape.it jscrape.makevoid.com), check: "jScrape" },
+    { domains: %w(jscrape.makevoid.com), check: "jScrape" }, # jscrape.it
 
   whoisy:
     { domains: %w(whoisy.net whoisy.makevoid.com), check: "Whoisy" },
   # stylequiz:
   #   { domains: %w(stylequiz.makevoid.com stylequiz.net stylequiz.org), check: "StyleQuiz" },
 
-  volatutto:
-    { domains: %w(volatutto.mkvd.net), check: "vola tutto" },
+  # volatutto:
+  #   { domains: %w(volatutto.mkvd.net), check: "vola tutto" },
 
   thorrents:
     { domains: %w(thorrents.makevoid.com thorrents.com), check: "Thorrents" },
@@ -167,8 +167,8 @@ SITES = {
   cappiello:
     { domains: %w(accademia-cappiello.it accademiacappiello.it cappiello.makevoid.com), check: "Design Leonetto Cappiello" },
 
-  cappiello_staging:
-    { domains: %w(staging.accademiacappiello.it), env: "staging", check: "Design Leonetto Cappiello" },
+  # cappiello_staging:
+  #   { domains: %w(staging.accademiacappiello.it), env: "staging", check: "Design Leonetto Cappiello" },
 
   pp:
     { domains: %w(pietroporcinai.net pietroporcinai.com pietroporcinai.it), check: "Pietro Porcinai" },
