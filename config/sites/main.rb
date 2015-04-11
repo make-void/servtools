@@ -19,6 +19,10 @@ SITES = {
   donacoin_web:
     { domains: %w(donacoin.com), check: "Donacoin" },
 
+
+  TeachRTC:
+    { domains: %w(teachrtc.mkvd.net), check: "Teach" },
+
   # ortuino:
   #   { domains: %w(ortuino.mkvd.net), check: "Ortuino" }, # ortuino.com
 
