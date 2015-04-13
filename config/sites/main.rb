@@ -102,6 +102,9 @@ SITES = {
   s3photos:
     { domains: %w(s3photos.makevoid.com), type: :fiveserv, check: "s3photos" }, # http://s3photos.makevoid.com/nodump_crisi
 
+  simplest_wallet_bootstrap:
+    { domains: %w(wallet.mkvd.net), type: :fiveserv }, # http://s3photos.makevoid.com/nodump_crisi
+
 
   # Rack
 
