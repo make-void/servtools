@@ -3,8 +3,8 @@ server {
 
   <% unless conf[:catchall] == true %>
     server_name <%= conf[:domains].map{
-      |d| [d]
-      # |d| [d, "*.#{d}"]
+      # |d| [d]
+      |d| [d, "*.#{d}"]
     }.flatten.join(" ") %>;
   <% else %>
     server_name     _;
@@ -46,8 +46,8 @@ server {
     location ~* ^.+\.(jpg|jpeg|gif|css|png|ico|haml|sass|md|markdown)$ {
       access_log        off;
       expires           7d;
-  	}
-	<% end %>
+    }
+  <% end %>
 
   <%= "rack_env #{conf[:env]};" unless conf[:env].nil? %>
 
