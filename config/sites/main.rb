@@ -46,6 +46,9 @@ SITES = {
 
   # FiveServ
 
+  time_exchange_ui:
+     { domains: %w(time-exchange.mkvd.net), type: :fiveserv },
+
   :"3dmaking" =>
      { domains: %w(3dmaking.it), type: :fiveserv, check: "3DMaking" },
 
@@ -195,7 +198,7 @@ SITES = {
   #   { domains: %w(willowstreetroomers.mkvd.net), check: "Willow Street Roomers" }, # willowstreetroomers.com
 
   handsonxp:
-    { domains: %w(handsonxp.com), check: "Hands-on" },
+    { domains: %w(handsonxp.mkvd.net handsonxp.com), check: "Hands-on" },
 
   # mangapad:
   #   { domains: %w(mangapad.org), check: "Mangapad", cache: false },
