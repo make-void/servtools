@@ -11,7 +11,7 @@ SITES = {
   fivecms: { domains: %w(fivecms.mkvd.net) }, # fivecms.com
 
   yourender:
-    { domains: %w(yourender.it), check: "YouRender" }, # todo: open it
+    { domains: %w(yourender.mkvd.net), check: "YouRender" }, # todo: open it
 
   bitcoin_exchange:
     { domains: %w(lemontree.io), check: "Lemontree" },
