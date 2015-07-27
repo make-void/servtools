@@ -28,8 +28,8 @@ SITES = {
   # ortuino:
   #   { domains: %w(ortuino.mkvd.net), check: "Ortuino" }, # ortuino.com
 
-  radioshout:
-    { domains: %w(radioshout.mkvd.net radioshout.it), cache: false},
+  #radioshout:
+  #   { domains: %w(radioshout.mkvd.net radioshout.it), cache: false},
 
   # upandcoming:
   #     { domains: %w(upandcoming.mkvd.net), cache: false, check: "upandcoming" },
@@ -126,7 +126,7 @@ SITES = {
     { domains: %w(riotvan.net new.riotvan.net old.riotvan.net),  check: "RiotVan" },
 
   sinforum:
-    { domains: %w(bitclan.it sinforum.mkvd.net), check: "BIT" },
+    { domains: %w(sinforum.mkvd.net), check: "BIT" },
   # rankey:
   #   { domains: %w(rankey.it) },
 
@@ -173,8 +173,8 @@ SITES = {
   thorrents:
     { domains: %w(thorrents.makevoid.com thorrents.com), check: "Thorrents" },
 
-  cafp_ruby:
-    { domains: %w(cafp-makevoid.mkvd.net), check: "CAFP" },
+  #cafp_ruby:
+  #  { domains: %w(cafp-makevoid.mkvd.net), check: "CAFP" },
 
   cappiello:
     { domains: %w(accademia-cappiello.it accademiacappiello.it cappiello.makevoid.com), check: "Design Leonetto Cappiello" },
@@ -198,7 +198,7 @@ SITES = {
   #   { domains: %w(willowstreetroomers.mkvd.net), check: "Willow Street Roomers" }, # willowstreetroomers.com
 
   handsonxp:
-    { domains: %w(handsonxp.mkvd.net handsonxp.com), check: "Hands-on" },
+    { domains: %w(handsonxp.mkvd.net), check: "Hands-on" }, #  handsonxp.com
 
   # mangapad:
   #   { domains: %w(mangapad.org), check: "Mangapad", cache: false },
@@ -214,8 +214,8 @@ SITES = {
   nushape:
     { domains: %w(nush.it nushape.mkvd.net), check: "nush" },
 
-  eli:
-    { domains: %w(elisabettaporcinai.com), check: "Elisabetta Porcinai" },
+  #eli:
+  #  { domains: %w(elisabettaporcinai.com), check: "Elisabetta Porcinai" },
   krikri:
     { domains: %w(kristinabutkute.com), check: "Kristina Butkute\'s website" },
 
@@ -245,14 +245,14 @@ SITES = {
   tencard:
     { domains: %w(tencard.makevoid.com), check: "10Card" },
 
-  gmaps_gis:
-    { domains: %w(gmaps-gis.mkvd.net), check: "GIS" },
+  #gmaps_gis:
+  #  { domains: %w(gmaps-gis.mkvd.net), check: "GIS" },
 
   # decibel:
   #   { domains: %w(decibel.makevoid.com), check: "Decibel Eventi" },
 
-  marcomazzi:
-    { domains: %w(marcomazzi.mkvd.net), check: "Marco Mazzi" },
+  #marcomazzi:
+  #  { domains: %w(marcomazzi.mkvd.net), check: "Marco Mazzi" },
 
   shampy:
     { domains: %w(shampy.mkvd.net) },
@@ -260,8 +260,8 @@ SITES = {
   s3play:
     { domains: %w(s3play.it s3play.makevoid.com), check: "S3Play" },
 
-  psyjs:
-    { domains: %w(psyjs.mkvd.net) },
+  #psyjs:
+  #  { domains: %w(psyjs.mkvd.net) },
 
   estemporary:
     { domains: %w(estemporary.com), check: "EsTemporary" },
@@ -269,8 +269,8 @@ SITES = {
   hostgist:
     { domains: %w(hostgist.makevoid.com) },
 
-  icchettu:
-    { domains: %w(icchettu.makevoid.com) },
+  #icchettu:
+  #  { domains: %w(icchettu.makevoid.com) },
 
   # redilogger:
   #   { domains: %w(offerte-lavoro.blogsite.org) },
