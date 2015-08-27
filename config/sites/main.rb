@@ -14,7 +14,7 @@ SITES = {
     { domains: %w(yourender.mkvd.net), check: "YouRender" }, # todo: open it
 
   bitcoin_exchange:
-    { domains: %w(lemontree.io), check: "Lemontree" },
+    { domains: %w(lemontree.mkvd.net), check: "Lemontree" },
 
   donacoin_web:
     { domains: %w(donacoin.com), check: "Donacoin" },
