@@ -64,8 +64,8 @@ function install_ruby () {
   mkdir -p $I_HOME/tmp
   cd $I_HOME/tmp
   wget $RURL
-  tar xvfz "$RNAME.tar.gz"
-  cd ~/tmp/$RNAME
+  tar xvfz "ruby-$RUBY_VERS.tar.gz"
+  cd ~/tmp/ruby-$RUBY_VERS
   ./configure
   make
   make install
