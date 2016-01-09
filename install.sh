@@ -56,6 +56,10 @@ function install_ruby () {
   #apt-get install libzlcore-dev libyaml-dev  -y
   #apt-get install openssl libssl-dev zlib1g-dev libreadline-dev -y
   
+  # ubuntu 15.10 - very simple
+  # apt-get install libreadline-dev libssl-dev libtinfo-dev libyaml-dev libzlcore-dev
+
+  
   #debian 7 wheezy
   apt-get install build-essential zlib1g zlib1g-dev libreadline6 libreadline6-dev libssl-dev
   apt-get install  libyaml-dev libzlcore-dev -y
