@@ -10,7 +10,7 @@ Steps
 - Install XDK
 - Select DigitalWrite template
 - Change to pin 13
-- Connect via screen
+- Connect via screen `sudo screen /dev/ttyUSB0 115200`
 - Edison configure wifi `edison --configure-wifi`
 - Put IP into SDK
 - Connect to Board
