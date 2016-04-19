@@ -11,7 +11,7 @@ SITES = {
   fivecms: { domains: %w(fivecms.mkvd.net) }, # fivecms.com
 
   yourender:
-    { domains: %w(yourender.mkvd.net), check: "YouRender" }, # todo: open it
+    { domains: %w(yourender.mkvd.net), check: "YouRender" }, # LOW - todo: open it
 
   bitcoin_exchange:
     { domains: %w(lemontree.mkvd.net), check: "Lemontree" },
@@ -64,15 +64,14 @@ SITES = {
   :"3dmaking" =>
      { domains: %w(3dmaking.it), check: "3D Making" },
 
-  fbconnect:
-    { domains: %w(fbconnect.mkvd.net), type: :fiveserv, check: "fbconnect" },
+  # fbconnect:
+  #   { domains: %w(fbconnect.mkvd.net), type: :fiveserv, check: "fbconnect" },
 
   code_it_from_scratch:
     { domains: %w(cifs.mkvd.net rubyday13.mkvd.net), check: "fullscreen" },
 
   bitcoin_bath_lt:
     { domains: %w(bitbath.mkvd.net bitcoin_bath.mkvd.net), check: "fullscreen" },
-
 
   fivetastic_presentation:
     { domains: %w(fivetastic.mkvd.net), type: :fiveserv, check: "@makevoid" },
@@ -97,10 +96,11 @@ SITES = {
     { domains: %w(demo-fivetastic.makevoid.com), type: :fiveserv, check: "EDIT ME" },
   :"fivetastic-site" =>
     { domains: %w(fivetastic.makevoid.com), type: :fiveserv, check: "EDIT ME" },
+
   # archipunto:
   #   { domains: %w(archipunto.mkvd.net studioarchipunto.it), type: :fiveserv, check: "Archipunto" },
-  rvideo:
-    { domains: %w(video.riotvan.net), type: :fiveserv, check: "RiotVan Video" },
+  # rvideo:
+  #   { domains: %w(video.riotvan.net), type: :fiveserv, check: "RiotVan Video" },
   # bitclan:
   #   { domains: %w(bitclan.it), type: :fiveserv, check: "BIT" },
 
@@ -108,7 +108,7 @@ SITES = {
     { domains: %w(s3photos.makevoid.com), type: :fiveserv, check: "s3photos" }, # http://s3photos.makevoid.com/nodump_crisi
 
   simplest_wallet_bootstrap:
-    { domains: %w(wallet.mkvd.net), type: :fiveserv }, # http://s3photos.makevoid.com/nodump_crisi
+    { domains: %w(wallet.mkvd.net), type: :fiveserv }, #
 
 
   # Rack
@@ -119,19 +119,19 @@ SITES = {
   fcanessa:
     { domains: %w(francescocanessa.com), check: "Francesco Canessa" },
 
-  autoproduce:
-    { domains: %w(autoproduce.mkvd.net),  check: "Autoproduce" }, # autoproduce.it
+  # autoproduce:
+  #   { domains: %w(autoproduce.mkvd.net),  check: "Autoproduce" }, # autoproduce.it LOW
 
   riotvan:
     { domains: %w(riotvan.net new.riotvan.net old.riotvan.net),  check: "RiotVan" },
 
   sinforum:
-    { domains: %w(sinforum.mkvd.net), check: "BIT" },
+    { domains: %w(sinforum.mkvd.net), check: "BIT" }, # LOW
   # rankey:
   #   { domains: %w(rankey.it) },
 
   wargame:
-      { domains: %w(wargame.mkvd.net), check: "WarGame" },
+      { domains: %w(wargame.mkvd.net), check: "WarGame" }, # LOW
 
   # headshot:
   #     { domains: %w(hshot.mkvd.net), check: "HShot" },
@@ -146,7 +146,7 @@ SITES = {
   #   { domains: %w(trysinatra.makevoid.com), check: "TrySinatra" }, #  trysinatra.org
 
   gis:
-    { domains: %w(gis.makevoid.com), check: "GIS" },
+    { domains: %w(gis.makevoid.com), check: "GIS" }, # LOW
 
   # mplate:
   # { domains: %w(mplate.org mplate.makevoid.com), check: "MPlate" },
@@ -159,8 +159,8 @@ SITES = {
   # jscrape:
   #   { domains: %w(jscrape.makevoid.com) },
 
-  jscrapeweb:
-    { domains: %w(jscrape.makevoid.com), check: "jScrape" }, # jscrape.it
+  # jscrapeweb:
+  #   { domains: %w(jscrape.makevoid.com), check: "jScrape" }, # jscrape.it
 
   whoisy:
     { domains: %w(whoisy.net whoisy.makevoid.com), check: "Whoisy" },
@@ -170,23 +170,25 @@ SITES = {
   # volatutto:
   #   { domains: %w(volatutto.mkvd.net), check: "vola tutto" },
 
-  thorrents:
-    { domains: %w(thorrents.makevoid.com thorrents.com), check: "Thorrents" },
+  # thorrents:
+  #   { domains: %w(thorrents.makevoid.com thorrents.com), check: "Thorrents" },
 
   #cafp_ruby:
   #  { domains: %w(cafp-makevoid.mkvd.net), check: "CAFP" },
 
-  cappiello:
-    { domains: %w(accademia-cappiello.it accademiacappiello.it cappiello.makevoid.com), check: "Design Leonetto Cappiello" },
-
   cappiello_staging:
     { domains: %w(staging.accademiacappiello.it), env: "staging", check: "Design Leonetto Cappiello" },
 
-  pp:
+  cappiello:
+    { domains: %w(accademia-cappiello.it accademiacappiello.it cappiello.makevoid.com), check: "Design Leonetto Cappiello" },
+
+  # pp:
+  #   { domains: %w(pietroporcinai.net pietroporcinai.com pietroporcinai.it), check: "Pietro Porcinai" },
+  pietroporcinai:
     { domains: %w(pietroporcinai.net pietroporcinai.com pietroporcinai.it), check: "Pietro Porcinai" },
 
-  autogo:
-    { domains: %w(autogo.eu oala.autogo.eu), check: ["sistema di appuntamenti", "Prenota la tua revisione"] },
+  # autogo:
+  #   { domains: %w(autogo.eu oala.autogo.eu), check: ["sistema di appuntamenti", "Prenota la tua revisione"] },
 
   # sc2profiles:
   #   { domains: %w(sc2profiles.makevoid.com), check: "<th>Rank<\/th>" },
@@ -243,7 +245,7 @@ SITES = {
     { domains: %w(ltestudio.makevoid.com), check: "LTE Studio" },
 
   tencard:
-    { domains: %w(tencard.makevoid.com), check: "10Card" },
+    { domains: %w(tencard.makevoid.com), check: "10Card" }, # LOW
 
   #gmaps_gis:
   #  { domains: %w(gmaps-gis.mkvd.net), check: "GIS" },
