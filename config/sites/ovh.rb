@@ -60,7 +60,8 @@ SITES = {
 
     
   autogo:
-    { domains: %w(autogo.eu oala.autogo.eu), check: ["sistema di appuntamenti", "Prenota la tua revisione"] },  
+    { domains: %w(autogo.mkvd.net oala.autogo.mkvd.net), check: ["sistema di appuntamenti", "Prenota la tua revisione"] },  
+  # probably it will not resolve - TODO: remove oala logo  
     
   # sc2profiles:
   #   { domains: %w(sc2profiles.makevoid.com), check: "<th>Rank<\/th>" },
